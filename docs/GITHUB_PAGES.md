@@ -14,7 +14,7 @@ The page title is `Street Memory — A Cozy Logic Puzzle`, with English descript
 
 ## CI and automatic deployment
 
-`.github/workflows/deploy.yml` runs on pushes to main and `workflow_dispatch`. It uses the official actions/checkout v7, setup-node v7, configure-pages v6, upload-pages-artifact v5 and deploy-pages v5 major versions, checked against upstream releases on 2026-11-10. Node 22 matches the existing project's engine requirement. No dependency was added.
+`.github/workflows/deploy.yml` runs on pushes to main and `workflow_dispatch`. It uses the official actions/checkout v7, setup-node v7, configure-pages v6, upload-pages-artifact v5 and deploy-pages v5 major versions, checked against upstream releases on 2026-11-10. Node 22 matches the existing project's engine requirement. Jobs use Ubuntu 24.04, supported by the existing Playwright 1.56.1; the first remote run exposed that the moving ubuntu-latest label had advanced to unsupported Ubuntu 26.04. No dependency was added.
 
 Build job: npm ci → typecheck → lint → all Vitest tests → validate all campaign solutions → Vite build → dist audit → install Playwright Chromium → production Pages browser tests → configure Pages → upload only dist.
 
