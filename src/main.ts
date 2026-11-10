@@ -1,6 +1,7 @@
 import Phaser from 'phaser';
 import './style.css';
 import { BoardScene } from './game/BoardScene';
+import { boardDisplay } from './game/Display';
 import { AudioBus } from './game/Audio';
 import { carSVG, svgURL } from './game/art';
 import { initialState, undo, type State, type Level, type Phase } from './core/model';
@@ -68,11 +69,41 @@ async function bootstrap() {
     render: { roundPixels: false },
     audio: { noAudio: true },
   });
-  const observer = new ResizeObserver(() => {
+  let resizeFrame = 0;
+  let ratioQuery: MediaQueryList | undefined;
+  let lastDisplay = '';
+  const syncDisplay = () => {
+    resizeFrame = 0;
     const box = el('board').getBoundingClientRect();
-    if (box.width && box.height) game.scale.resize(box.width, box.height);
-  });
+    if (!box.width || !box.height) return;
+    const display = boardDisplay(box.width, box.height, window.devicePixelRatio);
+    const key = JSON.stringify(display);
+    if (key !== lastDisplay) {
+      lastDisplay = key;
+      boardScene.setDisplay(display.cssWidth, display.cssHeight, display.density);
+      game.scale.resize(display.width, display.height);
+      // Force Scale.NONE to refresh its CSS display size even at zoom 1.
+      // resize() alone deliberately leaves existing CSS dimensions at native zoom.
+      game.scale.setZoom(1 / display.density);
+    }
+    game.scale.updateBounds();
+    if (!ratioQuery || !ratioQuery.matches) {
+      ratioQuery?.removeEventListener('change', requestDisplay);
+      ratioQuery = matchMedia(`(resolution: ${window.devicePixelRatio}dppx)`);
+      ratioQuery.addEventListener('change', requestDisplay);
+    }
+  };
+  const requestDisplay = () => {
+    if (!resizeFrame) resizeFrame = requestAnimationFrame(syncDisplay);
+  };
+  const observer = new ResizeObserver(requestDisplay);
   observer.observe(el('board'));
+  window.addEventListener('resize', requestDisplay);
+  // Some browser/monitor transitions silently change DPR without either event.
+  // Poll only the media-query boolean; redraw only when the density changed.
+  const densityCheck = window.setInterval(() => {
+    if (ratioQuery && !ratioQuery.matches) requestDisplay();
+  }, 500);
   const waitScene = () => {
     if (boardScene.sys?.isActive()) {
       ready = true;
@@ -138,6 +169,7 @@ async function bootstrap() {
     el('daily').classList.toggle('active', daily);
     el('delivery-count').textContent =
       state.deliveredCarIds.length + ' / ' + level.cars.length + ' home';
+    el('cars').style.setProperty('--fleet-columns', String(Math.min(3, level.cars.length)));
     el('cars').innerHTML = level.cars
       .map((c, i) => {
         const h = level.nodes.find((n) => n.id === c.destinationId)!;
@@ -145,7 +177,7 @@ async function bootstrap() {
         const pending = state.pendingCarIds.includes(c.id);
         const color = h.kind === 'home' ? h.color : '#ed806d',
           symbol = h.kind === 'home' ? h.symbol : '●';
-        return `<button class="car ${delivered ? 'delivered' : ''} ${!pending && !delivered ? 'wrong' : ''} ${selected === c.id ? 'selected' : ''} ${hinted === c.id ? 'hinted' : ''}" data-car="${c.id}" aria-label="Car ${i + 1}, ${symbol} home, leaves ${c.imprint}${delivered ? ', delivered' : ''}" ${!pending || state.phase !== 'ready' || modalOpen ? 'disabled' : ''} style="--car-color:${color}"><span class="car-index">${i + 1}</span><img src="${svgURL(carSVG(color, c.imprint, symbol))}" alt=""/><span class="car-meta"><b>${symbol}</b><span>leaves ${c.imprint}</span>${level.nodes.filter((n) => n.kind === 'entry').length > 1 ? `<em>dock ${c.entryId.replace('E', '')}</em>` : ''}</span>${delivered ? '<span class="check">✓</span>' : ''}</button>`;
+        return `<button class="car ${delivered ? 'delivered' : ''} ${!pending && !delivered ? 'wrong' : ''} ${selected === c.id ? 'selected' : ''} ${hinted === c.id ? 'hinted' : ''}" data-car="${c.id}" aria-label="Car ${i + 1}, ${symbol} home, leaves ${c.imprint}${delivered ? ', delivered' : ''}" ${!pending || state.phase !== 'ready' || modalOpen ? 'disabled' : ''} style="--car-color:${color}"><span class="car-index">${i + 1}</span>${level.nodes.filter((n) => n.kind === 'entry').length > 1 ? `<em class="car-dock">Dock ${c.entryId.replace('E', '')}</em>` : ''}<img src="${svgURL(carSVG(color, c.imprint, symbol))}" alt=""/><span class="car-meta"><b>${symbol}</b><span>leaves ${c.imprint}</span></span>${delivered ? '<span class="check">✓</span>' : ''}</button>`;
       })
       .join('');
     for (const button of el('cars').querySelectorAll<HTMLButtonElement>('button')) {
@@ -471,6 +503,7 @@ async function bootstrap() {
         },
         platform,
         audio,
+        boardDiagnostics: () => boardScene.diagnostics(),
       },
     });
   }
@@ -479,6 +512,10 @@ async function bootstrap() {
   });
   window.addEventListener('beforeunload', () => {
     observer.disconnect();
+    window.removeEventListener('resize', requestDisplay);
+    ratioQuery?.removeEventListener('change', requestDisplay);
+    cancelAnimationFrame(resizeFrame);
+    window.clearInterval(densityCheck);
     audio.destroy();
     platform.destroy();
     game.destroy(true);

@@ -30,7 +30,8 @@
     "build": "vite build --mode github-pages",
     "preview:pages": "vite preview --mode github-pages --host 127.0.0.1 --port 4180",
     "audit:pages": "node --import tsx scripts/audit-pages.ts",
-    "test:pages": "playwright test --config playwright.pages.config.ts"
+    "test:pages": "playwright test --config playwright.pages.config.ts",
+    "test:visual": "VISUAL_PHASE=after VISUAL_URL=http://127.0.0.1:4180/bgs-sm-playtest-7f42/ node scripts/capture-visual.mjs"
   },
   "dependencies": {
     "phaser": "3.90.0"
