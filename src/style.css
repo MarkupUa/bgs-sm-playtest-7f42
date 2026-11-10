@@ -1,0 +1,986 @@
+:root {
+  font-family: Inter, 'Avenir Next', Avenir, 'Segoe UI', sans-serif;
+  color: #304b40;
+  background: #f4f1e8;
+  font-synthesis: none;
+  --green: #2e5144;
+  --muted: #819082;
+  --district: #86a58b;
+  --line: #dedfd0;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+button,
+a,
+input {
+  -webkit-tap-highlight-color: transparent;
+}
+button {
+  font: inherit;
+  color: inherit;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  min-height: 44px;
+  min-width: 44px;
+  border-radius: 10px;
+  transition:
+    background 0.15s,
+    transform 0.15s;
+}
+button:hover:not(:disabled) {
+  background: #e7e9dc;
+}
+button:active:not(:disabled) {
+  transform: translateY(1px);
+}
+button:disabled {
+  cursor: default;
+  opacity: 0.4;
+}
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid #bb8b3b;
+  outline-offset: 3px;
+}
+button[hidden],
+div[hidden],
+pre[hidden] {
+  display: none !important;
+}
+.shell {
+  max-width: 1420px;
+  padding: 0 42px;
+  margin: 0 auto;
+  height: 100dvh;
+  min-height: 430px;
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  height: 98px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  text-decoration: none;
+  color: var(--green);
+  font-weight: 750;
+  font-size: 23px;
+  letter-spacing: -0.8px;
+}
+.brand img {
+  width: 45px;
+  height: 45px;
+}
+.brand small {
+  display: block;
+  font-size: 11px;
+  font-weight: 450;
+  letter-spacing: 0.25px;
+  margin-top: 4px;
+  color: #7f8978;
+}
+.header nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.nav-button {
+  padding: 0 16px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.nav-button span {
+  font-size: 20px;
+  margin-right: 5px;
+  font-weight: 400;
+}
+.nav-button.active {
+  background: #e4e8d9;
+}
+.icon-button {
+  font-size: 21px;
+  width: 44px;
+  border: 1px solid var(--line);
+}
+main {
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.street-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0 18px;
+  flex-shrink: 0;
+}
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 2.3px;
+  font-weight: 700;
+  color: #87937c;
+}
+h1 {
+  font-size: 29px;
+  margin: 7px 0 0;
+  font-weight: 650;
+  letter-spacing: -0.9px;
+}
+.level-indicator {
+  text-align: right;
+  align-self: center;
+}
+.level-indicator > span {
+  font-size: 10px;
+  font-weight: 650;
+  letter-spacing: 1.5px;
+  color: #83907c;
+}
+#progress-dots {
+  display: flex;
+  gap: 7px;
+  justify-content: flex-end;
+  margin-top: 11px;
+}
+#progress-dots i {
+  height: 5px;
+  width: 16px;
+  background: #dddccc;
+  border-radius: 3px;
+}
+#progress-dots i.done {
+  background: #7b987a;
+}
+#progress-dots i.current {
+  background: #d6ae60;
+}
+.board-frame {
+  position: relative;
+  flex: 1;
+  min-height: 130px;
+  border: 1px solid #dce0cc;
+  border-radius: 22px;
+  background: var(--board, #e9eddd);
+  overflow: hidden;
+  box-shadow:
+    inset 0 0 60px #f8f6e87f,
+    0 6px 0 #dfe1d05c;
+}
+#board {
+  position: absolute;
+  inset: 22px 25px 22px;
+  touch-action: manipulation;
+}
+#board canvas {
+  display: block;
+}
+.map-label {
+  position: absolute;
+  top: 20px;
+  left: 25px;
+  font-size: 9px;
+  font-weight: 650;
+  letter-spacing: 2px;
+  z-index: 1;
+  color: #82917b;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  pointer-events: none;
+}
+.live-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--district);
+}
+.map-compass {
+  position: absolute;
+  top: 19px;
+  right: 24px;
+  text-align: center;
+  color: #9ca792;
+  font-size: 10px;
+  line-height: 14px;
+  pointer-events: none;
+}
+.caption {
+  position: absolute;
+  bottom: 12px;
+  left: 20px;
+  right: 20px;
+  text-align: center;
+  pointer-events: none;
+  font-size: 12px;
+  color: #647b5c;
+}
+.garage {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  min-height: 122px;
+  padding: 12px 8px 7px;
+}
+.garage-label {
+  width: 143px;
+  flex-shrink: 0;
+}
+.garage-label > span {
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  color: #819079;
+}
+.garage-label small {
+  display: block;
+  font-size: 12px;
+  color: #6e826d;
+  margin-top: 8px;
+}
+.cars {
+  min-width: 0;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+.car {
+  background: #fcfaf2;
+  border: 1px solid #e1e1d4;
+  border-bottom: 3px solid #dcddcd;
+  border-radius: 14px;
+  width: 110px;
+  height: 92px;
+  position: relative;
+  flex: 0 1 110px;
+  min-width: 48px;
+  padding: 1px 5px 5px;
+  isolation: isolate;
+}
+.car img {
+  width: 86px;
+  max-width: 100%;
+  height: 58px;
+  object-fit: contain;
+  display: block;
+  margin: auto;
+}
+.car:hover:not(:disabled) {
+  background: #fffdf5;
+  transform: translateY(-3px);
+  border-color: #bdc8b0;
+}
+.car-index {
+  position: absolute;
+  left: 7px;
+  top: 5px;
+  color: #a6ad99;
+  font-size: 9px;
+}
+.car-meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 10px;
+  color: #6c7e68;
+  white-space: nowrap;
+}
+.car-meta b {
+  font-size: 12px;
+  color: #334d40;
+}
+.car-meta em {
+  font-size: 8px;
+  font-style: normal;
+}
+.car.delivered {
+  opacity: 0.38;
+}
+.check {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  color: var(--green);
+}
+.car.hinted {
+  border: 2px solid #cba653;
+  box-shadow: 0 0 0 5px #dbba6729;
+  animation: hint 1.3s ease-in-out infinite;
+}
+.car.selected {
+  border: 2px solid var(--green);
+  background: #e6eadb;
+}
+.car.wrong {
+  background: #f1d7cd;
+}
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--line);
+  padding: 8px 0;
+  flex-shrink: 0;
+}
+.tools {
+  display: flex;
+  gap: 9px;
+}
+.tools button {
+  font-size: 19px;
+  padding: 0 13px;
+}
+.tools button span {
+  font-size: 12px;
+  margin-left: 6px;
+  vertical-align: 2px;
+}
+.tools button.active {
+  background: #e1e6d4;
+  color: #294e3f;
+}
+.tools button.muted {
+  color: #b4b6a8;
+}
+footer {
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 10px;
+  color: #929b86;
+  flex-shrink: 0;
+}
+.rule-mark {
+  font-size: 11px;
+  color: #7f9178;
+}
+.rule-mark i {
+  font-style: normal;
+  color: #bec4af;
+  padding: 0 5px;
+}
+.footer-note {
+  margin-left: auto;
+  font-size: 8px;
+  letter-spacing: 1.7px;
+}
+.primary {
+  background: var(--green);
+  color: #faf6e7;
+  padding: 0 22px;
+  font-size: 12px;
+  font-weight: 650;
+  min-height: 46px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+.primary:hover:not(:disabled) {
+  background: #3c6351;
+}
+.result {
+  position: absolute;
+  z-index: 5;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(640px, 94%);
+  background: #fffcf2f7;
+  backdrop-filter: blur(10px);
+  border: 1px solid #d7ddc7;
+  box-shadow: 0 12px 35px #4a634a26;
+  border-radius: 17px;
+  padding: 18px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  animation: arrive 0.35s ease-out;
+}
+.result-icon {
+  font-size: 36px;
+  color: #b79c54;
+}
+.result h2 {
+  font-size: 20px;
+  letter-spacing: -0.5px;
+  margin: 0 0 4px;
+}
+.result p {
+  font-size: 11px;
+  color: #859179;
+  margin: 0;
+  max-width: 330px;
+  line-height: 1.5;
+}
+.result .primary {
+  margin-left: auto;
+}
+.stars {
+  color: #c5a453;
+  font-size: 18px;
+  letter-spacing: 5px;
+  margin-top: 5px;
+}
+.stars span {
+  color: #bcc2aa;
+}
+dialog {
+  color: var(--green);
+  background: #faf8ef;
+  border: 1px solid #dedfce;
+  border-radius: 24px;
+  padding: 36px;
+  max-width: 610px;
+  width: calc(100% - 32px);
+  max-height: 90dvh;
+  box-shadow: 0 30px 100px #273c3a33;
+}
+dialog::backdrop {
+  background: #2f493944;
+  backdrop-filter: blur(5px);
+}
+dialog h2 {
+  font-size: 30px;
+  letter-spacing: -1px;
+  font-weight: 650;
+  margin: 10px 0 12px;
+}
+dialog p {
+  font-size: 13px;
+  line-height: 1.65;
+  color: #7b8a72;
+}
+dialog .primary {
+  margin-top: 15px;
+}
+dialog .close {
+  position: absolute;
+  right: 14px;
+  top: 12px;
+  width: 44px;
+  font-size: 25px;
+  color: #8e9984;
+}
+.modal-illustration {
+  font-size: 42px;
+  margin-bottom: 24px;
+}
+.district-list {
+  margin-top: 25px;
+}
+.district-list section {
+  margin: 20px 0;
+}
+.district-list h3 {
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.district-list h3 i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+.level-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 6px;
+}
+.level-grid button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #dce0ce;
+  background: #f2f1e7;
+  height: 53px;
+}
+.level-grid button b {
+  font-size: 13px;
+  font-weight: 600;
+}
+.level-grid button small {
+  font-size: 9px;
+  color: #b29954;
+  margin-top: 3px;
+}
+.setting {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 0;
+  border-bottom: 1px solid #e3e3d5;
+  font-size: 14px;
+}
+.setting input {
+  accent-color: var(--green);
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+.howto {
+  padding-top: 12px;
+}
+.howto h3 {
+  font-size: 14px;
+}
+.howto small {
+  color: #9a9f8b;
+  font-size: 10px;
+  line-height: 1.8;
+}
+#debug {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: #fffef1ed;
+  padding: 10px;
+  max-height: 50vh;
+  overflow: auto;
+  font-size: 10px;
+  pointer-events: none;
+}
+@keyframes hint {
+  50% {
+    box-shadow: 0 0 0 6px #dbba6749;
+  }
+}
+@keyframes arrive {
+  from {
+    opacity: 0;
+    bottom: 12px;
+  }
+  to {
+    opacity: 1;
+    bottom: 24px;
+  }
+}
+@media (min-width: 1500px) {
+  .shell {
+    max-height: 1080px;
+    padding-bottom: 15px;
+  }
+  .header {
+    height: 110px;
+  }
+  .street-heading {
+    padding: 30px 0 25px;
+  }
+  .garage {
+    min-height: 140px;
+  }
+  .car {
+    width: 124px;
+    height: 104px;
+    flex-basis: 124px;
+  }
+  .car img {
+    height: 67px;
+    width: 100px;
+  }
+  .car-meta {
+    font-size: 11px;
+  }
+  .board-frame {
+    border-radius: 26px;
+  }
+}
+@media (max-height: 700px) {
+  .shell {
+    padding: 0 26px;
+  }
+  .header {
+    height: 64px;
+  }
+  .brand {
+    font-size: 19px;
+    gap: 10px;
+  }
+  .brand img {
+    width: 35px;
+    height: 35px;
+  }
+  .brand small {
+    font-size: 9px;
+  }
+  .street-heading {
+    padding: 12px 0;
+  }
+  .eyebrow {
+    font-size: 8px;
+    letter-spacing: 1.8px;
+  }
+  h1 {
+    font-size: 23px;
+    margin-top: 4px;
+  }
+  .board-frame {
+    border-radius: 16px;
+  }
+  #board {
+    inset: 12px 14px 20px;
+  }
+  .map-label {
+    top: 12px;
+    left: 16px;
+    font-size: 7px;
+  }
+  .map-compass {
+    top: 9px;
+    right: 16px;
+  }
+  .caption {
+    font-size: 10px;
+    bottom: 8px;
+  }
+  .garage {
+    min-height: 98px;
+    gap: 10px;
+    padding: 8px 0;
+  }
+  .garage-label {
+    width: 120px;
+  }
+  .cars {
+    gap: 9px;
+  }
+  .car {
+    height: 79px;
+    max-width: 100px;
+  }
+  .car img {
+    height: 47px;
+    width: 76px;
+  }
+  .toolbar {
+    padding: 3px 0;
+  }
+  .tools button {
+    padding: 0 12px;
+  }
+  footer {
+    min-height: 26px;
+    font-size: 9px;
+  }
+  .footer-note {
+    font-size: 7px;
+  }
+  .result {
+    bottom: 18px;
+    padding: 13px;
+    gap: 10px;
+  }
+  .result h2 {
+    font-size: 18px;
+  }
+  .result-icon {
+    font-size: 29px;
+  }
+  .result p {
+    font-size: 10px;
+  }
+}
+@media (max-width: 850px) {
+  .shell {
+    padding: 0 18px;
+  }
+  .header nav {
+    gap: 3px;
+  }
+  .nav-button {
+    padding: 0 10px;
+  }
+  .garage-label {
+    width: 103px;
+  }
+  .garage-label > span {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+  .car-meta em {
+    font-size: 7px;
+  }
+  .cars {
+    gap: 7px;
+  }
+  .tools {
+    gap: 3px;
+  }
+  .tools button {
+    padding: 0 10px;
+  }
+  .footer-note {
+    display: none;
+  }
+}
+@media (max-width: 520px) {
+  .shell {
+    padding: 0 12px;
+    min-height: 520px;
+  }
+  .header {
+    height: 65px;
+  }
+  .brand {
+    font-size: 17px;
+    gap: 8px;
+    letter-spacing: -0.5px;
+  }
+  .brand img {
+    width: 33px;
+    height: 33px;
+  }
+  .brand small {
+    display: none;
+  }
+  .header nav {
+    gap: 0;
+  }
+  .nav-button {
+    font-size: 11px;
+    padding: 0 8px;
+  }
+  .nav-button span {
+    display: none;
+  }
+  .icon-button {
+    border: 0;
+    font-size: 18px;
+    width: 44px;
+  }
+  .street-heading {
+    padding: 14px 2px;
+  }
+  .eyebrow {
+    font-size: 8px;
+  }
+  h1 {
+    font-size: 21px;
+    max-width: 220px;
+  }
+  .level-indicator > span {
+    font-size: 8px;
+    letter-spacing: 0.6px;
+  }
+  #progress-dots {
+    gap: 3px;
+    margin-top: 7px;
+  }
+  #progress-dots i {
+    width: 7px;
+    height: 4px;
+  }
+  .board-frame {
+    border-radius: 17px;
+    min-height: 200px;
+  }
+  #board {
+    inset: 20px 0 22px;
+  }
+  .map-label {
+    font-size: 6px;
+    letter-spacing: 1.4px;
+    top: 13px;
+    left: 13px;
+  }
+  .map-compass {
+    font-size: 8px;
+    right: 12px;
+    top: 10px;
+  }
+  .caption {
+    font-size: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 9px;
+  }
+  .garage {
+    flex-wrap: wrap;
+    gap: 6px;
+    min-height: 116px;
+    padding: 12px 0 8px;
+  }
+  .garage-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  .garage-label small {
+    font-size: 10px;
+    margin: 0;
+  }
+  .cars {
+    width: 100%;
+    gap: 4px;
+  }
+  .car {
+    height: 70px;
+    min-width: 44px;
+    padding: 0 2px 5px;
+    border-radius: 10px;
+    flex: 1;
+  }
+  .car img {
+    height: 45px;
+    width: 70px;
+  }
+  .car-index {
+    font-size: 7px;
+    top: 3px;
+    left: 4px;
+  }
+  .car-meta {
+    font-size: 8px;
+    gap: 2px;
+    flex-wrap: wrap;
+    line-height: 1.1;
+  }
+  .car-meta em {
+    width: 100%;
+    font-size: 7px;
+  }
+  .car-meta b {
+    font-size: 9px;
+  }
+  .check {
+    font-size: 9px;
+    top: 3px;
+    right: 4px;
+  }
+  .toolbar {
+    padding: 4px 0;
+  }
+  .tools button {
+    padding: 0 7px;
+    font-size: 19px;
+  }
+  .tools button span {
+    font-size: 10px;
+    margin-left: 1px;
+  }
+  .tools {
+    gap: 0;
+  }
+  footer {
+    min-height: 29px;
+    font-size: 8px;
+    justify-content: center;
+    gap: 7px;
+  }
+  .rule-mark {
+    font-size: 9px;
+  }
+  .result {
+    bottom: 24px;
+    flex-wrap: wrap;
+    padding: 14px;
+    gap: 10px;
+  }
+  .result div {
+    flex: 1;
+  }
+  .result h2 {
+    font-size: 18px;
+  }
+  .result p {
+    font-size: 11px;
+  }
+  .result .primary {
+    width: 100%;
+    min-height: 44px;
+  }
+  .result-icon {
+    font-size: 27px;
+  }
+  .stars {
+    font-size: 15px;
+  }
+  .send {
+    width: 100%;
+  }
+  dialog {
+    padding: 28px 20px;
+  }
+  .level-grid {
+    gap: 4px;
+  }
+  .level-grid button {
+    min-width: 0;
+  }
+  .level-grid button small {
+    font-size: 7px;
+  }
+  dialog h2 {
+    font-size: 25px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+:root {
+  --gutter: 42px;
+}
+@media (max-height: 700px) {
+  :root {
+    --gutter: 26px;
+  }
+}
+@media (max-width: 850px) {
+  :root {
+    --gutter: 18px;
+  }
+}
+@media (max-width: 520px) {
+  :root {
+    --gutter: 12px;
+  }
+}
+.shell {
+  padding-left: max(var(--gutter), env(safe-area-inset-left));
+  padding-right: max(var(--gutter), env(safe-area-inset-right));
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+body {
+  -webkit-touch-callout: none;
+}
+button {
+  touch-action: manipulation;
+}
+html.reduced-motion * {
+  animation: none !important;
+  transition: none !important;
+}
+
+#sound svg {
+  display: block;
+  margin: auto;
+}

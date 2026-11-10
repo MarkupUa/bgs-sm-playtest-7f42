@@ -1,0 +1,5545 @@
+[
+  {
+    "id": "sm-001",
+    "title": "A little departure",
+    "district": 0,
+    "seed": 1,
+    "note": "Tap the coral car. Watch the sign change.",
+    "nodes": [
+      {
+        "id": "E",
+        "kind": "entry",
+        "next": "X",
+        "x": 460,
+        "y": 35
+      },
+      {
+        "id": "X",
+        "kind": "switch",
+        "L": "H0",
+        "R": "H1",
+        "initial": "L",
+        "x": 460,
+        "y": 180
+      },
+      {
+        "id": "H0",
+        "kind": "home",
+        "color": "#e98873",
+        "symbol": "●",
+        "x": 260,
+        "y": 385
+      },
+      {
+        "id": "H1",
+        "kind": "home",
+        "color": "#75b6cd",
+        "symbol": "◆",
+        "x": 660,
+        "y": 385
+      }
+    ],
+    "cars": [
+      {
+        "id": "C0",
+        "entryId": "E",
+        "destinationId": "H0",
+        "imprint": "R"
+      }
+    ],
+    "solution": ["C0"]
+  },
+  {
+    "id": "sm-002",
+    "title": "After you",
+    "district": 0,
+    "seed": 2,
+    "note": "The first car leaves R. Who needs the left road?",
+    "nodes": [
+      {
+        "id": "E",
+        "kind": "entry",
+        "next": "X",
+        "x": 460,
+        "y": 35
+      },
+      {
+        "id": "X",
+        "kind": "switch",
+        "L": "H0",
+        "R": "H1",
+        "initial": "L",
+        "x": 460,
+        "y": 180
+      },
+      {
+        "id": "H0",
+        "kind": "home",
+        "color": "#e98873",
+        "symbol": "●",
+        "x": 260,
+        "y": 385
+      },
+      {
+        "id": "H1",
+        "kind": "home",
+        "color": "#75b6cd",
+        "symbol": "◆",
+        "x": 660,
+        "y": 385
+      }
+    ],
+    "cars": [
+      {
+        "id": "C1",
+        "entryId": "E",
+        "destinationId": "H1",
+        "imprint": "L"
+      },
+      {
+        "id": "C0",
+        "entryId": "E",
+        "destinationId": "H0",
+        "imprint": "R"
+      }
+    ],
+    "solution": ["C0", "C1"]
+  },
+  {
+    "id": "sm-003",
+    "title": "A road remembers",
+    "district": 0,
+    "seed": 3,
+    "note": "Each car follows the sign, then leaves its own.",
+    "nodes": [
+      {
+        "id": "E",
+        "kind": "entry",
+        "next": "X",
+        "x": 100,
+        "y": 300
+      },
+      {
+        "id": "X",
+        "kind": "switch",
+        "L": "H_RED",
+        "R": "Y",
+        "initial": "L",
+        "x": 310,
+        "y": 300
+      },
+      {
+        "id": "Y",
+        "kind": "switch",
+        "L": "H_BLUE",
+        "R": "H_GREEN",
+        "initial": "L",
+        "x": 570,
+        "y": 360
+      },
+      {
+        "id": "H_RED",
+        "kind": "home",
+        "color": "#ed806d",
+        "symbol": "●",
+        "x": 310,
+        "y": 130
+      },
+      {
+        "id": "H_BLUE",
+        "kind": "home",
+        "color": "#70afca",
+        "symbol": "◆",
+        "x": 570,
+        "y": 130
+      },
+      {
+        "id": "H_GREEN",
+        "kind": "home",
+        "color": "#8aaa75",
+        "symbol": "▲",
+        "x": 790,
+        "y": 360
+      }
+    ],
+    "cars": [
+      {
+        "id": "RED",
+        "entryId": "E",
+        "destinationId": "H_RED",
+        "imprint": "R"
+      },
+      {
+        "id": "BLUE",
+        "entryId": "E",
+        "destinationId": "H_BLUE",
+        "imprint": "R"
+      },
+      {
+        "id": "GREEN",
+        "entryId": "E",
+        "destinationId": "H_GREEN",
+        "imprint": "L"
+      }
+    ],
+    "solution": ["RED", "BLUE", "GREEN"]
+  },
+  {
+    "id": "sm-004",
+    "title": "Paper roofs",
+    "district": 0,
+    "nodes": [
+      {
+        "id": "H0",
+        "kind": "home",
+        "color": "#e98873",
+        "symbol": "●",
+        "x": 65,
+        "y": 410
+      },
+      {
+        "id": "H1",
+        "kind": "home",
+        "color": "#75b6cd",
+        "symbol": "◆",
+        "x": 460,
+        "y": 410
+      },
+      {
+        "id": "H2",
+        "kind": "home",
+        "color": "#a6b978",
+        "symbol": "▲",
+        "x": 855,
+        "y": 410
+      },
+      {
+        "id": "S1",
+        "kind": "switch",
+        "L": "H1",
+        "R": "H2",
+        "initial": "L",
+        "x": 657.5,
+        "y": 172
+      },
+      {
+        "id": "S0",
+        "kind": "switch",
+        "L": "H0",
+        "R": "S1",
+        "initial": "R",
+        "x": 361.25,
+        "y": 100
+      },
+      {
+        "id": "E0",
+        "kind": "entry",
+        "next": "S0",
+        "x": 361.25,
+        "y": 32
+      }
+    ],
+    "cars": [
+      {
+        "id": "C0",
+        "entryId": "E0",
+        "destinationId": "H2",
+        "imprint": "L"
+      },
+      {
+        "id": "C1",
+        "entryId": "E0",
+        "destinationId": "H1",
+        "imprint": "R"
+      },
+      {
+        "id": "C2",
+        "entryId": "E0",
+        "destinationId": "H0",
+        "imprint": "L"
+      }
+    ],
+    "solution": ["C1", "C0", "C2"],
+    "seed": 61000
+  },
+  {
+    "id": "sm-005",
+    "title": "A small favour",
+    "district": 0,
+    "nodes": [
+      {
+        "id": "H0",
+        "kind": "home",
+        "color": "#e98873",
+        "symbol": "●",
+        "x": 65,
+        "y": 410
+      },
+      {
+        "id": "H1",
+        "kind": "home",
+        "color": "#75b6cd",
+        "symbol": "◆",
+        "x": 460,
+        "y": 410
+      },
+      {
+        "id": "H2",
+        "kind": "home",
+        "color": "#a6b978",
+        "symbol": "▲",
+        "x": 855,
+        "y": 410
+      },
+      {
+        "id": "S1",
+        "kind": "switch",
+        "L": "H1",
+        "R": "H2",
+        "initial": "L",
+        "x": 657.5,
+        "y": 172
+      },
+      {
+        "id": "S0",
+        "kind": "switch",
+        "L": "H0",
+        "R": "S1",
+        "initial": "R",
+        "x": 361.25,
+        "y": 100
+      },
+      {
+        "id": "E0",
+        "kind": "entry",
+        "next": "S0",
+        "x": 361.25,
+        "y": 32
+      }
+    ],
+    "cars": [
+      {
+        "id": "C0",
+        "entryId": "E0",
+        "destinationId": "H2",
+        "imprint": "L"
+      },
+      {
+        "id": "C1",
+        "entryId": "E0",
+        "destinationId": "H1",
+        "imprint": "R"
+      },
+      {
+        "id": "C2",
+        "entryId": "E0",
+        "destinationId": "H0",
+        "imprint": "R"
+      }
+    ],
+    "solution": ["C1", "C0", "C2"],
+    "seed": 81006
+  },
+  {
+    "id": "sm-006",
+    "title": "The morning post",
+    "district": 0,
+    "nodes": [
+      {
+        "id": "H0",
+        "kind": "home",
+        "color": "#e98873",
+        "symbol": "●",
+        "x": 65,
+        "y": 410
+      },
+      {
+        "id": "H1",
+        "kind": "home",
+        "color": "#75b6cd",
+        "symbol": "◆",
+        "x": 460,
+        "y": 410
+      },
+      {
+        "id": "H2",
+        "kind": "home",
+        "color": "#a6b978",
+        "symbol": "▲",
+        "x": 855,
+        "y": 410
+      },
+      {
+        "id": "S1",
+        "kind": "switch",
+        "L": "H1",
+        "R": "H2",
+        "initial": "L",
+        "x": 657.5,
+        "y": 172
+      },
+      {
+        "id": "S0",
+        "kind": "switch",
+        "L": "H0",
+        "R": "S1",
+        "initial": "R",
+        "x": 361.25,
+        "y": 100
+      },
+      {
+        "id": "E0",
+        "kind": "entry",
+        "next": "S0",
+        "x": 361.25,
+        "y": 32
+      }
+    ],
+    "cars": [
+      {
+        "id": "C0",
+        "entryId": "E0",
+        "destinationId": "H2",
+        "imprint": "R"
+      },
+      {
+        "id": "C1",
+        "entryId": "E0",
+        "destinationId": "H1",
+        "imprint": "R"
+      },
+      {
+        "id": "C2",
+        "entryId": "E0",
+        "destinationId": "H0",
+        "imprint": "R"
+      },
+      {
+        "id": "C3",
+        "entryId": "E0",
+        "destinationId": "H2",
+        "imprint": "L"
+      }
+    ],
+    "solution": ["C1", "C0", "C3", "C2"],
+    "seed": 101001
+  },
+  {
+    "id": "sm-007",
+    "title": "Two ways home",
+    "district": 0,
+    "nodes": [
+      {
+        "id": "H0",
+        "kind": "home",
+        "color": "#e98873",
+        "symbol": "●",
+        "x": 65,
+        "y": 410
+      },
+      {
+        "id": "H1",
+        "kind": "home",
+        "color": "#75b6cd",
+        "symbol": "◆",
+        "x": 460,
+        "y": 410
+      },
+      {
+        "id": "S1",
+        "kind": "switch",
+        "L": "H0",
+        "R": "H1",
+        "initial": "R",
+        "x": 262.5,
+        "y": 172
+      },
+      {
+        "id": "H2",
+        "kind": "home",
+        "color": "#a6b978",
+        "symbol": "▲",
+        "x": 855,
+        "y": 410
+      },
+      {
+        "id": "S0",
+        "kind": "switch",
+        "L": "S1",
+        "R": "H2",
+        "initial": "L",
+        "x": 558.75,
+        "y": 100
+      },
+      {
+        "id": "E0",
+        "kind": "entry",
+        "next": "S0",
+        "x": 558.75,
+        "y": 32
+      }
+    ],
+    "cars": [
+      {
+        "id": "C0",
+        "entryId": "E0",
+        "destinationId": "H1",
+        "imprint": "L"
+      },
+      {
+        "id": "C1",
+        "entryId": "E0",
+        "destinationId": "H0",
+        "imprint": "R"
+      },
+      {
+        "id": "C2",
+        "entryId": "E0",
+        "destinationId": "H2",
+        "imprint": "R"
+      }
+    ],
+    "solution": ["C0", "C1", "C2"],
+    "seed": 121005
+  },
+  {
+    "id": "sm-008",
+    "title": "One good turn",
+    "district": 0,
+    "nodes": [
+      {
+        "id": "H0",
+        "kind": "home",
+        "color": "#e98873",
+        "symbol": "●",
+        "x": 65,
+        "y": 410
+      },
+      {
+        "id": "H1",
+        "kind": "home",
+        "color": "#75b6cd",
+        "symbol": "◆",
+        "x": 460,
+        "y": 410
+      },
+      {
+        "id": "S1",
+        "kind": "switch",
+        "L": "H0",
+        "R": "H1",
+        "initial": "R",
+        "x": 262.5,
+        "y": 172
+      },
+      {
+        "id": "H2",
+        "kind": "home",
+        "color": "#a6b978",
+        "symbol": "▲",
+        "x": 855,
+        "y": 410
+      },
+      {
+        "id": "S0",
+        "kind": "switch",
+        "L": "S1",
+        "R": "H2",
+        "initial": "L",
+        "x": 558.75,
+        "y": 100
+      },
+      {
+        "id": "E0",
+        "kind": "entry",
+        "next": "S0",
+        "x": 558.75,
+        "y": 32
+      }
+    ],
+    "cars": [
+      {
+        "id": "C0",
+        "entryId": "E0",
+        "destinationId": "H2",
+        "imprint": "L"
+      },
+      {
+        "id": "C1",
+        "entryId": "E0",
+        "destinationId": "H2",
+        "imprint": "R"
+      },
+      {
+        "id": "C2",
+        "entryId": "E0",
+        "destinationId": "H0",
+        "imprint": "R"
+      },
+      {
+        "id": "C3",
+        "entryId": "E0",
+        "destinationId": "H1",
+        "imprint": "L"
+      }
+    ],
+    "solution": ["C3", "C2", "C1", "C0"],
+    "seed": 141000
+  },
+  {
+    "id": "sm-009",
+    "title": "Neighbourly order",
+    "district": 1,
+    "nodes": [
+      {
+        "id": "H0",
+        "kind": "home",
+        "color": "#e98873",
+        "symbol": "●",
+        "x": 65,
+        "y": 410
+      },
+      {
+        "id": "H1",
+        "kind": "home",
+        "color": "#75b6cd",
+        "symbol": "◆",
+        "x": 460,
+        "y": 410
+      },
+      {
+        "id": "S1",
+        "kind": "switch",
+        "L": "H0",
+        "R": "H1",
+        "initial": "R",
+        "x": 262.5,
+        "y": 172
+      },
+      {
+        "id": "H2",
+        "kind": "home",
+        "color": "#a6b978",
+        "symbol": "▲",
+        "x": 855,
+        "y": 410
+      },
+      {
+        "id": "S0",
+        "kind": "switch",
+        "L": "S1",
+        "R": "H2",
+        "initial": "R",
+        "x": 558.75,
+        "y": 100
+      },
+      {
+        "id": "E0",
+        "kind": "entry",
+        "next": "S0",
+        "x": 558.75,
+        "y": 32
+      }
+    ],
+    "cars": [
+      {
+        "id": "C0",
+        "entryId": "E0",
+        "destinationId": "H2",
+        "imprint": "L"
+      },
+      {
+        "id": "C1",
+        "entryId": "E0",
+        "destinationId": "H1",
+        "imprint": "L"
+      },
+      {
+        "id": "C2",
+        "entryId": "E0",
+        "destinationId": "H0",
+        "imprint": "R"
+      }
+    ],
+    "solution": ["C0", "C1", "C2"],
+    "seed": 161009
+  },
+  {
+    "id": "sm-010",
+    "title": "Borrowed directions",
+    "district": 1,
+    "nodes": [
+      {
+        "id": "H0",
+        "kind": "home",
+        "color": "#e98873",
+        "symbol": "●",
+        "x": 65,
+        "y": 410
+      },
+      {
+        "id": "H1",
+        "kind": "home",
+        "color": "#75b6cd",
+        "symbol": "◆",
+        "x": 460,
+        "y": 410
+      },
+      {
+        "id": "H2",
+        "kind": "home",
+        "color": "#a6b978",
+        "symbol": "▲",
+        "x": 855,
+        "y": 410
+      },
+      {
+        "id": "S1",
+        "kind": "switch",
+        "L": "H1",
+        "R": "H2",
+        "initial": "L",
+        "x": 657.5,
+        "y": 172
+      },
+      {
+        "id": "S0",
+        "kind": "switch",
+        "L": "H0",
+        "R": "S1",
+        "initial": "R",
+        "x": 361.25,
+        "y": 100
+      },
+      {
+        "id": "E0",
+        "kind": "entry",
+        "next": "S0",
+        "x": 361.25,
+        "y": 32
+      }
+    ],
+    "cars": [
+      {
+        "id": "C0",
+        "entryId": "E0",
+        "destinationId": "H1",
+        "imprint": "R"
+      },
+      {
+        "id": "C1",
+        "entryId": "E0",
+        "destinationId": "H2",
+        "imprint": "R"
+      },
+      {
+        "id": "C2",
+        "entryId": "E0",
+        "destinationId": "H1",
+        "imprint": "L"
+      },
+      {
+        "id": "C3",
+        "entryId": "E0",
+        "destinationId": "H0",
+        "imprint": "R"
+      }
+    ],
+    "solution": ["C2", "C3", "C0", "C1"],
+    "seed": 181000
+  },
+  {
+    "id": "sm-011",
+    "title": "Quiet crossing",
+    "district": 1,
+    "nodes": [
+      {
+        "id": "H0",
+        "kind": "home",
+        "color": "#e98873",
+        "symbol": "●",
+        "x": 65,
+        "y": 410
+      },
+      {
+        "id": "H1",
+        "kind": "home",
+        "color": "#75b6cd",
+        "symbol": "◆",
+        "x": 460,
+        "y": 410
+      },
+      {
+        "id": "H2",
+        "kind": "home",
+        "color": "#a6b978",
+        "symbol": "▲",
+        "x": 855,
+        "y": 410
+      },
+      {
+        "id": "S1",
+        "kind": "switch",
+        "L": "H1",
+        "R": "H2",
+        "initial": "L",
+        "x": 657.5,
+        "y": 172
+      },
+      {
+        "id": "S0",
+        "kind": "switch",
+        "L": "H0",
+        "R": "S1",
+        "initial": "L",
+        "x": 361.25,
+        "y": 100
+      },
+      {
+        "id": "E0",
+        "kind": "entry",
+        "next": "S0",
+        "x": 361.25,
+        "y": 32
+      }
+    ],
+    "cars": [
+      {
+        "id": "C0",
+        "entryId": "E0",
+        "destinationId": "H0",
+        "imprint": "R"
+      },
+      {
+        "id": "C1",
+        "entryId": "E0",
+        "destinationId": "H1",
+        "imprint": "R"
+      },
+      {
+        "id": "C2",
+        "entryId": "E0",
+        "destinationId": "H2",
+        "imprint": "R"
+      }
+    ],
+    "solution": ["C0", "C1", "C2"],
+    "seed": 201001
+  },
+  {
+    "id": "sm-012",
+    "title": "The long way round",
+    "district": 1,
+    "nodes": [
+      {
+        "id": "H0",
+        "kind": "home",
+        "color": "#e98873",
+        "symbol": "●",
+        "x": 65,
+        "y": 410
+      },
+      {
+        "id": "H1",
+        "kind": "home",
+        "color": "#75b6cd",
+        "symbol": "◆",
+        "x": 460,
+        "y": 410
+      },
+      {
+        "id": "S1",
+        "kind": "switch",
+        "L": "H0",
+        "R": "H1",
+        "initial": "R",
+        "x": 262.5,
+        "y": 172
+      },
+      {
+        "id": "H2",
+        "kind": "home",
+        "color": "#a6b978",
+        "symbol": "▲",
+        "x": 855,
+        "y": 410
+      },
+      {
+        "id": "S0",
+        "kind": "switch",
+        "L": "S1",
+        "R": "H2",
+        "initial": "R",
+        "x": 558.75,
+        "y": 100
+      },
+      {
+        "id": "E0",
+        "kind": "entry",
+        "next": "S0",
+        "x": 558.75,
+        "y": 32
+      }
+    ],
+    "cars": [
+      {
+        "id": "C0",
+        "entryId": "E0",
+        "destinationId": "H1",
+        "imprint": "L"
+      },
+      {
+        "id": "C1",
+        "entryId": "E0",
+        "destinationId": "H2",
+        "imprint": "R"
+      },
+      {
+        "id": "C2",
+        "entryId": "E0",
+        "destinationId": "H2",
+        "imprint": "L"
+      },
+      {
+        "id": "C3",
+        "entryId": "E0",
+        "destinationId": "H0",
+        "imprint": "L"
+      }
+    ],
+    "solution": ["C1", "C2", "C0", "C3"],
+    "seed": 221001
+  },
+  {
+    "id": "sm-013",
+    "title": "Open windows",
+    "district": 1,
+    "nodes": [
+      {
+        "id": "H0",
+        "kind": "home",
+        "color": "#e98873",
+        "symbol": "●",
+        "x": 65,
+        "y": 410
+      },
+      {
+        "id": "H1",
+        "kind": "home",
+        "color": "#75b6cd",
+        "symbol": "◆",
+        "x": 328.3333333333333,
+        "y": 410
+      },
+      {
+        "id": "S1",
+        "kind": "switch",
+        "L": "H0",
+        "R": "H1",
+        "initial": "L",
+        "x": 196.66666666666666,
+        "y": 172
+      },
+      {
+        "id": "H2",
+        "kind": "home",
+        "color": "#a6b978",
+        "symbol": "▲",
+        "x": 591.6666666666666,
+        "y": 410
+      },
+      {
+        "id": "H3",
+        "kind": "home",
+        "color": "#dbb05d",
+        "symbol": "★",
+        "x": 855,
+        "y": 410
+      },
+      {
+        "id": "S2",
+        "kind": "switch",
+        "L": "H2",
+        "R": "H3",
+        "initial": "R",
+        "x": 723.3333333333333,
+        "y": 172
+      },
+      {
+        "id": "S0",
+        "kind": "switch",
+        "L": "S1",
+        "R": "S2",
+        "initial": "L",
+        "x": 459.99999999999994,
+        "y": 100
+      },
+      {
+        "id": "E0",
+        "kind": "entry",
+        "next": "S0",
+        "x": 459.99999999999994,
+        "y": 32
+      }
+    ],
+    "cars": [
+      {
+        "id": "C0",
+        "entryId": "E0",
+        "destinationId": "H3",
+        "imprint": "L"
+      },
+      {
+        "id": "C1",
+        "entryId": "E0",
+        "destinationId": "H1",
+        "imprint": "R"
+      },
+      {
+        "id": "C2",
+        "entryId": "E0",
+        "destinationId": "H0",
+        "imprint": "R"
+      },
+      {
+        "id": "C3",
+        "entryId": "E0",
+        "destinationId": "H2",
+        "imprint": "L"
+      }
+    ],
+    "solution": ["C2", "C0", "C1", "C3"],
+    "seed": 241000
+  },
+  {
+    "id": "sm-014",
+    "title": "Market delivery",
+    "district": 1,
+    "nodes": [
+      {
+        "id": "H0",
+        "kind": "home",
+        "color": "#e98873",
+        "symbol": "●",
+        "x": 65,
+        "y": 410
+      },
+      {
+        "id": "H1",
+        "kind": "home",
+        "color": "#75b6cd",
+        "symbol": "◆",
+        "x": 328.3333333333333,
+        "y": 410
+      },
+      {
+        "id": "S2",
+        "kind": "switch",
+        "L": "H0",
+        "R": "H1",
+        "initial": "R",
+        "x": 196.66666666666666,
+        "y": 244
+      },
+      {
+        "id": "H2",
+        "kind": "home",
+        "color": "#a6b978",
+        "symbol": "▲",
+        "x": 591.6666666666666,
+        "y": 410
+      },
+      {
+        "id": "S1",
+        "kind": "switch",
+        "L": "S2",
+        "R": "H2",
+        "initial": "R",
+        "x": 394.16666666666663,
+        "y": 172
+      },
+      {
+        "id": "H3",
+        "kind": "home",
+        "color": "#dbb05d",
+        "symbol": "★",
+        "x": 855,
+        "y": 410
+      },
+      {
+        "id": "S0",
+        "kind": "switch",
+        "L": "S1",
+        "R": "H3",
+        "initial": "L",
+        "x": 624.5833333333333,
+        "y": 100
+      },
+      {
+        "id": "E0",
+        "kind": "entry",
+        "next": "S0",
+        "x": 624.5833333333333,
+        "y": 32
+      },
+      {
+        "id": "E1",
+        "kind": "entry",
+        "next": "S1",
+        "x": 339.16666666666663,
+        "y": 137
+      }
+    ],
+    "cars": [
+      {
+        "id": "C0",
+        "entryId": "E1",
+        "destinationId": "H1",
+        "imprint": "L"
+      },
+      {
+        "id": "C1",
+        "entryId": "E1",
+        "destinationId": "H2",
+        "imprint": "L"
+      },
+      {
+        "id": "C2",
+        "entryId": "E0",
+        "destinationId": "H3",
+        "imprint": "L"
+      },
+      {
+        "id": "C3",
+        "entryId": "E0",
+        "destinationId": "H2",
+        "imprint": "R"
+      }
+    ],
+    "solution": ["C3", "C1", "C0", "C2"],
+    "seed": 261000
+  },
+  {
+    "id": "sm-015",
+    "title": "Before the bustle",
+    "district": 1,
+    "nodes": [
+      {
+        "id": "H0",
+        "kind": "home",
+        "color": "#e98873",
+        "symbol": "●",
+        "x": 65,
+        "y": 410
+      },
+      {
+        "id": "H1",
+        "kind": "home",
+        "color": "#75b6cd",
+        "symbol": "◆",
+        "x": 328.3333333333333,
+        "y": 410
+      },
+      {
+        "id": "H2",
+        "kind": "home",
+        "color": "#a6b978",
+        "symbol": "▲",
+        "x": 591.6666666666666,
+        "y": 410
+      },
+      {
+        "id": "S2",
+        "kind": "switch",
+        "L": "H1",
+        "R": "H2",
+        "initial": "L",
+        "x": 460,
+        "y": 244
+      },
+      {
+        "id": "H3",
+        "kind": "home",
+        "color": "#dbb05d",
+        "symbol": "★",
+        "x": 855,
+        "y": 410
+      },
+      {
+        "id": "S1",
+        "kind": "switch",
+        "L": "S2",
+        "R": "H3",
+        "initial": "R",
+        "x": 657.5,
+        "y": 172
+      },
+      {
+        "id": "S0",
+        "kind": "switch",
+        "L": "H0",
+        "R": "S1",
+        "initial": "L",
+        "x": 361.25,
+        "y": 100
+      },
+      {
+        "id": "E0",
+        "kind": "entry",
+        "next": "S0",
+        "x": 361.25,
+        "y": 32
+      },
+      {
+        "id": "E1",
+        "kind": "entry",
+        "next": "S1",
+        "x": 602.5,
+        "y": 137
+      }
+    ],
+    "cars": [
+      {
+        "id": "C0",
+        "entryId": "E1",
+        "destinationId": "H3",
+        "imprint": "L"
+      },
+      {
+        "id": "C1",
+        "entryId": "E1",
+        "destinationId": "H1",
+        "imprint": "R"
+      },
+      {
+        "id": "C2",
+        "entryId": "E0",
+        "destinationId": "H0",
+        "imprint": "R"
+      },
+      {
+        "id": "C3",
+        "entryId": "E1",
+        "destinationId": "H1",
+        "imprint": "L"
+      }
+    ],
+    "solution": ["C0", "C2", "C3", "C1"],
+    "seed": 281002
+  },
+  {
+    "id": "sm-016",
+    "title": "A change of plans",
+    "district": 1,
+    "nodes": [
+      {
+        "id": "H0",
+        "kind": "home",
+        "color": "#e98873",
+        "symbol": "●",
+        "x": 65,
+        "y": 410
+      },
+      {
+        "id": "H1",
+        "kind": "home",
+        "color": "#75b6cd",
+        "symbol": "◆",
+        "x": 328.3333333333333,
+        "y": 410
+      },
+      {
+        "id": "H2",
+        "kind": "home",
+        "color": "#a6b978",
+        "symbol": "▲",
+        "x": 591.6666666666666,
+        "y": 410
+      },
+      {
+        "id": "S2",
+        "kind": "switch",
+        "L": "H1",
+        "R": "H2",
+        "initial": "L",
+        "x": 460,
+        "y": 244
+      },
+      {
+        "id": "H3",
+        "kind": "home",
+        "color": "#dbb05d",
+        "symbol": "★",
+        "x": 855,
+        "y": 410
+      },
+      {
+        "id": "S1",
+        "kind": "switch",
+        "L": "S2",
+        "R": "H3",
+        "initial": "L",
+        "x": 657.5,
+        "y": 172
+      },
+      {
+        "id": "S0",
+        "kind": "switch",
+        "L": "H0",
+        "R": "S1",
+        "initial": "L",
+        "x": 361.25,
+        "y": 100
+      },
+      {
+        "id": "E0",
+        "kind": "entry",
+        "next": "S0",
+        "x": 361.25,
+        "y": 32
+      }
+    ],
+    "cars": [
+      {
+        "id": "C0",
+        "entryId": "E0",
+        "destinationId": "H0",
+        "imprint": "L"
+      },
+      {
+        "id": "C1",
+        "entryId": "E0",
+        "destinationId": "H0",
+        "imprint": "R"
+      },
+      {
+        "id": "C2",
+        "entryId": "E0",
+        "destinationId": "H1",
+        "imprint": "R"
+      },
+      {
+        "id": "C3",
+        "entryId": "E0",
+        "destinationId": "H3",
+        "imprint": "L"
+      }
+    ],
+    "solution": ["C0", "C1", "C2", "C3"],
+    "seed": 301000
+  },
+  {
+    "id": "sm-017",
+    "title": "Under the awnings",
+    "district": 2,
+    "nodes": [
+      {
+        "id": "H0",
+        "kind": "home",
+        "color": "#e98873",
+        "symbol": "●",
+        "x": 65,
+        "y": 410
+      },
+      {
+        "id": "H1",
+        "kind": "home",
+        "color": "#75b6cd",
+        "symbol": "◆",
+        "x": 328.3333333333333,
+        "y": 410
+      },
+      {
+        "id": "S2",
+        "kind": "switch",
+        "L": "H0",
+        "R": "H1",
+        "initial": "R",
+        "x": 196.66666666666666,
+        "y": 244
+      },
+      {
+        "id": "H2",
+        "kind": "home",
+        "color": "#a6b978",
+        "symbol": "▲",
+        "x": 591.6666666666666,
+        "y": 410
+      },
+      {
+        "id": "S1",
+        "kind": "switch",
+        "L": "S2",
+        "R": "H2",
+        "initial": "R",
+        "x": 394.16666666666663,
+        "y": 172
+      },
+      {
+        "id": "H3",
+        "kind": "home",
+        "color": "#dbb05d",
+        "symbol": "★",
+        "x": 855,
+        "y": 410
+      },
+      {
+        "id": "S0",
+        "kind": "switch",
+        "L": "S1",
+        "R": "H3",
+        "initial": "L",
+        "x": 624.5833333333333,
+        "y": 100
+      },
+      {
+        "id": "E0",
+        "kind": "entry",
+        "next": "S0",
+        "x": 624.5833333333333,
+        "y": 32
+      },
+      {
+        "id": "E1",
+        "kind": "entry",
+        "next": "S2",
+        "x": 141.66666666666666,
+        "y": 209
+      }
+    ],
+    "cars": [
+      {
+        "id": "C0",
+        "entryId": "E1",
+        "destinationId": "H1",
+        "imprint": "L"
+      },
+      {
+        "id": "C1",
+        "entryId": "E0",
+        "destinationId": "H3",
+        "imprint": "L"
+      },
+      {
+        "id": "C2",
+        "entryId": "E0",
+        "destinationId": "H2",
+        "imprint": "L"
+      },
+      {
+        "id": "C3",
+        "entryId": "E0",
+        "destinationId": "H1",
+        "imprint": "R"
+      }
+    ],
+    "solution": ["C2", "C3", "C0", "C1"],
+    "seed": 321004
+  },
+  {
+    "id": "sm-018",
+    "title": "The right moment",
+    "district": 2,
+    "nodes": [
+      {
+        "id": "H0",
+        "kind": "home",
+        "color": "#e98873",
+        "symbol": "●",
+        "x": 65,
+        "y": 410
+      },
+      {
+        "id": "H1",
+        "kind": "home",
+        "color": "#75b6cd",
+        "symbol": "◆",
+        "x": 328.3333333333333,
+        "y": 410
+      },
+      {
+        "id": "H2",
+        "kind": "home",
+        "color": "#a6b978",
+        "symbol": "▲",
+        "x": 591.6666666666666,
+        "y": 410
+      },
+      {
+        "id": "S2",
+        "kind": "switch",
+        "L": "H1",
+        "R": "H2",
+        "initial": "R",
+        "x": 460,
+        "y": 244
+      },
+      {
+        "id": "S1",
+        "kind": "switch",
+        "L": "H0",
+        "R": "S2",
+        "initial": "L",
+        "x": 262.5,
+        "y": 172
+      },
+      {
+        "id": "H3",
+        "kind": "home",
+        "color": "#dbb05d",
+        "symbol": "★",
+        "x": 855,
+        "y": 410
+      },
+      {
+        "id": "S0",
+        "kind": "switch",
+        "L": "S1",
+        "R": "H3",
+        "initial": "L",
+        "x": 558.75,
+        "y": 100
+      },
+      {
+        "id": "E0",
+        "kind": "entry",
+        "next": "S0",
+        "x": 558.75,
+        "y": 32
+      },
+      {
+        "id": "E1",
+        "kind": "entry",
+        "next": "S2",
+        "x": 405,
+        "y": 209
+      }
+    ],
+    "cars": [
+      {
+        "id": "C0",
+        "entryId": "E0",
+        "destinationId": "H1",
+        "imprint": "L"
+      },
+      {
+        "id": "C1",
+        "entryId": "E0",
+        "destinationId": "H3",
+        "imprint": "L"
+      },
+      {
+        "id": "C2",
+        "entryId": "E1",
+        "destinationId": "H2",
+        "imprint": "L"
+      },
+      {
+        "id": "C3",
+        "entryId": "E0",
+        "destinationId": "H0",
+        "imprint": "R"
+      }
+    ],
+    "solution": ["C2", "C3", "C1", "C0"],
+    "seed": 341006
+  },
+  {
+    "id": "sm-019",
+    "title": "Closing the market",
+    "district": 2,
+    "nodes": [
+      {
+        "id": "H0",
+        "kind": "home",
+        "color": "#e98873",
+        "symbol": "●",
+        "x": 65,
+        "y": 410
+      },
+      {
+        "id": "H1",
+        "kind": "home",
+        "color": "#75b6cd",
+        "symbol": "◆",
+        "x": 328.3333333333333,
+        "y": 410
+      },
+      {
+        "id": "H2",
+        "kind": "home",
+        "color": "#a6b978",
+        "symbol": "▲",
+        "x": 591.6666666666666,
+        "y": 410
+      },
+      {
+        "id": "S2",
+        "kind": "switch",
+        "L": "H1",
+        "R": "H2",
+        "initial": "R",
+        "x": 460,
+        "y": 244
+      },
+      {
+        "id": "S1",
+        "kind": "switch",
+        "L": "H0",
+        "R": "S2",
+        "initial": "R",
+        "x": 262.5,
+        "y": 172
+      },
+      {
+        "id": "H3",
+        "kind": "home",
+        "color": "#dbb05d",
+        "symbol": "★",
+        "x": 855,
+        "y": 410
+      },
+      {
+        "id": "S0",
+        "kind": "switch",
+        "L": "S1",
+        "R": "H3",
+        "initial": "R",
+        "x": 558.75,
+        "y": 100
+      },
+      {
+        "id": "E0",
+        "kind": "entry",
+        "next": "S0",
+        "x": 558.75,
+        "y": 32
+      }
+    ],
+    "cars": [
+      {
+        "id": "C0",
+        "entryId": "E0",
+        "destinationId": "H3",
+        "imprint": "R"
+      },
+      {
+        "id": "C1",
+        "entryId": "E0",
+        "destinationId": "H2",
+        "imprint": "L"
+      },
+      {
+        "id": "C2",
+        "entryId": "E0",
+        "destinationId": "H3",
+        "imprint": "L"
+      },
+      {
+        "id": "C3",
+        "entryId": "E0",
+        "destinationId": "H0",
+        "imprint": "R"
+      }
+    ],
+    "solution": ["C0", "C2", "C1", "C3"],
+    "seed": 361000
+  },
+  {
+    "id": "sm-020",
+    "title": "Green paths",
+    "district": 2,
+    "nodes": [
+      {
+        "id": "H0",
+        "kind": "home",
+        "color": "#e98873",
+        "symbol": "●",
+        "x": 65,
+        "y": 410
+      },
+      {
+        "id": "H1",
+        "kind": "home",
+        "color": "#75b6cd",
+        "symbol": "◆",
+        "x": 328.3333333333333,
+        "y": 410
+      },
+      {
+        "id": "H2",
+        "kind": "home",
+        "color": "#a6b978",
+        "symbol": "▲",
+        "x": 591.6666666666666,
+        "y": 410
+      },
+      {
+        "id": "H3",
+        "kind": "home",
+        "color": "#dbb05d",
+        "symbol": "★",
+        "x": 855,
+        "y": 410
+      },
+      {
+        "id": "S2",
+        "kind": "switch",
+        "L": "H2",
+        "R": "H3",
+        "initial": "L",
+        "x": 723.3333333333333,
+        "y": 244
+      },
+      {
+        "id": "S1",
+        "kind": "switch",
+        "L": "H1",
+        "R": "S2",
+        "initial": "L",
+        "x": 525.8333333333333,
+        "y": 172
+      },
+      {
+        "id": "S0",
+        "kind": "switch",
+        "L": "H0",
+        "R": "S1",
+        "initial": "R",
+        "x": 295.41666666666663,
+        "y": 100
+      },
+      {
+        "id": "E0",
+        "kind": "entry",
+        "next": "S0",
+        "x": 295.41666666666663,
+        "y": 32
+      },
+      {
+        "id": "E1",
+        "kind": "entry",
+        "next": "S2",
+        "x": 668.3333333333333,
+        "y": 209
+      }
+    ],
+    "cars": [
+      {
+        "id": "C0",
+        "entryId": "E0",
+        "destinationId": "H1",
+        "imprint": "R"
+      },
+      {
+        "id": "C1",
+        "entryId": "E0",
+        "destinationId": "H2",
+        "imprint": "R"
+      },
+      {
+        "id": "C2",
+        "entryId": "E1",
+        "destinationId": "H3",
+        "imprint": "L"
+      },
+      {
+        "id": "C3",
+        "entryId": "E0",
+        "destinationId": "H2",
+        "imprint": "L"
+      }
+    ],
+    "solution": ["C0", "C1", "C2", "C3"],
+    "seed": 381003
+  },
+  {
+    "id": "sm-021",
+    "title": "A patient gardener",
+    "district": 2,
+    "nodes": [
+      {
+        "id": "H0",
+        "kind": "home",
+        "color": "#e98873",
+        "symbol": "●",
+        "x": 65,
+        "y": 410
+      },
+      {
+        "id": "H1",
+        "kind": "home",
+        "color": "#75b6cd",
+        "symbol": "◆",
+        "x": 328.3333333333333,
+        "y": 410
+      },
+      {
+        "id": "H2",
+        "kind": "home",
+        "color": "#a6b978",
+        "symbol": "▲",
+        "x": 591.6666666666666,
+        "y": 410
+      },
+      {
+        "id": "H3",
+        "kind": "home",
+        "color": "#dbb05d",
+        "symbol": "★",
+        "x": 855,
+        "y": 410
+      },
+      {
+        "id": "S2",
+        "kind": "switch",
+        "L": "H2",
+        "R": "H3",
+        "initial": "L",
+        "x": 723.3333333333333,
+        "y": 244
+      },
+      {
+        "id": "S1",
+        "kind": "switch",
+        "L": "H1",
+        "R": "S2",
+        "initial": "R",
+        "x": 525.8333333333333,
+        "y": 172
+      },
+      {
+        "id": "S0",
+        "kind": "switch",
+        "L": "H0",
+        "R": "S1",
+        "initial": "R",
+        "x": 295.41666666666663,
+        "y": 100
+      },
+      {
+        "id": "E0",
+        "kind": "entry",
+        "next": "S0",
+        "x": 295.41666666666663,
+        "y": 32
+      },
+      {
+        "id": "E1",
+        "kind": "entry",
+        "next": "S1",
+        "x": 470.83333333333326,
+        "y": 137
+      }
+    ],
+    "cars": [
+      {
+        "id": "C0",
+        "entryId": "E1",
+        "destinationId": "H3",
+        "imprint": "R"
+      },
+      {
+        "id": "C1",
+        "entryId": "E1",
+        "destinationId": "H1",
+        "imprint": "L"
+      },
+      {
+        "id": "C2",
+        "entryId": "E0",
+        "destinationId": "H3",
+        "imprint": "L"
+      },
+      {
+        "id": "C3",
+        "entryId": "E1",
+        "destinationId": "H2",
+        "imprint": "R"
+      }
+    ],
+    "solution": ["C3", "C0", "C2", "C1"],
+    "seed": 401008
+  },
+  {
+    "id": "sm-022",
+    "title": "The park gate",
+    "district": 2,
+    "nodes": [
+      {
+        "id": "H0",
+        "kind": "home",
+        "color": "#e98873",
+        "symbol": "●",
+        "x": 65,
+        "y": 410
+      },
+      {
+        "id": "H1",
+        "kind": "home",
+        "color": "#75b6cd",
+        "symbol": "◆",
+        "x": 328.3333333333333,
+        "y": 410
+      },
+      {
+        "id": "H2",
+        "kind": "home",
+        "color": "#a6b978",
+        "symbol": "▲",
+        "x": 591.6666666666666,
+        "y": 410
+      },
+      {
+        "id": "H3",
+        "kind": "home",
+        "color": "#dbb05d",
+        "symbol": "★",
+        "x": 855,
+        "y": 410
+      },
+      {
+        "id": "S2",
+        "kind": "switch",
+        "L": "H2",
+        "R": "H3",
+        "initial": "L",
+        "x": 723.3333333333333,
+        "y": 244
+      },
+      {
+        "id": "S1",
+        "kind": "switch",
+        "L": "H1",
+        "R": "S2",
+        "initial": "L",
+        "x": 525.8333333333333,
+        "y": 172
+      },
+      {
+        "id": "S0",
+        "kind": "switch",
+        "L": "H0",
+        "R": "S1",
+        "initial": "R",
+        "x": 295.41666666666663,
+        "y": 100
+      },
+      {
+        "id": "E0",
+        "kind": "entry",
+        "next": "S0",
+        "x": 295.41666666666663,
+        "y": 32
+      }
+    ],
+    "cars": [
+      {
+        "id": "C0",
+        "entryId": "E0",
+        "destinationId": "H1",
+        "imprint": "R"
+      },
+      {
+        "id": "C1",
+        "entryId": "E0",
+        "destinationId": "H0",
+        "imprint": "R"
+      },
+      {
+        "id": "C2",
+        "entryId": "E0",
+        "destinationId": "H2",
+        "imprint": "R"
+      },
+      {
+        "id": "C3",
+        "entryId": "E0",
+        "destinationId": "H3",
+        "imprint": "L"
+      }
+    ],
+    "solution": ["C0", "C2", "C3", "C1"],
+    "seed": 421002
+  },
+  {
+    "id": "sm-023",
+    "title": "Past the fountain",
+    "district": 2,
+    "nodes": [
+      {
+        "id": "H0",
+        "kind": "home",
+        "color": "#e98873",
+        "symbol": "●",
+        "x": 65,
+        "y": 410
+      },
+      {
+        "id": "H1",
+        "kind": "home",
+        "color": "#75b6cd",
+        "symbol": "◆",
+        "x": 328.3333333333333,
+        "y": 410
+      },
+      {
+        "id": "H2",
+        "kind": "home",
+        "color": "#a6b978",
+        "symbol": "▲",
+        "x": 591.6666666666666,
+        "y": 410
+      },
+      {
+        "id": "H3",
+        "kind": "home",
+        "color": "#dbb05d",
+        "symbol": "★",
+        "x": 855,
+        "y": 410
+      },
+      {
+        "id": "S2",
+        "kind": "switch",
+        "L": "H2",
+        "R": "H3",
+        "initial": "L",
+        "x": 723.3333333333333,
+        "y": 244
+      },
+      {
+        "id": "S1",
+        "kind": "switch",
+        "L": "H1",
+        "R": "S2",
+        "initial": "R",
+        "x": 525.8333333333333,
+        "y": 172
+      },
+      {
+        "id": "S0",
+        "kind": "switch",
+        "L": "H0",
+        "R": "S1",
+        "initial": "L",
+        "x": 295.41666666666663,
+        "y": 100
+      },
+      {
+        "id": "E0",
+        "kind": "entry",
+        "next": "S0",
+        "x": 295.41666666666663,
+        "y": 32
+      },
+      {
+        "id": "E1",
+        "kind": "entry",
+        "next": "S1",
+        "x": 470.83333333333326,
+        "y": 137
+      }
+    ],
+    "cars": [
+      {
+        "id": "C0",
+        "entryId": "E1",
+        "destinationId": "H3",
+        "imprint": "L"
+      },
+      {
+        "id": "C1",
+        "entryId": "E1",
+        "destinationId": "H1",
+        "imprint": "R"
+      },
+      {
+        "id": "C2",
+        "entryId": "E0",
+        "destinationId": "H0",
+        "imprint": "R"
+      },
+      {
+        "id": "C3",
+        "entryId": "E1",
+        "destinationId": "H2",
+        "imprint": "R"
+      }
+    ],
+    "solution": ["C2", "C3", "C0", "C1"],
+    "seed": 441000
+  },
+  {
+    "id": "sm-024",
+    "title": "Weekend walkers",
+    "district": 2,
+    "nodes": [
+      {
+        "id": "H0",
+        "kind": "home",
+        "color": "#e98873",
+        "symbol": "●",
+        "x": 65,
+        "y": 410
+      },
+      {
+        "id": "H1",
+        "kind": "home",
+        "color": "#75b6cd",
+        "symbol": "◆",
+        "x": 328.3333333333333,
+        "y": 410
+      },
+      {
+        "id": "S1",
+        "kind": "switch",
+        "L": "H0",
+        "R": "H1",
+        "initial": "L",
+        "x": 196.66666666666666,
+        "y": 172
+      },
+      {
+        "id": "H2",
+        "kind": "home",
+        "color": "#a6b978",
+        "symbol": "▲",
+        "x": 591.6666666666666,
+        "y": 410
+      },
+      {
+        "id": "H3",
+        "kind": "home",
+        "color": "#dbb05d",
+        "symbol": "★",
+        "x": 855,
+        "y": 410
+      },
+      {
+        "id": "S2",
+        "kind": "switch",
+        "L": "H2",
+        "R": "H3",
+        "initial": "L",
+        "x": 723.3333333333333,
+        "y": 172
+      },
+      {
+        "id": "S0",
+        "kind": "switch",
+        "L": "S1",
+        "R": "S2",
+        "initial": "R",
+        "x": 459.99999999999994,
+        "y": 100
+      },
+      {
+        "id": "E0",
+        "kind": "entry",
+        "next": "S0",
+        "x": 459.99999999999994,
+        "y": 32
+      },
+      {
+        "id": "E1",
+        "kind": "entry",
+        "next": "S2",
+        "x": 668.3333333333333,
+        "y": 137
+      }
+    ],
+    "cars": [
+      {
+        "id": "C0",
+        "entryId": "E0",
+        "destinationId": "H2",
+        "imprint": "R"
+      },
+      {
+        "id": "C1",
+        "entryId": "E1",
+        "destinationId": "H2",
+        "imprint": "R"
+      },
+      {
+        "id": "C2",
+        "entryId": "E0",
+        "destinationId": "H0",
+        "imprint": "R"
+      },
+      {
+        "id": "C3",
+        "entryId": "E0",
+        "destinationId": "H3",
+        "imprint": "L"
+      }
+    ],
+    "solution": ["C0", "C3", "C1", "C2"],
+    "seed": 461012
+  },
+  {
+    "id": "sm-025",
+    "title": "A fork in the path",
+    "district": 3,
+    "nodes": [
+      {
+        "id": "H0",
+        "kind": "home",
+        "color": "#e98873",
+        "symbol": "●",
+        "x": 65,
+        "y": 410
+      },
+      {
+        "id": "H1",
+        "kind": "home",
+        "color": "#75b6cd",
+        "symbol": "◆",
+        "x": 262.5,
+        "y": 410
+      },
+      {
+        "id": "H2",
+        "kind": "home",
+        "color": "#a6b978",
+        "symbol": "▲",
+        "x": 460,
+        "y": 410
+      },
+      {
+        "id": "S3",
+        "kind": "switch",
+        "L": "H1",
+        "R": "H2",
+        "initial": "L",
+        "x": 361.25,
+        "y": 316
+      },
+      {
+        "id": "H3",
+        "kind": "home",
+        "color": "#dbb05d",
+        "symbol": "★",
+        "x": 657.5,
+        "y": 410
+      },
+      {
+        "id": "S2",
+        "kind": "switch",
+        "L": "S3",
+        "R": "H3",
+        "initial": "L",
+        "x": 509.375,
+        "y": 244
+      },
+      {
+        "id": "H4",
+        "kind": "home",
+        "color": "#b69aca",
+        "symbol": "✚",
+        "x": 855,
+        "y": 410
+      },
+      {
+        "id": "S1",
+        "kind": "switch",
+        "L": "S2",
+        "R": "H4",
+        "initial": "L",
+        "x": 682.1875,
+        "y": 172
+      },
+      {
+        "id": "S0",
+        "kind": "switch",
+        "L": "H0",
+        "R": "S1",
+        "initial": "R",
+        "x": 373.59375,
+        "y": 100
+      },
+      {
+        "id": "E0",
+        "kind": "entry",
+        "next": "S0",
+        "x": 373.59375,
+        "y": 32
+      }
+    ],
+    "cars": [
+      {
+        "id": "C0",
+        "entryId": "E0",
+        "destinationId": "H4",
+        "imprint": "L"
+      },
+      {
+        "id": "C1",
+        "entryId": "E0",
+        "destinationId": "H0",
+        "imprint": "L"
+      },
+      {
+        "id": "C2",
+        "entryId": "E0",
+        "destinationId": "H0",
+        "imprint": "R"
+      },
+      {
+        "id": "C3",
+        "entryId": "E0",
+        "destinationId": "H1",
+        "imprint": "R"
+      },
+      {
+        "id": "C4",
+        "entryId": "E0",
+        "destinationId": "H1",
+        "imprint": "L"
+      }
+    ],
+    "solution": ["C4", "C1", "C2", "C3", "C0"],
+    "seed": 481017
+  },
+  {
+    "id": "sm-026",
+    "title": "Picnic parcels",
+    "district": 3,
+    "nodes": [
+      {
+        "id": "H0",
+        "kind": "home",
+        "color": "#e98873",
+        "symbol": "●",
+        "x": 65,
+        "y": 410
+      },
+      {
+        "id": "H1",
+        "kind": "home",
+        "color": "#75b6cd",
+        "symbol": "◆",
+        "x": 262.5,
+        "y": 410
+      },
+      {
+        "id": "H2",
+        "kind": "home",
+        "color": "#a6b978",
+        "symbol": "▲",
+        "x": 460,
+        "y": 410
+      },
+      {
+        "id": "S3",
+        "kind": "switch",
+        "L": "H1",
+        "R": "H2",
+        "initial": "L",
+        "x": 361.25,
+        "y": 316
+      },
+      {
+        "id": "H3",
+        "kind": "home",
+        "color": "#dbb05d",
+        "symbol": "★",
+        "x": 657.5,
+        "y": 410
+      },
+      {
+        "id": "S2",
+        "kind": "switch",
+        "L": "S3",
+        "R": "H3",
+        "initial": "L",
+        "x": 509.375,
+        "y": 244
+      },
+      {
+        "id": "H4",
+        "kind": "home",
+        "color": "#b69aca",
+        "symbol": "✚",
+        "x": 855,
+        "y": 410
+      },
+      {
+        "id": "S1",
+        "kind": "switch",
+        "L": "S2",
+        "R": "H4",
+        "initial": "L",
+        "x": 682.1875,
+        "y": 172
+      },
+      {
+        "id": "S0",
+        "kind": "switch",
+        "L": "H0",
+        "R": "S1",
+        "initial": "R",
+        "x": 373.59375,
+        "y": 100
+      },
+      {
+        "id": "E0",
+        "kind": "entry",
+        "next": "S0",
+        "x": 373.59375,
+        "y": 32
+      },
+      {
+        "id": "E1",
+        "kind": "entry",
+        "next": "S2",
+        "x": 454.375,
+        "y": 209
+      }
+    ],
+    "cars": [
+      {
+        "id": "C0",
+        "entryId": "E0",
+        "destinationId": "H4",
+        "imprint": "L"
+      },
+      {
+        "id": "C1",
+        "entryId": "E1",
+        "destinationId": "H1",
+        "imprint": "L"
+      },
+      {
+        "id": "C2",
+        "entryId": "E0",
+        "destinationId": "H0",
+        "imprint": "L"
+      },
+      {
+        "id": "C3",
+        "entryId": "E1",
+        "destinationId": "H3",
+        "imprint": "L"
+      },
+      {
+        "id": "C4",
+        "entryId": "E0",
+        "destinationId": "H1",
+        "imprint": "R"
+      }
+    ],
+    "solution": ["C1", "C4", "C0", "C2", "C3"],
+    "seed": 501006
+  },
+  {
+    "id": "sm-027",
+    "title": "A leafy finish",
+    "district": 3,
+    "nodes": [
+      {
+        "id": "H0",
+        "kind": "home",
+        "color": "#e98873",
+        "symbol": "●",
+        "x": 65,
+        "y": 410
+      },
+      {
+        "id": "H1",
+        "kind": "home",
+        "color": "#75b6cd",
+        "symbol": "◆",
+        "x": 262.5,
+        "y": 410
+      },
+      {
+        "id": "H2",
+        "kind": "home",
+        "color": "#a6b978",
+        "symbol": "▲",
+        "x": 460,
+        "y": 410
+      },
+      {
+        "id": "H3",
+        "kind": "home",
+        "color": "#dbb05d",
+        "symbol": "★",
+        "x": 657.5,
+        "y": 410
+      },
+      {
+        "id": "S3",
+        "kind": "switch",
+        "L": "H2",
+        "R": "H3",
+        "initial": "L",
+        "x": 558.75,
+        "y": 316
+      },
+      {
+        "id": "H4",
+        "kind": "home",
+        "color": "#b69aca",
+        "symbol": "✚",
+        "x": 855,
+        "y": 410
+      },
+      {
+        "id": "S2",
+        "kind": "switch",
+        "L": "S3",
+        "R": "H4",
+        "initial": "L",
+        "x": 706.875,
+        "y": 244
+      },
+      {
+        "id": "S1",
+        "kind": "switch",
+        "L": "H1",
+        "R": "S2",
+        "initial": "R",
+        "x": 484.6875,
+        "y": 172
+      },
+      {
+        "id": "S0",
+        "kind": "switch",
+        "L": "H0",
+        "R": "S1",
+        "initial": "L",
+        "x": 274.84375,
+        "y": 100
+      },
+      {
+        "id": "E0",
+        "kind": "entry",
+        "next": "S0",
+        "x": 274.84375,
+        "y": 32
+      },
+      {
+        "id": "E1",
+        "kind": "entry",
+        "next": "S1",
+        "x": 429.6875,
+        "y": 137
+      }
+    ],
+    "cars": [
+      {
+        "id": "C0",
+        "entryId": "E0",
+        "destinationId": "H2",
+        "imprint": "R"
+      },
+      {
+        "id": "C1",
+        "entryId": "E0",
+        "destinationId": "H0",
+        "imprint": "R"
+      },
+      {
+        "id": "C2",
+        "entryId": "E1",
+        "destinationId": "H1",
+        "imprint": "L"
+      },
+      {
+        "id": "C3",
+        "entryId": "E1",
+        "destinationId": "H2",
+        "imprint": "L"
+      },
+      {
+        "id": "C4",
+        "entryId": "E1",
+        "destinationId": "H1",
+        "imprint": "R"
+      }
+    ],
+    "solution": ["C1", "C3", "C2", "C4", "C0"],
+    "seed": 521001
+  },
+  {
+    "id": "sm-028",
+    "title": "Golden hour",
+    "district": 3,
+    "nodes": [
+      {
+        "id": "H0",
+        "kind": "home",
+        "color": "#e98873",
+        "symbol": "●",
+        "x": 65,
+        "y": 410
+      },
+      {
+        "id": "H1",
+        "kind": "home",
+        "color": "#75b6cd",
+        "symbol": "◆",
+        "x": 262.5,
+        "y": 410
+      },
+      {
+        "id": "S1",
+        "kind": "switch",
+        "L": "H0",
+        "R": "H1",
+        "initial": "L",
+        "x": 163.75,
+        "y": 172
+      },
+      {
+        "id": "H2",
+        "kind": "home",
+        "color": "#a6b978",
+        "symbol": "▲",
+        "x": 460,
+        "y": 410
+      },
+      {
+        "id": "H3",
+        "kind": "home",
+        "color": "#dbb05d",
+        "symbol": "★",
+        "x": 657.5,
+        "y": 410
+      },
+      {
+        "id": "H4",
+        "kind": "home",
+        "color": "#b69aca",
+        "symbol": "✚",
+        "x": 855,
+        "y": 410
+      },
+      {
+        "id": "S3",
+        "kind": "switch",
+        "L": "H3",
+        "R": "H4",
+        "initial": "R",
+        "x": 756.25,
+        "y": 244
+      },
+      {
+        "id": "S2",
+        "kind": "switch",
+        "L": "H2",
+        "R": "S3",
+        "initial": "R",
+        "x": 608.125,
+        "y": 172
+      },
+      {
+        "id": "S0",
+        "kind": "switch",
+        "L": "S1",
+        "R": "S2",
+        "initial": "R",
+        "x": 385.9375,
+        "y": 100
+      },
+      {
+        "id": "E0",
+        "kind": "entry",
+        "next": "S0",
+        "x": 385.9375,
+        "y": 32
+      }
+    ],
+    "cars": [
+      {
+        "id": "C0",
+        "entryId": "E0",
+        "destinationId": "H2",
+        "imprint": "R"
+      },
+      {
+        "id": "C1",
+        "entryId": "E0",
+        "destinationId": "H0",
+        "imprint": "R"
+      },
+      {
+        "id": "C2",
+        "entryId": "E0",
+        "destinationId": "H4",
+        "imprint": "L"
+      },
+      {
+        "id": "C3",
+        "entryId": "E0",
+        "destinationId": "H2",
+        "imprint": "L"
+      },
+      {
+        "id": "C4",
+        "entryId": "E0",
+        "destinationId": "H1",
+        "imprint": "R"
+      }
+    ],
+    "solution": ["C2", "C1", "C3", "C4", "C0"],
+    "seed": 541011
+  },
+  {
+    "id": "sm-029",
+    "title": "Another entrance",
+    "district": 3,
+    "nodes": [
+      {
+        "id": "H0",
+        "kind": "home",
+        "color": "#e98873",
+        "symbol": "●",
+        "x": 65,
+        "y": 410
+      },
+      {
+        "id": "H1",
+        "kind": "home",
+        "color": "#75b6cd",
+        "symbol": "◆",
+        "x": 262.5,
+        "y": 410
+      },
+      {
+        "id": "H2",
+        "kind": "home",
+        "color": "#a6b978",
+        "symbol": "▲",
+        "x": 460,
+        "y": 410
+      },
+      {
+        "id": "H3",
+        "kind": "home",
+        "color": "#dbb05d",
+        "symbol": "★",
+        "x": 657.5,
+        "y": 410
+      },
+      {
+        "id": "S3",
+        "kind": "switch",
+        "L": "H2",
+        "R": "H3",
+        "initial": "L",
+        "x": 558.75,
+        "y": 316
+      },
+      {
+        "id": "H4",
+        "kind": "home",
+        "color": "#b69aca",
+        "symbol": "✚",
+        "x": 855,
+        "y": 410
+      },
+      {
+        "id": "S2",
+        "kind": "switch",
+        "L": "S3",
+        "R": "H4",
+        "initial": "R",
+        "x": 706.875,
+        "y": 244
+      },
+      {
+        "id": "S1",
+        "kind": "switch",
+        "L": "H1",
+        "R": "S2",
+        "initial": "L",
+        "x": 484.6875,
+        "y": 172
+      },
+      {
+        "id": "S0",
+        "kind": "switch",
+        "L": "H0",
+        "R": "S1",
+        "initial": "L",
+        "x": 274.84375,
+        "y": 100
+      },
+      {
+        "id": "E0",
+        "kind": "entry",
+        "next": "S0",
+        "x": 274.84375,
+        "y": 32
+      },
+      {
+        "id": "E1",
+        "kind": "entry",
+        "next": "S2",
+        "x": 651.875,
+        "y": 209
+      }
+    ],
+    "cars": [
+      {
+        "id": "C0",
+        "entryId": "E1",
+        "destinationId": "H4",
+        "imprint": "L"
+      },
+      {
+        "id": "C1",
+        "entryId": "E0",
+        "destinationId": "H1",
+        "imprint": "R"
+      },
+      {
+        "id": "C2",
+        "entryId": "E1",
+        "destinationId": "H2",
+        "imprint": "R"
+      },
+      {
+        "id": "C3",
+        "entryId": "E1",
+        "destinationId": "H2",
+        "imprint": "L"
+      },
+      {
+        "id": "C4",
+        "entryId": "E0",
+        "destinationId": "H0",
+        "imprint": "R"
+      }
+    ],
+    "solution": ["C0", "C3", "C2", "C4", "C1"],
+    "seed": 561000
+  },
+  {
+    "id": "sm-030",
+    "title": "A useful detour",
+    "district": 3,
+    "nodes": [
+      {
+        "id": "H0",
+        "kind": "home",
+        "color": "#e98873",
+        "symbol": "●",
+        "x": 65,
+        "y": 410
+      },
+      {
+        "id": "H1",
+        "kind": "home",
+        "color": "#75b6cd",
+        "symbol": "◆",
+        "x": 262.5,
+        "y": 410
+      },
+      {
+        "id": "S2",
+        "kind": "switch",
+        "L": "H0",
+        "R": "H1",
+        "initial": "R",
+        "x": 163.75,
+        "y": 244
+      },
+      {
+        "id": "H2",
+        "kind": "home",
+        "color": "#a6b978",
+        "symbol": "▲",
+        "x": 460,
+        "y": 410
+      },
+      {
+        "id": "H3",
+        "kind": "home",
+        "color": "#dbb05d",
+        "symbol": "★",
+        "x": 657.5,
+        "y": 410
+      },
+      {
+        "id": "S3",
+        "kind": "switch",
+        "L": "H2",
+        "R": "H3",
+        "initial": "L",
+        "x": 558.75,
+        "y": 244
+      },
+      {
+        "id": "S1",
+        "kind": "switch",
+        "L": "S2",
+        "R": "S3",
+        "initial": "L",
+        "x": 361.25,
+        "y": 172
+      },
+      {
+        "id": "H4",
+        "kind": "home",
+        "color": "#b69aca",
+        "symbol": "✚",
+        "x": 855,
+        "y": 410
+      },
+      {
+        "id": "S0",
+        "kind": "switch",
+        "L": "S1",
+        "R": "H4",
+        "initial": "L",
+        "x": 608.125,
+        "y": 100
+      },
+      {
+        "id": "E0",
+        "kind": "entry",
+        "next": "S0",
+        "x": 608.125,
+        "y": 32
+      },
+      {
+        "id": "E1",
+        "kind": "entry",
+        "next": "S1",
+        "x": 306.25,
+        "y": 137
+      }
+    ],
+    "cars": [
+      {
+        "id": "C0",
+        "entryId": "E0",
+        "destinationId": "H4",
+        "imprint": "L"
+      },
+      {
+        "id": "C1",
+        "entryId": "E0",
+        "destinationId": "H0",
+        "imprint": "R"
+      },
+      {
+        "id": "C2",
+        "entryId": "E0",
+        "destinationId": "H1",
+        "imprint": "L"
+      },
+      {
+        "id": "C3",
+        "entryId": "E1",
+        "destinationId": "H2",
+        "imprint": "R"
+      },
+      {
+        "id": "C4",
+        "entryId": "E1",
+        "destinationId": "H3",
+        "imprint": "R"
+      }
+    ],
+    "solution": ["C2", "C1", "C0", "C3", "C4"],
+    "seed": 581002
+  },
+  {
+    "id": "sm-031",
+    "title": "First things first",
+    "district": 3,
+    "nodes": [
+      {
+        "id": "H0",
+        "kind": "home",
+        "color": "#e98873",
+        "symbol": "●",
+        "x": 65,
+        "y": 410
+      },
+      {
+        "id": "H1",
+        "kind": "home",
+        "color": "#75b6cd",
+        "symbol": "◆",
+        "x": 262.5,
+        "y": 410
+      },
+      {
+        "id": "S1",
+        "kind": "switch",
+        "L": "H0",
+        "R": "H1",
+        "initial": "L",
+        "x": 163.75,
+        "y": 172
+      },
+      {
+        "id": "H2",
+        "kind": "home",
+        "color": "#a6b978",
+        "symbol": "▲",
+        "x": 460,
+        "y": 410
+      },
+      {
+        "id": "H3",
+        "kind": "home",
+        "color": "#dbb05d",
+        "symbol": "★",
+        "x": 657.5,
+        "y": 410
+      },
+      {
+        "id": "S3",
+        "kind": "switch",
+        "L": "H2",
+        "R": "H3",
+        "initial": "R",
+        "x": 558.75,
+        "y": 244
+      },
+      {
+        "id": "H4",
+        "kind": "home",
+        "color": "#b69aca",
+        "symbol": "✚",
+        "x": 855,
+        "y": 410
+      },
+      {
+        "id": "S2",
+        "kind": "switch",
+        "L": "S3",
+        "R": "H4",
+        "initial": "L",
+        "x": 706.875,
+        "y": 172
+      },
+      {
+        "id": "S0",
+        "kind": "switch",
+        "L": "S1",
+        "R": "S2",
+        "initial": "R",
+        "x": 435.3125,
+        "y": 100
+      },
+      {
+        "id": "E0",
+        "kind": "entry",
+        "next": "S0",
+        "x": 435.3125,
+        "y": 32
+      }
+    ],
+    "cars": [
+      {
+        "id": "C0",
+        "entryId": "E0",
+        "destinationId": "H3",
+        "imprint": "L"
+      },
+      {
+        "id": "C1",
+        "entryId": "E0",
+        "destinationId": "H0",
+        "imprint": "R"
+      },
+      {
+        "id": "C2",
+        "entryId": "E0",
+        "destinationId": "H3",
+        "imprint": "R"
+      },
+      {
+        "id": "C3",
+        "entryId": "E0",
+        "destinationId": "H0",
+        "imprint": "L"
+      },
+      {
+        "id": "C4",
+        "entryId": "E0",
+        "destinationId": "H4",
+        "imprint": "L"
+      }
+    ],
+    "solution": ["C2", "C4", "C3", "C1", "C0"],
+    "seed": 601002
+  },
+  {
+    "id": "sm-032",
+    "title": "The little bridge",
+    "district": 3,
+    "nodes": [
+      {
+        "id": "H0",
+        "kind": "home",
+        "color": "#e98873",
+        "symbol": "●",
+        "x": 65,
+        "y": 410
+      },
+      {
+        "id": "H1",
+        "kind": "home",
+        "color": "#75b6cd",
+        "symbol": "◆",
+        "x": 262.5,
+        "y": 410
+      },
+      {
+        "id": "H2",
+        "kind": "home",
+        "color": "#a6b978",
+        "symbol": "▲",
+        "x": 460,
+        "y": 410
+      },
+      {
+        "id": "S3",
+        "kind": "switch",
+        "L": "H1",
+        "R": "H2",
+        "initial": "R",
+        "x": 361.25,
+        "y": 316
+      },
+      {
+        "id": "S2",
+        "kind": "switch",
+        "L": "H0",
+        "R": "S3",
+        "initial": "R",
+        "x": 213.125,
+        "y": 244
+      },
+      {
+        "id": "H3",
+        "kind": "home",
+        "color": "#dbb05d",
+        "symbol": "★",
+        "x": 657.5,
+        "y": 410
+      },
+      {
+        "id": "S1",
+        "kind": "switch",
+        "L": "S2",
+        "R": "H3",
+        "initial": "L",
+        "x": 435.3125,
+        "y": 172
+      },
+      {
+        "id": "H4",
+        "kind": "home",
+        "color": "#b69aca",
+        "symbol": "✚",
+        "x": 855,
+        "y": 410
+      },
+      {
+        "id": "S0",
+        "kind": "switch",
+        "L": "S1",
+        "R": "H4",
+        "initial": "L",
+        "x": 645.15625,
+        "y": 100
+      },
+      {
+        "id": "E0",
+        "kind": "entry",
+        "next": "S0",
+        "x": 645.15625,
+        "y": 32
+      },
+      {
+        "id": "E1",
+        "kind": "entry",
+        "next": "S1",
+        "x": 380.3125,
+        "y": 137
+      }
+    ],
+    "cars": [
+      {
+        "id": "C0",
+        "entryId": "E1",
+        "destinationId": "H2",
+        "imprint": "L"
+      },
+      {
+        "id": "C1",
+        "entryId": "E0",
+        "destinationId": "H2",
+        "imprint": "R"
+      },
+      {
+        "id": "C2",
+        "entryId": "E1",
+        "destinationId": "H3",
+        "imprint": "L"
+      },
+      {
+        "id": "C3",
+        "entryId": "E0",
+        "destinationId": "H4",
+        "imprint": "L"
+      },
+      {
+        "id": "C4",
+        "entryId": "E0",
+        "destinationId": "H0",
+        "imprint": "R"
+      }
+    ],
+    "solution": ["C1", "C2", "C0", "C3", "C4"],
+    "seed": 621025
+  },
+  {
+    "id": "sm-033",
+    "title": "Passing it on",
+    "district": 4,
+    "nodes": [
+      {
+        "id": "H0",
+        "kind": "home",
+        "color": "#e98873",
+        "symbol": "●",
+        "x": 65,
+        "y": 410
+      },
+      {
+        "id": "H1",
+        "kind": "home",
+        "color": "#75b6cd",
+        "symbol": "◆",
+        "x": 262.5,
+        "y": 410
+      },
+      {
+        "id": "S2",
+        "kind": "switch",
+        "L": "H0",
+        "R": "H1",
+        "initial": "R",
+        "x": 163.75,
+        "y": 244
+      },
+      {
+        "id": "H2",
+        "kind": "home",
+        "color": "#a6b978",
+        "symbol": "▲",
+        "x": 460,
+        "y": 410
+      },
+      {
+        "id": "H3",
+        "kind": "home",
+        "color": "#dbb05d",
+        "symbol": "★",
+        "x": 657.5,
+        "y": 410
+      },
+      {
+        "id": "S3",
+        "kind": "switch",
+        "L": "H2",
+        "R": "H3",
+        "initial": "L",
+        "x": 558.75,
+        "y": 244
+      },
+      {
+        "id": "S1",
+        "kind": "switch",
+        "L": "S2",
+        "R": "S3",
+        "initial": "R",
+        "x": 361.25,
+        "y": 172
+      },
+      {
+        "id": "H4",
+        "kind": "home",
+        "color": "#b69aca",
+        "symbol": "✚",
+        "x": 855,
+        "y": 410
+      },
+      {
+        "id": "S0",
+        "kind": "switch",
+        "L": "S1",
+        "R": "H4",
+        "initial": "L",
+        "x": 608.125,
+        "y": 100
+      },
+      {
+        "id": "E0",
+        "kind": "entry",
+        "next": "S0",
+        "x": 608.125,
+        "y": 32
+      },
+      {
+        "id": "E1",
+        "kind": "entry",
+        "next": "S1",
+        "x": 306.25,
+        "y": 137
+      }
+    ],
+    "cars": [
+      {
+        "id": "C0",
+        "entryId": "E0",
+        "destinationId": "H2",
+        "imprint": "R"
+      },
+      {
+        "id": "C1",
+        "entryId": "E0",
+        "destinationId": "H4",
+        "imprint": "R"
+      },
+      {
+        "id": "C2",
+        "entryId": "E1",
+        "destinationId": "H3",
+        "imprint": "L"
+      },
+      {
+        "id": "C3",
+        "entryId": "E1",
+        "destinationId": "H3",
+        "imprint": "R"
+      },
+      {
+        "id": "C4",
+        "entryId": "E1",
+        "destinationId": "H1",
+        "imprint": "L"
+      }
+    ],
+    "solution": ["C0", "C1", "C3", "C2", "C4"],
+    "seed": 641006
+  },
+  {
+    "id": "sm-034",
+    "title": "Evening errands",
+    "district": 4,
+    "nodes": [
+      {
+        "id": "H0",
+        "kind": "home",
+        "color": "#e98873",
+        "symbol": "●",
+        "x": 65,
+        "y": 410
+      },
+      {
+        "id": "H1",
+        "kind": "home",
+        "color": "#75b6cd",
+        "symbol": "◆",
+        "x": 262.5,
+        "y": 410
+      },
+      {
+        "id": "S1",
+        "kind": "switch",
+        "L": "H0",
+        "R": "H1",
+        "initial": "L",
+        "x": 163.75,
+        "y": 172
+      },
+      {
+        "id": "H2",
+        "kind": "home",
+        "color": "#a6b978",
+        "symbol": "▲",
+        "x": 460,
+        "y": 410
+      },
+      {
+        "id": "H3",
+        "kind": "home",
+        "color": "#dbb05d",
+        "symbol": "★",
+        "x": 657.5,
+        "y": 410
+      },
+      {
+        "id": "S3",
+        "kind": "switch",
+        "L": "H2",
+        "R": "H3",
+        "initial": "R",
+        "x": 558.75,
+        "y": 244
+      },
+      {
+        "id": "H4",
+        "kind": "home",
+        "color": "#b69aca",
+        "symbol": "✚",
+        "x": 855,
+        "y": 410
+      },
+      {
+        "id": "S2",
+        "kind": "switch",
+        "L": "S3",
+        "R": "H4",
+        "initial": "R",
+        "x": 706.875,
+        "y": 172
+      },
+      {
+        "id": "S0",
+        "kind": "switch",
+        "L": "S1",
+        "R": "S2",
+        "initial": "R",
+        "x": 435.3125,
+        "y": 100
+      },
+      {
+        "id": "E0",
+        "kind": "entry",
+        "next": "S0",
+        "x": 435.3125,
+        "y": 32
+      }
+    ],
+    "cars": [
+      {
+        "id": "C0",
+        "entryId": "E0",
+        "destinationId": "H0",
+        "imprint": "R"
+      },
+      {
+        "id": "C1",
+        "entryId": "E0",
+        "destinationId": "H3",
+        "imprint": "L"
+      },
+      {
+        "id": "C2",
+        "entryId": "E0",
+        "destinationId": "H4",
+        "imprint": "L"
+      },
+      {
+        "id": "C3",
+        "entryId": "E0",
+        "destinationId": "H1",
+        "imprint": "R"
+      },
+      {
+        "id": "C4",
+        "entryId": "E0",
+        "destinationId": "H2",
+        "imprint": "L"
+      }
+    ],
+    "solution": ["C2", "C0", "C1", "C3", "C4"],
+    "seed": 661008
+  },
+  {
+    "id": "sm-035",
+    "title": "Last light",
+    "district": 4,
+    "nodes": [
+      {
+        "id": "H0",
+        "kind": "home",
+        "color": "#e98873",
+        "symbol": "●",
+        "x": 65,
+        "y": 410
+      },
+      {
+        "id": "H1",
+        "kind": "home",
+        "color": "#75b6cd",
+        "symbol": "◆",
+        "x": 262.5,
+        "y": 410
+      },
+      {
+        "id": "H2",
+        "kind": "home",
+        "color": "#a6b978",
+        "symbol": "▲",
+        "x": 460,
+        "y": 410
+      },
+      {
+        "id": "S3",
+        "kind": "switch",
+        "L": "H1",
+        "R": "H2",
+        "initial": "R",
+        "x": 361.25,
+        "y": 316
+      },
+      {
+        "id": "S2",
+        "kind": "switch",
+        "L": "H0",
+        "R": "S3",
+        "initial": "R",
+        "x": 213.125,
+        "y": 244
+      },
+      {
+        "id": "H3",
+        "kind": "home",
+        "color": "#dbb05d",
+        "symbol": "★",
+        "x": 657.5,
+        "y": 410
+      },
+      {
+        "id": "S1",
+        "kind": "switch",
+        "L": "S2",
+        "R": "H3",
+        "initial": "R",
+        "x": 435.3125,
+        "y": 172
+      },
+      {
+        "id": "H4",
+        "kind": "home",
+        "color": "#b69aca",
+        "symbol": "✚",
+        "x": 855,
+        "y": 410
+      },
+      {
+        "id": "S0",
+        "kind": "switch",
+        "L": "S1",
+        "R": "H4",
+        "initial": "L",
+        "x": 645.15625,
+        "y": 100
+      },
+      {
+        "id": "E0",
+        "kind": "entry",
+        "next": "S0",
+        "x": 645.15625,
+        "y": 32
+      },
+      {
+        "id": "E1",
+        "kind": "entry",
+        "next": "S1",
+        "x": 380.3125,
+        "y": 137
+      }
+    ],
+    "cars": [
+      {
+        "id": "C0",
+        "entryId": "E1",
+        "destinationId": "H3",
+        "imprint": "R"
+      },
+      {
+        "id": "C1",
+        "entryId": "E0",
+        "destinationId": "H4",
+        "imprint": "R"
+      },
+      {
+        "id": "C2",
+        "entryId": "E1",
+        "destinationId": "H3",
+        "imprint": "L"
+      },
+      {
+        "id": "C3",
+        "entryId": "E1",
+        "destinationId": "H2",
+        "imprint": "L"
+      },
+      {
+        "id": "C4",
+        "entryId": "E0",
+        "destinationId": "H3",
+        "imprint": "R"
+      }
+    ],
+    "solution": ["C0", "C4", "C1", "C2", "C3"],
+    "seed": 681000
+  },
+  {
+    "id": "sm-036",
+    "title": "Blue rooftops",
+    "district": 4,
+    "nodes": [
+      {
+        "id": "H0",
+        "kind": "home",
+        "color": "#e98873",
+        "symbol": "●",
+        "x": 65,
+        "y": 410
+      },
+      {
+        "id": "H1",
+        "kind": "home",
+        "color": "#75b6cd",
+        "symbol": "◆",
+        "x": 262.5,
+        "y": 410
+      },
+      {
+        "id": "S1",
+        "kind": "switch",
+        "L": "H0",
+        "R": "H1",
+        "initial": "L",
+        "x": 163.75,
+        "y": 172
+      },
+      {
+        "id": "H2",
+        "kind": "home",
+        "color": "#a6b978",
+        "symbol": "▲",
+        "x": 460,
+        "y": 410
+      },
+      {
+        "id": "H3",
+        "kind": "home",
+        "color": "#dbb05d",
+        "symbol": "★",
+        "x": 657.5,
+        "y": 410
+      },
+      {
+        "id": "H4",
+        "kind": "home",
+        "color": "#b69aca",
+        "symbol": "✚",
+        "x": 855,
+        "y": 410
+      },
+      {
+        "id": "S3",
+        "kind": "switch",
+        "L": "H3",
+        "R": "H4",
+        "initial": "R",
+        "x": 756.25,
+        "y": 244
+      },
+      {
+        "id": "S2",
+        "kind": "switch",
+        "L": "H2",
+        "R": "S3",
+        "initial": "L",
+        "x": 608.125,
+        "y": 172
+      },
+      {
+        "id": "S0",
+        "kind": "switch",
+        "L": "S1",
+        "R": "S2",
+        "initial": "L",
+        "x": 385.9375,
+        "y": 100
+      },
+      {
+        "id": "E0",
+        "kind": "entry",
+        "next": "S0",
+        "x": 385.9375,
+        "y": 32
+      },
+      {
+        "id": "E1",
+        "kind": "entry",
+        "next": "S2",
+        "x": 553.125,
+        "y": 137
+      }
+    ],
+    "cars": [
+      {
+        "id": "C0",
+        "entryId": "E1",
+        "destinationId": "H4",
+        "imprint": "L"
+      },
+      {
+        "id": "C1",
+        "entryId": "E0",
+        "destinationId": "H0",
+        "imprint": "R"
+      },
+      {
+        "id": "C2",
+        "entryId": "E1",
+        "destinationId": "H3",
+        "imprint": "R"
+      },
+      {
+        "id": "C3",
+        "entryId": "E0",
+        "destinationId": "H2",
+        "imprint": "R"
+      },
+      {
+        "id": "C4",
+        "entryId": "E1",
+        "destinationId": "H2",
+        "imprint": "R"
+      }
+    ],
+    "solution": ["C1", "C3", "C0", "C4", "C2"],
+    "seed": 701014
+  },
+  {
+    "id": "sm-037",
+    "title": "An unexpected route",
+    "district": 4,
+    "nodes": [
+      {
+        "id": "H0",
+        "kind": "home",
+        "color": "#e98873",
+        "symbol": "●",
+        "x": 65,
+        "y": 410
+      },
+      {
+        "id": "H1",
+        "kind": "home",
+        "color": "#75b6cd",
+        "symbol": "◆",
+        "x": 223,
+        "y": 410
+      },
+      {
+        "id": "S2",
+        "kind": "switch",
+        "L": "H0",
+        "R": "H1",
+        "initial": "R",
+        "x": 144,
+        "y": 244
+      },
+      {
+        "id": "H2",
+        "kind": "home",
+        "color": "#a6b978",
+        "symbol": "▲",
+        "x": 381,
+        "y": 410
+      },
+      {
+        "id": "S1",
+        "kind": "switch",
+        "L": "S2",
+        "R": "H2",
+        "initial": "L",
+        "x": 262.5,
+        "y": 172
+      },
+      {
+        "id": "H3",
+        "kind": "home",
+        "color": "#dbb05d",
+        "symbol": "★",
+        "x": 539,
+        "y": 410
+      },
+      {
+        "id": "H4",
+        "kind": "home",
+        "color": "#b69aca",
+        "symbol": "✚",
+        "x": 697,
+        "y": 410
+      },
+      {
+        "id": "H5",
+        "kind": "home",
+        "color": "#7db6a5",
+        "symbol": "■",
+        "x": 855,
+        "y": 410
+      },
+      {
+        "id": "S4",
+        "kind": "switch",
+        "L": "H4",
+        "R": "H5",
+        "initial": "R",
+        "x": 776,
+        "y": 244
+      },
+      {
+        "id": "S3",
+        "kind": "switch",
+        "L": "H3",
+        "R": "S4",
+        "initial": "L",
+        "x": 657.5,
+        "y": 172
+      },
+      {
+        "id": "S0",
+        "kind": "switch",
+        "L": "S1",
+        "R": "S3",
+        "initial": "L",
+        "x": 460,
+        "y": 100
+      },
+      {
+        "id": "E0",
+        "kind": "entry",
+        "next": "S0",
+        "x": 460,
+        "y": 32
+      }
+    ],
+    "cars": [
+      {
+        "id": "C0",
+        "entryId": "E0",
+        "destinationId": "H3",
+        "imprint": "R"
+      },
+      {
+        "id": "C1",
+        "entryId": "E0",
+        "destinationId": "H5",
+        "imprint": "L"
+      },
+      {
+        "id": "C2",
+        "entryId": "E0",
+        "destinationId": "H0",
+        "imprint": "L"
+      },
+      {
+        "id": "C3",
+        "entryId": "E0",
+        "destinationId": "H1",
+        "imprint": "L"
+      },
+      {
+        "id": "C4",
+        "entryId": "E0",
+        "destinationId": "H0",
+        "imprint": "R"
+      },
+      {
+        "id": "C5",
+        "entryId": "E0",
+        "destinationId": "H2",
+        "imprint": "L"
+      }
+    ],
+    "solution": ["C3", "C2", "C4", "C0", "C1", "C5"],
+    "seed": 721014
+  },
+  {
+    "id": "sm-038",
+    "title": "The night bakery",
+    "district": 4,
+    "nodes": [
+      {
+        "id": "H0",
+        "kind": "home",
+        "color": "#e98873",
+        "symbol": "●",
+        "x": 65,
+        "y": 410
+      },
+      {
+        "id": "H1",
+        "kind": "home",
+        "color": "#75b6cd",
+        "symbol": "◆",
+        "x": 223,
+        "y": 410
+      },
+      {
+        "id": "H2",
+        "kind": "home",
+        "color": "#a6b978",
+        "symbol": "▲",
+        "x": 381,
+        "y": 410
+      },
+      {
+        "id": "S2",
+        "kind": "switch",
+        "L": "H1",
+        "R": "H2",
+        "initial": "L",
+        "x": 302,
+        "y": 244
+      },
+      {
+        "id": "S1",
+        "kind": "switch",
+        "L": "H0",
+        "R": "S2",
+        "initial": "R",
+        "x": 183.5,
+        "y": 172
+      },
+      {
+        "id": "H3",
+        "kind": "home",
+        "color": "#dbb05d",
+        "symbol": "★",
+        "x": 539,
+        "y": 410
+      },
+      {
+        "id": "H4",
+        "kind": "home",
+        "color": "#b69aca",
+        "symbol": "✚",
+        "x": 697,
+        "y": 410
+      },
+      {
+        "id": "H5",
+        "kind": "home",
+        "color": "#7db6a5",
+        "symbol": "■",
+        "x": 855,
+        "y": 410
+      },
+      {
+        "id": "S4",
+        "kind": "switch",
+        "L": "H4",
+        "R": "H5",
+        "initial": "R",
+        "x": 776,
+        "y": 244
+      },
+      {
+        "id": "S3",
+        "kind": "switch",
+        "L": "H3",
+        "R": "S4",
+        "initial": "R",
+        "x": 657.5,
+        "y": 172
+      },
+      {
+        "id": "S0",
+        "kind": "switch",
+        "L": "S1",
+        "R": "S3",
+        "initial": "L",
+        "x": 420.5,
+        "y": 100
+      },
+      {
+        "id": "E0",
+        "kind": "entry",
+        "next": "S0",
+        "x": 420.5,
+        "y": 32
+      },
+      {
+        "id": "E1",
+        "kind": "entry",
+        "next": "S1",
+        "x": 128.5,
+        "y": 137
+      }
+    ],
+    "cars": [
+      {
+        "id": "C0",
+        "entryId": "E1",
+        "destinationId": "H0",
+        "imprint": "R"
+      },
+      {
+        "id": "C1",
+        "entryId": "E1",
+        "destinationId": "H2",
+        "imprint": "L"
+      },
+      {
+        "id": "C2",
+        "entryId": "E0",
+        "destinationId": "H5",
+        "imprint": "L"
+      },
+      {
+        "id": "C3",
+        "entryId": "E0",
+        "destinationId": "H2",
+        "imprint": "R"
+      },
+      {
+        "id": "C4",
+        "entryId": "E0",
+        "destinationId": "H1",
+        "imprint": "R"
+      },
+      {
+        "id": "C5",
+        "entryId": "E1",
+        "destinationId": "H1",
+        "imprint": "L"
+      }
+    ],
+    "solution": ["C4", "C2", "C3", "C1", "C0", "C5"],
+    "seed": 741006
+  },
+  {
+    "id": "sm-039",
+    "title": "Follow the memory",
+    "district": 4,
+    "nodes": [
+      {
+        "id": "H0",
+        "kind": "home",
+        "color": "#e98873",
+        "symbol": "●",
+        "x": 65,
+        "y": 410
+      },
+      {
+        "id": "H1",
+        "kind": "home",
+        "color": "#75b6cd",
+        "symbol": "◆",
+        "x": 223,
+        "y": 410
+      },
+      {
+        "id": "S1",
+        "kind": "switch",
+        "L": "H0",
+        "R": "H1",
+        "initial": "L",
+        "x": 144,
+        "y": 172
+      },
+      {
+        "id": "H2",
+        "kind": "home",
+        "color": "#a6b978",
+        "symbol": "▲",
+        "x": 381,
+        "y": 410
+      },
+      {
+        "id": "H3",
+        "kind": "home",
+        "color": "#dbb05d",
+        "symbol": "★",
+        "x": 539,
+        "y": 410
+      },
+      {
+        "id": "S4",
+        "kind": "switch",
+        "L": "H2",
+        "R": "H3",
+        "initial": "L",
+        "x": 460,
+        "y": 316
+      },
+      {
+        "id": "H4",
+        "kind": "home",
+        "color": "#b69aca",
+        "symbol": "✚",
+        "x": 697,
+        "y": 410
+      },
+      {
+        "id": "S3",
+        "kind": "switch",
+        "L": "S4",
+        "R": "H4",
+        "initial": "L",
+        "x": 578.5,
+        "y": 244
+      },
+      {
+        "id": "H5",
+        "kind": "home",
+        "color": "#7db6a5",
+        "symbol": "■",
+        "x": 855,
+        "y": 410
+      },
+      {
+        "id": "S2",
+        "kind": "switch",
+        "L": "S3",
+        "R": "H5",
+        "initial": "L",
+        "x": 716.75,
+        "y": 172
+      },
+      {
+        "id": "S0",
+        "kind": "switch",
+        "L": "S1",
+        "R": "S2",
+        "initial": "R",
+        "x": 430.375,
+        "y": 100
+      },
+      {
+        "id": "E0",
+        "kind": "entry",
+        "next": "S0",
+        "x": 430.375,
+        "y": 32
+      },
+      {
+        "id": "E1",
+        "kind": "entry",
+        "next": "S3",
+        "x": 523.5,
+        "y": 209
+      }
+    ],
+    "cars": [
+      {
+        "id": "C0",
+        "entryId": "E0",
+        "destinationId": "H5",
+        "imprint": "L"
+      },
+      {
+        "id": "C1",
+        "entryId": "E0",
+        "destinationId": "H4",
+        "imprint": "R"
+      },
+      {
+        "id": "C2",
+        "entryId": "E1",
+        "destinationId": "H4",
+        "imprint": "L"
+      },
+      {
+        "id": "C3",
+        "entryId": "E1",
+        "destinationId": "H2",
+        "imprint": "R"
+      },
+      {
+        "id": "C4",
+        "entryId": "E0",
+        "destinationId": "H0",
+        "imprint": "R"
+      },
+      {
+        "id": "C5",
+        "entryId": "E1",
+        "destinationId": "H3",
+        "imprint": "L"
+      }
+    ],
+    "solution": ["C3", "C1", "C0", "C2", "C4", "C5"],
+    "seed": 761000
+  },
+  {
+    "id": "sm-040",
+    "title": "A shared address",
+    "district": 4,
+    "nodes": [
+      {
+        "id": "H0",
+        "kind": "home",
+        "color": "#e98873",
+        "symbol": "●",
+        "x": 65,
+        "y": 410
+      },
+      {
+        "id": "H1",
+        "kind": "home",
+        "color": "#75b6cd",
+        "symbol": "◆",
+        "x": 223,
+        "y": 410
+      },
+      {
+        "id": "S1",
+        "kind": "switch",
+        "L": "H0",
+        "R": "H1",
+        "initial": "L",
+        "x": 144,
+        "y": 172
+      },
+      {
+        "id": "H2",
+        "kind": "home",
+        "color": "#a6b978",
+        "symbol": "▲",
+        "x": 381,
+        "y": 410
+      },
+      {
+        "id": "H3",
+        "kind": "home",
+        "color": "#dbb05d",
+        "symbol": "★",
+        "x": 539,
+        "y": 410
+      },
+      {
+        "id": "S3",
+        "kind": "switch",
+        "L": "H2",
+        "R": "H3",
+        "initial": "R",
+        "x": 460,
+        "y": 244
+      },
+      {
+        "id": "H4",
+        "kind": "home",
+        "color": "#b69aca",
+        "symbol": "✚",
+        "x": 697,
+        "y": 410
+      },
+      {
+        "id": "H5",
+        "kind": "home",
+        "color": "#7db6a5",
+        "symbol": "■",
+        "x": 855,
+        "y": 410
+      },
+      {
+        "id": "S4",
+        "kind": "switch",
+        "L": "H4",
+        "R": "H5",
+        "initial": "R",
+        "x": 776,
+        "y": 244
+      },
+      {
+        "id": "S2",
+        "kind": "switch",
+        "L": "S3",
+        "R": "S4",
+        "initial": "L",
+        "x": 618,
+        "y": 172
+      },
+      {
+        "id": "S0",
+        "kind": "switch",
+        "L": "S1",
+        "R": "S2",
+        "initial": "L",
+        "x": 381,
+        "y": 100
+      },
+      {
+        "id": "E0",
+        "kind": "entry",
+        "next": "S0",
+        "x": 381,
+        "y": 32
+      }
+    ],
+    "cars": [
+      {
+        "id": "C0",
+        "entryId": "E0",
+        "destinationId": "H0",
+        "imprint": "R"
+      },
+      {
+        "id": "C1",
+        "entryId": "E0",
+        "destinationId": "H0",
+        "imprint": "L"
+      },
+      {
+        "id": "C2",
+        "entryId": "E0",
+        "destinationId": "H1",
+        "imprint": "R"
+      },
+      {
+        "id": "C3",
+        "entryId": "E0",
+        "destinationId": "H5",
+        "imprint": "L"
+      },
+      {
+        "id": "C4",
+        "entryId": "E0",
+        "destinationId": "H3",
+        "imprint": "L"
+      },
+      {
+        "id": "C5",
+        "entryId": "E0",
+        "destinationId": "H3",
+        "imprint": "R"
+      }
+    ],
+    "solution": ["C1", "C0", "C5", "C3", "C2", "C4"],
+    "seed": 781000
+  },
+  {
+    "id": "sm-041",
+    "title": "Moonlit junctions",
+    "district": 5,
+    "nodes": [
+      {
+        "id": "H0",
+        "kind": "home",
+        "color": "#e98873",
+        "symbol": "●",
+        "x": 65,
+        "y": 410
+      },
+      {
+        "id": "H1",
+        "kind": "home",
+        "color": "#75b6cd",
+        "symbol": "◆",
+        "x": 223,
+        "y": 410
+      },
+      {
+        "id": "S1",
+        "kind": "switch",
+        "L": "H0",
+        "R": "H1",
+        "initial": "L",
+        "x": 144,
+        "y": 172
+      },
+      {
+        "id": "H2",
+        "kind": "home",
+        "color": "#a6b978",
+        "symbol": "▲",
+        "x": 381,
+        "y": 410
+      },
+      {
+        "id": "H3",
+        "kind": "home",
+        "color": "#dbb05d",
+        "symbol": "★",
+        "x": 539,
+        "y": 410
+      },
+      {
+        "id": "H4",
+        "kind": "home",
+        "color": "#b69aca",
+        "symbol": "✚",
+        "x": 697,
+        "y": 410
+      },
+      {
+        "id": "S4",
+        "kind": "switch",
+        "L": "H3",
+        "R": "H4",
+        "initial": "L",
+        "x": 618,
+        "y": 316
+      },
+      {
+        "id": "S3",
+        "kind": "switch",
+        "L": "H2",
+        "R": "S4",
+        "initial": "R",
+        "x": 499.5,
+        "y": 244
+      },
+      {
+        "id": "H5",
+        "kind": "home",
+        "color": "#7db6a5",
+        "symbol": "■",
+        "x": 855,
+        "y": 410
+      },
+      {
+        "id": "S2",
+        "kind": "switch",
+        "L": "S3",
+        "R": "H5",
+        "initial": "R",
+        "x": 677.25,
+        "y": 172
+      },
+      {
+        "id": "S0",
+        "kind": "switch",
+        "L": "S1",
+        "R": "S2",
+        "initial": "R",
+        "x": 410.625,
+        "y": 100
+      },
+      {
+        "id": "E0",
+        "kind": "entry",
+        "next": "S0",
+        "x": 410.625,
+        "y": 32
+      },
+      {
+        "id": "E1",
+        "kind": "entry",
+        "next": "S4",
+        "x": 563,
+        "y": 281
+      }
+    ],
+    "cars": [
+      {
+        "id": "C0",
+        "entryId": "E0",
+        "destinationId": "H0",
+        "imprint": "R"
+      },
+      {
+        "id": "C1",
+        "entryId": "E1",
+        "destinationId": "H3",
+        "imprint": "R"
+      },
+      {
+        "id": "C2",
+        "entryId": "E0",
+        "destinationId": "H5",
+        "imprint": "L"
+      },
+      {
+        "id": "C3",
+        "entryId": "E1",
+        "destinationId": "H4",
+        "imprint": "R"
+      },
+      {
+        "id": "C4",
+        "entryId": "E1",
+        "destinationId": "H3",
+        "imprint": "L"
+      },
+      {
+        "id": "C5",
+        "entryId": "E0",
+        "destinationId": "H4",
+        "imprint": "L"
+      }
+    ],
+    "solution": ["C1", "C2", "C0", "C3", "C5", "C4"],
+    "seed": 801036
+  },
+  {
+    "id": "sm-042",
+    "title": "Sleepy streets",
+    "district": 5,
+    "nodes": [
+      {
+        "id": "H0",
+        "kind": "home",
+        "color": "#e98873",
+        "symbol": "●",
+        "x": 65,
+        "y": 410
+      },
+      {
+        "id": "H1",
+        "kind": "home",
+        "color": "#75b6cd",
+        "symbol": "◆",
+        "x": 223,
+        "y": 410
+      },
+      {
+        "id": "S1",
+        "kind": "switch",
+        "L": "H0",
+        "R": "H1",
+        "initial": "L",
+        "x": 144,
+        "y": 172
+      },
+      {
+        "id": "H2",
+        "kind": "home",
+        "color": "#a6b978",
+        "symbol": "▲",
+        "x": 381,
+        "y": 410
+      },
+      {
+        "id": "H3",
+        "kind": "home",
+        "color": "#dbb05d",
+        "symbol": "★",
+        "x": 539,
+        "y": 410
+      },
+      {
+        "id": "H4",
+        "kind": "home",
+        "color": "#b69aca",
+        "symbol": "✚",
+        "x": 697,
+        "y": 410
+      },
+      {
+        "id": "H5",
+        "kind": "home",
+        "color": "#7db6a5",
+        "symbol": "■",
+        "x": 855,
+        "y": 410
+      },
+      {
+        "id": "S4",
+        "kind": "switch",
+        "L": "H4",
+        "R": "H5",
+        "initial": "R",
+        "x": 776,
+        "y": 316
+      },
+      {
+        "id": "S3",
+        "kind": "switch",
+        "L": "H3",
+        "R": "S4",
+        "initial": "R",
+        "x": 657.5,
+        "y": 244
+      },
+      {
+        "id": "S2",
+        "kind": "switch",
+        "L": "H2",
+        "R": "S3",
+        "initial": "L",
+        "x": 519.25,
+        "y": 172
+      },
+      {
+        "id": "S0",
+        "kind": "switch",
+        "L": "S1",
+        "R": "S2",
+        "initial": "R",
+        "x": 331.625,
+        "y": 100
+      },
+      {
+        "id": "E0",
+        "kind": "entry",
+        "next": "S0",
+        "x": 331.625,
+        "y": 32
+      },
+      {
+        "id": "E1",
+        "kind": "entry",
+        "next": "S3",
+        "x": 602.5,
+        "y": 209
+      }
+    ],
+    "cars": [
+      {
+        "id": "C0",
+        "entryId": "E1",
+        "destinationId": "H5",
+        "imprint": "R"
+      },
+      {
+        "id": "C1",
+        "entryId": "E0",
+        "destinationId": "H2",
+        "imprint": "R"
+      },
+      {
+        "id": "C2",
+        "entryId": "E1",
+        "destinationId": "H5",
+        "imprint": "L"
+      },
+      {
+        "id": "C3",
+        "entryId": "E0",
+        "destinationId": "H0",
+        "imprint": "R"
+      },
+      {
+        "id": "C4",
+        "entryId": "E0",
+        "destinationId": "H2",
+        "imprint": "L"
+      },
+      {
+        "id": "C5",
+        "entryId": "E1",
+        "destinationId": "H3",
+        "imprint": "R"
+      }
+    ],
+    "solution": ["C0", "C2", "C4", "C3", "C1", "C5"],
+    "seed": 821000
+  },
+  {
+    "id": "sm-043",
+    "title": "Good night, town",
+    "district": 5,
+    "nodes": [
+      {
+        "id": "H0",
+        "kind": "home",
+        "color": "#e98873",
+        "symbol": "●",
+        "x": 65,
+        "y": 410
+      },
+      {
+        "id": "H1",
+        "kind": "home",
+        "color": "#75b6cd",
+        "symbol": "◆",
+        "x": 223,
+        "y": 410
+      },
+      {
+        "id": "S3",
+        "kind": "switch",
+        "L": "H0",
+        "R": "H1",
+        "initial": "R",
+        "x": 144,
+        "y": 316
+      },
+      {
+        "id": "H2",
+        "kind": "home",
+        "color": "#a6b978",
+        "symbol": "▲",
+        "x": 381,
+        "y": 410
+      },
+      {
+        "id": "S2",
+        "kind": "switch",
+        "L": "S3",
+        "R": "H2",
+        "initial": "L",
+        "x": 262.5,
+        "y": 244
+      },
+      {
+        "id": "H3",
+        "kind": "home",
+        "color": "#dbb05d",
+        "symbol": "★",
+        "x": 539,
+        "y": 410
+      },
+      {
+        "id": "S1",
+        "kind": "switch",
+        "L": "S2",
+        "R": "H3",
+        "initial": "L",
+        "x": 400.75,
+        "y": 172
+      },
+      {
+        "id": "H4",
+        "kind": "home",
+        "color": "#b69aca",
+        "symbol": "✚",
+        "x": 697,
+        "y": 410
+      },
+      {
+        "id": "H5",
+        "kind": "home",
+        "color": "#7db6a5",
+        "symbol": "■",
+        "x": 855,
+        "y": 410
+      },
+      {
+        "id": "S4",
+        "kind": "switch",
+        "L": "H4",
+        "R": "H5",
+        "initial": "L",
+        "x": 776,
+        "y": 172
+      },
+      {
+        "id": "S0",
+        "kind": "switch",
+        "L": "S1",
+        "R": "S4",
+        "initial": "L",
+        "x": 588.375,
+        "y": 100
+      },
+      {
+        "id": "E0",
+        "kind": "entry",
+        "next": "S0",
+        "x": 588.375,
+        "y": 32
+      }
+    ],
+    "cars": [
+      {
+        "id": "C0",
+        "entryId": "E0",
+        "destinationId": "H1",
+        "imprint": "L"
+      },
+      {
+        "id": "C1",
+        "entryId": "E0",
+        "destinationId": "H2",
+        "imprint": "L"
+      },
+      {
+        "id": "C2",
+        "entryId": "E0",
+        "destinationId": "H0",
+        "imprint": "R"
+      },
+      {
+        "id": "C3",
+        "entryId": "E0",
+        "destinationId": "H5",
+        "imprint": "L"
+      },
+      {
+        "id": "C4",
+        "entryId": "E0",
+        "destinationId": "H3",
+        "imprint": "L"
+      },
+      {
+        "id": "C5",
+        "entryId": "E0",
+        "destinationId": "H4",
+        "imprint": "R"
+      }
+    ],
+    "solution": ["C0", "C2", "C5", "C3", "C4", "C1"],
+    "seed": 841015
+  },
+  {
+    "id": "sm-044",
+    "title": "Homecoming",
+    "district": 5,
+    "nodes": [
+      {
+        "id": "H0",
+        "kind": "home",
+        "color": "#e98873",
+        "symbol": "●",
+        "x": 65,
+        "y": 410
+      },
+      {
+        "id": "H1",
+        "kind": "home",
+        "color": "#75b6cd",
+        "symbol": "◆",
+        "x": 223,
+        "y": 410
+      },
+      {
+        "id": "H2",
+        "kind": "home",
+        "color": "#a6b978",
+        "symbol": "▲",
+        "x": 381,
+        "y": 410
+      },
+      {
+        "id": "H3",
+        "kind": "home",
+        "color": "#dbb05d",
+        "symbol": "★",
+        "x": 539,
+        "y": 410
+      },
+      {
+        "id": "S3",
+        "kind": "switch",
+        "L": "H2",
+        "R": "H3",
+        "initial": "L",
+        "x": 460,
+        "y": 316
+      },
+      {
+        "id": "H4",
+        "kind": "home",
+        "color": "#b69aca",
+        "symbol": "✚",
+        "x": 697,
+        "y": 410
+      },
+      {
+        "id": "H5",
+        "kind": "home",
+        "color": "#7db6a5",
+        "symbol": "■",
+        "x": 855,
+        "y": 410
+      },
+      {
+        "id": "S4",
+        "kind": "switch",
+        "L": "H4",
+        "R": "H5",
+        "initial": "R",
+        "x": 776,
+        "y": 316
+      },
+      {
+        "id": "S2",
+        "kind": "switch",
+        "L": "S3",
+        "R": "S4",
+        "initial": "R",
+        "x": 618,
+        "y": 244
+      },
+      {
+        "id": "S1",
+        "kind": "switch",
+        "L": "H1",
+        "R": "S2",
+        "initial": "R",
+        "x": 420.5,
+        "y": 172
+      },
+      {
+        "id": "S0",
+        "kind": "switch",
+        "L": "H0",
+        "R": "S1",
+        "initial": "L",
+        "x": 242.75,
+        "y": 100
+      },
+      {
+        "id": "E0",
+        "kind": "entry",
+        "next": "S0",
+        "x": 242.75,
+        "y": 32
+      },
+      {
+        "id": "E1",
+        "kind": "entry",
+        "next": "S1",
+        "x": 365.5,
+        "y": 137
+      }
+    ],
+    "cars": [
+      {
+        "id": "C0",
+        "entryId": "E1",
+        "destinationId": "H1",
+        "imprint": "R"
+      },
+      {
+        "id": "C1",
+        "entryId": "E1",
+        "destinationId": "H5",
+        "imprint": "L"
+      },
+      {
+        "id": "C2",
+        "entryId": "E1",
+        "destinationId": "H2",
+        "imprint": "R"
+      },
+      {
+        "id": "C3",
+        "entryId": "E0",
+        "destinationId": "H0",
+        "imprint": "R"
+      },
+      {
+        "id": "C4",
+        "entryId": "E0",
+        "destinationId": "H0",
+        "imprint": "L"
+      },
+      {
+        "id": "C5",
+        "entryId": "E0",
+        "destinationId": "H1",
+        "imprint": "L"
+      }
+    ],
+    "solution": ["C1", "C3", "C5", "C0", "C2", "C4"],
+    "seed": 861010
+  },
+  {
+    "id": "sm-045",
+    "title": "All connected",
+    "district": 5,
+    "nodes": [
+      {
+        "id": "H0",
+        "kind": "home",
+        "color": "#e98873",
+        "symbol": "●",
+        "x": 65,
+        "y": 410
+      },
+      {
+        "id": "H1",
+        "kind": "home",
+        "color": "#75b6cd",
+        "symbol": "◆",
+        "x": 223,
+        "y": 410
+      },
+      {
+        "id": "S2",
+        "kind": "switch",
+        "L": "H0",
+        "R": "H1",
+        "initial": "R",
+        "x": 144,
+        "y": 244
+      },
+      {
+        "id": "H2",
+        "kind": "home",
+        "color": "#a6b978",
+        "symbol": "▲",
+        "x": 381,
+        "y": 410
+      },
+      {
+        "id": "H3",
+        "kind": "home",
+        "color": "#dbb05d",
+        "symbol": "★",
+        "x": 539,
+        "y": 410
+      },
+      {
+        "id": "S3",
+        "kind": "switch",
+        "L": "H2",
+        "R": "H3",
+        "initial": "R",
+        "x": 460,
+        "y": 244
+      },
+      {
+        "id": "S1",
+        "kind": "switch",
+        "L": "S2",
+        "R": "S3",
+        "initial": "R",
+        "x": 302,
+        "y": 172
+      },
+      {
+        "id": "H4",
+        "kind": "home",
+        "color": "#b69aca",
+        "symbol": "✚",
+        "x": 697,
+        "y": 410
+      },
+      {
+        "id": "H5",
+        "kind": "home",
+        "color": "#7db6a5",
+        "symbol": "■",
+        "x": 855,
+        "y": 410
+      },
+      {
+        "id": "S4",
+        "kind": "switch",
+        "L": "H4",
+        "R": "H5",
+        "initial": "R",
+        "x": 776,
+        "y": 172
+      },
+      {
+        "id": "S0",
+        "kind": "switch",
+        "L": "S1",
+        "R": "S4",
+        "initial": "R",
+        "x": 539,
+        "y": 100
+      },
+      {
+        "id": "E0",
+        "kind": "entry",
+        "next": "S0",
+        "x": 539,
+        "y": 32
+      },
+      {
+        "id": "E1",
+        "kind": "entry",
+        "next": "S2",
+        "x": 89,
+        "y": 209
+      }
+    ],
+    "cars": [
+      {
+        "id": "C0",
+        "entryId": "E1",
+        "destinationId": "H0",
+        "imprint": "R"
+      },
+      {
+        "id": "C1",
+        "entryId": "E1",
+        "destinationId": "H1",
+        "imprint": "R"
+      },
+      {
+        "id": "C2",
+        "entryId": "E0",
+        "destinationId": "H5",
+        "imprint": "R"
+      },
+      {
+        "id": "C3",
+        "entryId": "E0",
+        "destinationId": "H5",
+        "imprint": "L"
+      },
+      {
+        "id": "C4",
+        "entryId": "E1",
+        "destinationId": "H1",
+        "imprint": "L"
+      },
+      {
+        "id": "C5",
+        "entryId": "E0",
+        "destinationId": "H3",
+        "imprint": "L"
+      }
+    ],
+    "solution": ["C1", "C2", "C3", "C4", "C0", "C5"],
+    "seed": 881021
+  },
+  {
+    "id": "sm-046",
+    "title": "A final favour",
+    "district": 5,
+    "nodes": [
+      {
+        "id": "H0",
+        "kind": "home",
+        "color": "#e98873",
+        "symbol": "●",
+        "x": 65,
+        "y": 410
+      },
+      {
+        "id": "H1",
+        "kind": "home",
+        "color": "#75b6cd",
+        "symbol": "◆",
+        "x": 223,
+        "y": 410
+      },
+      {
+        "id": "H2",
+        "kind": "home",
+        "color": "#a6b978",
+        "symbol": "▲",
+        "x": 381,
+        "y": 410
+      },
+      {
+        "id": "S2",
+        "kind": "switch",
+        "L": "H1",
+        "R": "H2",
+        "initial": "L",
+        "x": 302,
+        "y": 244
+      },
+      {
+        "id": "H3",
+        "kind": "home",
+        "color": "#dbb05d",
+        "symbol": "★",
+        "x": 539,
+        "y": 410
+      },
+      {
+        "id": "H4",
+        "kind": "home",
+        "color": "#b69aca",
+        "symbol": "✚",
+        "x": 697,
+        "y": 410
+      },
+      {
+        "id": "H5",
+        "kind": "home",
+        "color": "#7db6a5",
+        "symbol": "■",
+        "x": 855,
+        "y": 410
+      },
+      {
+        "id": "S4",
+        "kind": "switch",
+        "L": "H4",
+        "R": "H5",
+        "initial": "L",
+        "x": 776,
+        "y": 316
+      },
+      {
+        "id": "S3",
+        "kind": "switch",
+        "L": "H3",
+        "R": "S4",
+        "initial": "R",
+        "x": 657.5,
+        "y": 244
+      },
+      {
+        "id": "S1",
+        "kind": "switch",
+        "L": "S2",
+        "R": "S3",
+        "initial": "R",
+        "x": 479.75,
+        "y": 172
+      },
+      {
+        "id": "S0",
+        "kind": "switch",
+        "L": "H0",
+        "R": "S1",
+        "initial": "R",
+        "x": 272.375,
+        "y": 100
+      },
+      {
+        "id": "E0",
+        "kind": "entry",
+        "next": "S0",
+        "x": 272.375,
+        "y": 32
+      }
+    ],
+    "cars": [
+      {
+        "id": "C0",
+        "entryId": "E0",
+        "destinationId": "H4",
+        "imprint": "R"
+      },
+      {
+        "id": "C1",
+        "entryId": "E0",
+        "destinationId": "H0",
+        "imprint": "R"
+      },
+      {
+        "id": "C2",
+        "entryId": "E0",
+        "destinationId": "H1",
+        "imprint": "R"
+      },
+      {
+        "id": "C3",
+        "entryId": "E0",
+        "destinationId": "H4",
+        "imprint": "L"
+      },
+      {
+        "id": "C4",
+        "entryId": "E0",
+        "destinationId": "H3",
+        "imprint": "R"
+      },
+      {
+        "id": "C5",
+        "entryId": "E0",
+        "destinationId": "H5",
+        "imprint": "L"
+      }
+    ],
+    "solution": ["C0", "C5", "C1", "C2", "C4", "C3"],
+    "seed": 901006
+  },
+  {
+    "id": "sm-047",
+    "title": "Every road remembers",
+    "district": 5,
+    "nodes": [
+      {
+        "id": "H0",
+        "kind": "home",
+        "color": "#e98873",
+        "symbol": "●",
+        "x": 65,
+        "y": 410
+      },
+      {
+        "id": "H1",
+        "kind": "home",
+        "color": "#75b6cd",
+        "symbol": "◆",
+        "x": 223,
+        "y": 410
+      },
+      {
+        "id": "S3",
+        "kind": "switch",
+        "L": "H0",
+        "R": "H1",
+        "initial": "R",
+        "x": 144,
+        "y": 316
+      },
+      {
+        "id": "H2",
+        "kind": "home",
+        "color": "#a6b978",
+        "symbol": "▲",
+        "x": 381,
+        "y": 410
+      },
+      {
+        "id": "S2",
+        "kind": "switch",
+        "L": "S3",
+        "R": "H2",
+        "initial": "L",
+        "x": 262.5,
+        "y": 244
+      },
+      {
+        "id": "H3",
+        "kind": "home",
+        "color": "#dbb05d",
+        "symbol": "★",
+        "x": 539,
+        "y": 410
+      },
+      {
+        "id": "S1",
+        "kind": "switch",
+        "L": "S2",
+        "R": "H3",
+        "initial": "L",
+        "x": 400.75,
+        "y": 172
+      },
+      {
+        "id": "H4",
+        "kind": "home",
+        "color": "#b69aca",
+        "symbol": "✚",
+        "x": 697,
+        "y": 410
+      },
+      {
+        "id": "H5",
+        "kind": "home",
+        "color": "#7db6a5",
+        "symbol": "■",
+        "x": 855,
+        "y": 410
+      },
+      {
+        "id": "S4",
+        "kind": "switch",
+        "L": "H4",
+        "R": "H5",
+        "initial": "R",
+        "x": 776,
+        "y": 172
+      },
+      {
+        "id": "S0",
+        "kind": "switch",
+        "L": "S1",
+        "R": "S4",
+        "initial": "L",
+        "x": 588.375,
+        "y": 100
+      },
+      {
+        "id": "E0",
+        "kind": "entry",
+        "next": "S0",
+        "x": 588.375,
+        "y": 32
+      },
+      {
+        "id": "E1",
+        "kind": "entry",
+        "next": "S4",
+        "x": 721,
+        "y": 137
+      }
+    ],
+    "cars": [
+      {
+        "id": "C0",
+        "entryId": "E0",
+        "destinationId": "H1",
+        "imprint": "L"
+      },
+      {
+        "id": "C1",
+        "entryId": "E1",
+        "destinationId": "H5",
+        "imprint": "L"
+      },
+      {
+        "id": "C2",
+        "entryId": "E1",
+        "destinationId": "H4",
+        "imprint": "L"
+      },
+      {
+        "id": "C3",
+        "entryId": "E0",
+        "destinationId": "H5",
+        "imprint": "L"
+      },
+      {
+        "id": "C4",
+        "entryId": "E1",
+        "destinationId": "H4",
+        "imprint": "R"
+      },
+      {
+        "id": "C5",
+        "entryId": "E0",
+        "destinationId": "H0",
+        "imprint": "R"
+      }
+    ],
+    "solution": ["C0", "C1", "C2", "C4", "C5", "C3"],
+    "seed": 921035
+  },
+  {
+    "id": "sm-048",
+    "title": "Welcome home",
+    "district": 5,
+    "nodes": [
+      {
+        "id": "H0",
+        "kind": "home",
+        "color": "#e98873",
+        "symbol": "●",
+        "x": 65,
+        "y": 410
+      },
+      {
+        "id": "H1",
+        "kind": "home",
+        "color": "#75b6cd",
+        "symbol": "◆",
+        "x": 223,
+        "y": 410
+      },
+      {
+        "id": "S2",
+        "kind": "switch",
+        "L": "H0",
+        "R": "H1",
+        "initial": "R",
+        "x": 144,
+        "y": 244
+      },
+      {
+        "id": "H2",
+        "kind": "home",
+        "color": "#a6b978",
+        "symbol": "▲",
+        "x": 381,
+        "y": 410
+      },
+      {
+        "id": "H3",
+        "kind": "home",
+        "color": "#dbb05d",
+        "symbol": "★",
+        "x": 539,
+        "y": 410
+      },
+      {
+        "id": "H4",
+        "kind": "home",
+        "color": "#b69aca",
+        "symbol": "✚",
+        "x": 697,
+        "y": 410
+      },
+      {
+        "id": "S4",
+        "kind": "switch",
+        "L": "H3",
+        "R": "H4",
+        "initial": "R",
+        "x": 618,
+        "y": 316
+      },
+      {
+        "id": "S3",
+        "kind": "switch",
+        "L": "H2",
+        "R": "S4",
+        "initial": "L",
+        "x": 499.5,
+        "y": 244
+      },
+      {
+        "id": "S1",
+        "kind": "switch",
+        "L": "S2",
+        "R": "S3",
+        "initial": "L",
+        "x": 321.75,
+        "y": 172
+      },
+      {
+        "id": "H5",
+        "kind": "home",
+        "color": "#7db6a5",
+        "symbol": "■",
+        "x": 855,
+        "y": 410
+      },
+      {
+        "id": "S0",
+        "kind": "switch",
+        "L": "S1",
+        "R": "H5",
+        "initial": "L",
+        "x": 588.375,
+        "y": 100
+      },
+      {
+        "id": "E0",
+        "kind": "entry",
+        "next": "S0",
+        "x": 588.375,
+        "y": 32
+      },
+      {
+        "id": "E1",
+        "kind": "entry",
+        "next": "S1",
+        "x": 266.75,
+        "y": 137
+      }
+    ],
+    "cars": [
+      {
+        "id": "C0",
+        "entryId": "E1",
+        "destinationId": "H4",
+        "imprint": "L"
+      },
+      {
+        "id": "C1",
+        "entryId": "E0",
+        "destinationId": "H1",
+        "imprint": "L"
+      },
+      {
+        "id": "C2",
+        "entryId": "E1",
+        "destinationId": "H2",
+        "imprint": "R"
+      },
+      {
+        "id": "C3",
+        "entryId": "E1",
+        "destinationId": "H0",
+        "imprint": "L"
+      },
+      {
+        "id": "C4",
+        "entryId": "E0",
+        "destinationId": "H5",
+        "imprint": "L"
+      },
+      {
+        "id": "C5",
+        "entryId": "E0",
+        "destinationId": "H1",
+        "imprint": "R"
+      }
+    ],
+    "solution": ["C5", "C2", "C0", "C4", "C1", "C3"],
+    "seed": 941001
+  }
+]

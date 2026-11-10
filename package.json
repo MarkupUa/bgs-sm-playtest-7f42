@@ -1,0 +1,50 @@
+{
+  "name": "street-memory",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "preview": "vite preview --host 127.0.0.1",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src scripts tests",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "validate:levels": "node --import tsx scripts/validate-levels.ts",
+    "generate:levels": "node --import tsx scripts/generate-levels.ts",
+    "build:standalone": "vite build --mode standalone",
+    "build:crazygames-basic": "vite build --mode crazygames-basic",
+    "build:crazygames-full": "vite build --mode crazygames-full",
+    "audit:package": "node --import tsx scripts/package-audit.ts",
+    "package": "python3 scripts/package.py",
+    "assets": "node scripts/export-assets.mjs",
+    "format": "prettier --write src scripts tests *.ts *.js *.json *.html README.md docs/*.md",
+    "review:levels": "node scripts/review-levels.mjs",
+    "capture:preview": "node scripts/capture-preview.mjs",
+    "verify": "node scripts/verify.mjs",
+    "audit:assets": "python3 scripts/asset-audit.py",
+    "audit:layout": "node --import tsx scripts/layout-audit.ts",
+    "build": "vite build --mode github-pages",
+    "preview:pages": "vite preview --mode github-pages --host 127.0.0.1 --port 4180",
+    "audit:pages": "node --import tsx scripts/audit-pages.ts",
+    "test:pages": "playwright test --config playwright.pages.config.ts"
+  },
+  "dependencies": {
+    "phaser": "3.90.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.39.1",
+    "@playwright/test": "1.56.1",
+    "@types/node": "22.19.0",
+    "eslint": "9.39.1",
+    "prettier": "3.6.2",
+    "tsx": "4.20.6",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.46.4",
+    "vite": "6.4.1",
+    "vitest": "3.2.4"
+  }
+}
