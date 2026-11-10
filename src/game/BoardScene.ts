@@ -2,9 +2,62 @@ import Phaser from 'phaser';
 import type { Level, State, Trace, Point, Car } from '../core/model';
 import { exits } from '../core/validation';
 import { carSVG, homeSVG, svgURL } from './art';
+import { boardPoints, boundsOverlap, nodeBounds } from './layout';
 export class BoardScene extends Phaser.Scene {
   private pendingTextures = new Set<string>();
   private level?: Level;
+  private cssWidth = 1;
+  private cssHeight = 1;
+  private density = 1;
+  private redrawQueued = false;
+  setDisplay(width: number, height: number, density: number) {
+    this.cssWidth = width;
+    this.cssHeight = height;
+    this.density = density;
+    this.queueRedraw();
+  }
+  private queueRedraw() {
+    if (this.redrawQueued) return;
+    this.redrawQueued = true;
+    requestAnimationFrame(() => {
+      this.redrawQueued = false;
+      this.redraw();
+    });
+  }
+  private label(
+    x: number,
+    y: number,
+    text: string,
+    style: Phaser.Types.GameObjects.Text.TextStyle,
+  ) {
+    return this.add.text(x, y, text, { ...style, resolution: this.density });
+  }
+  diagnostics() {
+    const pointer = this.input.activePointer;
+    const world = this.cameras.main.getWorldPoint(pointer.x, pointer.y);
+    return {
+      css: [this.cssWidth, this.cssHeight],
+      density: this.density,
+      camera: {
+        zoom: this.cameras.main.zoom,
+        width: this.cameras.main.width,
+        height: this.cameras.main.height,
+      },
+      pointer: { x: world.x, y: world.y },
+      texts: [...this.signs.values()].map((t) => ({
+        resolution: t.style.resolution,
+        size: t.style.fontSize,
+      })),
+      textures: this.textures
+        .getTextureKeys()
+        .filter((k) => k.startsWith('house-') || k.startsWith('car-'))
+        .map((k) => ({
+          key: k,
+          width: this.textures.get(k).getSourceImage().width,
+          height: this.textures.get(k).getSourceImage().height,
+        })),
+    };
+  }
   private mismatch?: { actual: string; wanted: string };
   private state?: State;
   private points = new Map<string, Point>();
@@ -14,6 +67,7 @@ export class BoardScene extends Phaser.Scene {
   private overlay?: Phaser.GameObjects.Graphics;
   private moving?: Phaser.GameObjects.Container;
   private signs = new Map<string, Phaser.GameObjects.Text>();
+  private signArrows = new Map<string, Phaser.GameObjects.Graphics>();
   private shown: Record<string, string> = {};
   private activeTrace?: Trace[];
   private progress = 0;
@@ -29,13 +83,13 @@ export class BoardScene extends Phaser.Scene {
     super('town');
   }
   create() {
-    this.scale.on('resize', this.redraw, this);
+    this.scale.on('resize', this.queueRedraw, this);
     this.game.canvas.setAttribute(
       'aria-label',
       'Town map. Roads connect entry docks, memory signs and matching homes.',
     );
     this.game.canvas.setAttribute('role', 'img');
-    this.events.once('shutdown', () => this.scale.off('resize', this.redraw, this));
+    this.events.once('shutdown', () => this.scale.off('resize', this.queueRedraw, this));
   }
   setBoard(level: Level, state: State, mismatch?: { actual: string; wanted: string }) {
     this.mismatch = mismatch;
@@ -57,32 +111,36 @@ export class BoardScene extends Phaser.Scene {
     return this.points.get(id) ?? { x: 0, y: 0 };
   }
   private size() {
-    return Math.max(25, Math.min(40, this.scale.width * 0.045, this.scale.height * 0.18));
+    return this.cssWidth < 600
+      ? Math.max(30, Math.min(36, this.cssWidth * 0.095))
+      : Math.max(30, Math.min(40, this.cssHeight * 0.22));
   }
   redraw() {
     if (!this.sys.isActive() || !this.level) return;
-    const w = this.scale.width,
-      h = this.scale.height;
-    this.cameras.main.setViewport(0, 0, w, h);
-    this.points.clear();
-    for (const node of this.level.nodes)
-      this.points.set(node.id, {
-        x: 25 + (node.x / 920) * (w - 50),
-        y: 18 + (node.y / 460) * (h - 64),
-      });
-    for (const n of this.level.nodes)
-      if (n.kind === 'entry') {
-        const p = this.point(n.id),
-          b = this.point(n.next);
-        if (n.y < this.level.nodes.find((v) => v.id === n.next)!.y) {
-          p.y = Math.max(12, Math.min(p.y, b.y - this.size() * 1.1));
-        }
-      }
+    const w = this.cssWidth,
+      h = this.cssHeight;
+    const physicalW = this.scale.width,
+      physicalH = this.scale.height;
+    // Camera matrix maps logical CSS coordinates to backing pixels. Compensation
+    // keeps worldView at (0,0), including native Phaser pointer unprojection.
+    this.cameras.main
+      .setViewport(0, 0, physicalW, physicalH)
+      .setZoom(this.density)
+      .setScroll(
+        (w - physicalW) / 2 + (Math.round(physicalW / 2) - physicalW / 2) / this.density,
+        (h - physicalH) / 2 + (Math.round(physicalH / 2) - physicalH / 2) / this.density,
+      );
+    this.game.canvas.dataset.renderDensity = String(this.density);
+    this.game.canvas.dataset.logicalWidth = String(w);
+    this.game.canvas.dataset.logicalHeight = String(h);
+    const s = this.size();
+    this.points = boardPoints(this.level, w, h, s);
     this.decor?.destroy(true);
     this.roads?.destroy();
     this.objects?.destroy(true);
     this.overlay?.destroy();
     this.signs.clear();
+    this.signArrows.clear();
     this.decor = this.add.container(0, 0);
     this.roads = this.add.graphics();
     this.objects = this.add.container(0, 0);
@@ -90,7 +148,7 @@ export class BoardScene extends Phaser.Scene {
     const g = this.add.graphics();
     this.decor.add(g);
     const rng = new Phaser.Math.RandomDataGenerator([this.level.id]);
-    for (let i = 0; i < 28; i++) {
+    for (let i = 0; i < (w < 600 ? 12 : 24); i++) {
       const x = rng.between(15, w - 15),
         y = rng.between(22, h - 30);
       if ([...this.points.values()].some((p) => Math.hypot(p.x - x, p.y - y) < 65)) continue;
@@ -102,19 +160,19 @@ export class BoardScene extends Phaser.Scene {
         .fillCircle(x - 6, y, 7)
         .fillCircle(x + 7, y + 1, 7);
     }
-    const s = this.size();
     for (const n of this.level.nodes)
       for (const to of exits(n)) {
         const a = this.point(n.id),
           b = this.point(to);
-        this.roads.lineStyle(s * 0.65 + 7, 0xfaf7ec, 1).lineBetween(a.x, a.y + 3, b.x, b.y + 3);
-        this.roads.lineStyle(s * 0.65, 0x899086, 1).lineBetween(a.x, a.y, b.x, b.y);
+        this.roads.lineStyle(s * 0.57 + 8, 0xfaf7ec, 1).lineBetween(a.x, a.y + 2, b.x, b.y + 2);
+        this.roads.lineStyle(s * 0.57 + 3, 0x536858, 1).lineBetween(a.x, a.y, b.x, b.y);
+        this.roads.lineStyle(s * 0.57, 0x7b897a, 1).lineBetween(a.x, a.y, b.x, b.y);
         const len = Math.hypot(b.x - a.x, b.y - a.y);
         for (let d = s * 0.7; d < len - s; d += 22) {
           const t = d / len,
             t2 = Math.min((d + 7) / len, 1);
           this.roads
-            .lineStyle(1.5, 0xf4efd9, 0.6)
+            .lineStyle(2, 0xfff8e4, 0.92)
             .lineBetween(
               a.x + (b.x - a.x) * t,
               a.y + (b.y - a.y) * t,
@@ -123,6 +181,7 @@ export class BoardScene extends Phaser.Scene {
             );
         }
       }
+    const portBounds: ReturnType<typeof nodeBounds>[] = [];
     for (const n of this.level.nodes) {
       const p = this.point(n.id);
       if (n.kind === 'home') {
@@ -135,18 +194,16 @@ export class BoardScene extends Phaser.Scene {
               .strokeCircle(p.x, p.y, s * 0.92),
           );
           this.objects.add(
-            this.add
-              .text(p.x + s * 0.7, p.y - s * 0.85, actual ? '×' : '◎', {
-                fontFamily: 'Arial',
-                fontSize: Math.max(20, s * 0.65) + 'px',
-                fontStyle: 'bold',
-                color: actual ? '#b56d57' : '#6e9474',
-              })
-              .setOrigin(0.5),
+            this.label(p.x + s * 0.7, p.y - s * 0.85, actual ? '×' : '◎', {
+              fontFamily: 'Arial',
+              fontSize: Math.max(20, s * 0.65) + 'px',
+              fontStyle: 'bold',
+              color: actual ? '#b56d57' : '#6e9474',
+            }).setOrigin(0.5),
           );
         }
 
-        const key = `house-${n.color}-${n.symbol}`;
+        const key = `house-${n.color}-${n.symbol}@${this.density}`;
         this.texture(key, homeSVG(n.color, n.symbol));
         if (this.textures.exists(key)) {
           const house = this.add.image(p.x, p.y - s * 0.18, key).setDisplaySize(s * 1.6, s * 1.68);
@@ -158,17 +215,15 @@ export class BoardScene extends Phaser.Scene {
           this.add
             .graphics()
             .fillStyle(0xfffae9)
-            .fillCircle(badgeX, badgeY, Math.max(10, s * 0.25)),
+            .fillCircle(badgeX, badgeY, Math.max(13, s * 0.31)),
         );
         this.objects.add(
-          this.add
-            .text(badgeX, badgeY, n.symbol, {
-              fontFamily: 'Arial',
-              fontStyle: 'bold',
-              fontSize: Math.max(14, s * 0.42) + 'px',
-              color: '#304e40',
-            })
-            .setOrigin(0.5),
+          this.label(badgeX, badgeY, n.symbol, {
+            fontFamily: 'Arial',
+            fontStyle: 'bold',
+            fontSize: Math.max(18, s * 0.46) + 'px',
+            color: '#304e40',
+          }).setOrigin(0.5),
         );
         const delivered =
           this.state?.deliveredCarIds.filter(
@@ -176,15 +231,13 @@ export class BoardScene extends Phaser.Scene {
           ).length ?? 0;
         if (delivered)
           this.objects.add(
-            this.add
-              .text(p.x + s * 0.5, p.y - s * 0.8, '✓', {
-                fontSize: String(s * 0.5) + 'px',
-                fontFamily: 'Arial',
-                color: '#284e43',
-                backgroundColor: '#fff8df',
-                padding: { x: 3, y: 1 },
-              })
-              .setOrigin(0.5),
+            this.label(p.x + s * 0.5, p.y - s * 0.8, '✓', {
+              fontSize: String(Math.max(16, s * 0.5)) + 'px',
+              fontFamily: 'Arial',
+              color: '#284e43',
+              backgroundColor: '#fff8df',
+              padding: { x: 3, y: 1 },
+            }).setOrigin(0.5),
           );
       } else if (n.kind === 'entry') {
         const bg = this.add
@@ -194,21 +247,19 @@ export class BoardScene extends Phaser.Scene {
           .lineStyle(2, 0xadb6a0)
           .strokeRoundedRect(p.x - s * 0.55, p.y - s * 0.4, s * 1.1, s * 0.8, 6);
         this.objects.add(bg);
-        const label = this.add
-          .text(
-            p.x,
-            p.y,
-            this.level.nodes.filter((v) => v.kind === 'entry').length > 1
-              ? n.id.replace('E', '')
-              : '↓',
-            {
-              fontFamily: 'Arial',
-              fontSize: String(s * 0.5) + 'px',
-              fontStyle: 'bold',
-              color: '#526a56',
-            },
-          )
-          .setOrigin(0.5);
+        const label = this.label(
+          p.x,
+          p.y,
+          this.level.nodes.filter((v) => v.kind === 'entry').length > 1
+            ? n.id.replace('E', '')
+            : this.entryArrow(p, this.point(n.next)),
+          {
+            fontFamily: 'Arial',
+            fontSize: String(Math.max(16, s * 0.5)) + 'px',
+            fontStyle: 'bold',
+            color: '#526a56',
+          },
+        ).setOrigin(0.5);
         this.objects.add(label);
       } else {
         const bg = this.add
@@ -217,39 +268,54 @@ export class BoardScene extends Phaser.Scene {
           .fillRoundedRect(p.x - s * 0.7 + 2, p.y - s * 0.53 + 5, s * 1.4, s * 1.06, 10)
           .fillStyle(0xfffbee)
           .fillRoundedRect(p.x - s * 0.7, p.y - s * 0.53, s * 1.4, s * 1.06, 10)
-          .lineStyle(2, 0xd9d9c4)
+          .lineStyle(2, 0x83947c)
           .strokeRoundedRect(p.x - s * 0.7, p.y - s * 0.53, s * 1.4, s * 1.06, 10);
         this.objects.add(bg);
-        const label = this.add
-          .text(p.x, p.y, this.signLabel(n.id), {
-            fontFamily: 'Arial',
-            fontSize: String(s * 0.61) + 'px',
-            fontStyle: 'bold',
-            color: '#2d5446',
-          })
-          .setOrigin(0.5);
+        const label = this.label(p.x + this.size() * 0.33, p.y, this.shown[n.id], {
+          fontFamily: 'Arial',
+          fontSize: String(Math.max(20, s * 0.61)) + 'px',
+          fontStyle: 'bold',
+          color: '#203f32',
+        }).setOrigin(0.5);
         this.signs.set(n.id, label);
         this.objects.add(label);
+        const arrow = this.add.graphics();
+        this.signArrows.set(n.id, arrow);
+        this.objects.add(arrow);
+        this.updateSign(n.id, this.shown[n.id]);
         for (const direction of ['L', 'R'] as const) {
           const b = this.point(n[direction]),
             dx = b.x - p.x,
             dy = b.y - p.y,
             len = Math.hypot(dx, dy),
-            dist = Math.min(len * 0.35, s * 1.0);
-          const x = p.x + (dx / len) * dist,
-            y = p.y + (dy / len) * dist;
-          const dot = this.add
-            .graphics()
-            .fillStyle(0xfbf7e8)
-            .fillCircle(x, y, s * 0.22);
-          const text = this.add
-            .text(x, y, direction, {
-              fontFamily: 'Arial',
-              fontStyle: 'bold',
-              fontSize: String(Math.max(11, s * 0.29)) + 'px',
-              color: '#46594a',
-            })
-            .setOrigin(0.5);
+            dist = Math.min(len * 0.5, s * 1.4);
+          const port = [dist / len, 0.5, 0.4, 0.6, 0.3, 0.7]
+            .map((t) => ({ x: p.x + dx * t, y: p.y + dy * t }))
+            .find((candidate) => {
+              const box = {
+                left: candidate.x - 10,
+                right: candidate.x + 10,
+                top: candidate.y - 10,
+                bottom: candidate.y + 10,
+              };
+              return (
+                !this.level!.nodes.some((node) =>
+                  boundsOverlap(box, nodeBounds(node, this.point(node.id), s), 2),
+                ) && !portBounds.some((other) => boundsOverlap(box, other, 2))
+              );
+            });
+          // The large sign already identifies its active exit. Omit a duplicate
+          // small L/R marker when a short road has no clear space for it.
+          if (!port) continue;
+          const { x, y } = port;
+          portBounds.push({ left: x - 10, right: x + 10, top: y - 10, bottom: y + 10 });
+          const dot = this.add.graphics().fillStyle(0xfbf7e8).fillCircle(x, y, 10);
+          const text = this.label(x, y, direction, {
+            fontFamily: 'Arial',
+            fontStyle: 'bold',
+            fontSize: String(Math.max(14, s * 0.35)) + 'px',
+            color: '#46594a',
+          }).setOrigin(0.5);
           this.objects.add([dot, text]);
         }
       }
@@ -265,19 +331,50 @@ export class BoardScene extends Phaser.Scene {
       image.onload = () => {
         this.pendingTextures.delete(key);
         if (!this.textures.exists(key)) this.textures.addImage(key, image);
-        if (this.sys.isActive()) this.redraw();
+        if (this.sys.isActive()) this.queueRedraw();
       };
-      image.src = svgURL(svg);
+      // Size the SVG raster for the largest displayed sprite at this density.
+      const width = Number(svg.match(/width="(\d+)"/)?.[1] ?? 200);
+      const height = Number(svg.match(/height="(\d+)"/)?.[1] ?? 200);
+      const factor = Math.max(1, Math.ceil((96 * this.density) / width));
+      image.src = svgURL(
+        svg
+          .replace(`width="${width}"`, `width="${width * factor}"`)
+          .replace(`height="${height}"`, `height="${height * factor}"`),
+      );
     }
   }
-  private signLabel(id: string, value = this.shown[id]) {
+  private entryArrow(start: Point, end: Point) {
+    return Math.abs(end.x - start.x) > Math.abs(end.y - start.y)
+      ? end.x > start.x
+        ? '→'
+        : '←'
+      : end.y > start.y
+        ? '↓'
+        : '↑';
+  }
+  private updateSign(id: string, value: string, highlight = false) {
     const node = this.level?.nodes.find((n) => n.id === id);
-    if (node?.kind !== 'switch') return value;
+    if (node?.kind !== 'switch') return;
     const p = this.point(id),
       end = this.point(value === 'L' ? node.L : node.R);
-    const arrows = ['→', '↘', '↓', '↙', '←', '↖', '↑', '↗'];
-    const angle = Math.atan2(end.y - p.y, end.x - p.x);
-    return arrows[(Math.round(angle / (Math.PI / 4)) + 8) % 8] + ' ' + value;
+    const angle = Math.atan2(end.y - p.y, end.x - p.x),
+      cos = Math.cos(angle),
+      sin = Math.sin(angle);
+    const center = { x: p.x - this.size() * 0.32, y: p.y },
+      half = 10;
+    const tip = { x: center.x + cos * half, y: center.y + sin * half };
+    const back = { x: tip.x - cos * 8, y: tip.y - sin * 8 };
+    const g = this.signArrows.get(id);
+    g?.clear();
+    g?.lineStyle(3, highlight ? 0x865d1b : 0x203f32, 1)
+      .lineBetween(center.x - cos * half, center.y - sin * half, tip.x, tip.y)
+      .lineBetween(back.x - sin * 6, back.y + cos * 6, tip.x, tip.y)
+      .lineBetween(back.x + sin * 6, back.y - cos * 6, tip.x, tip.y);
+    this.signs
+      .get(id)
+      ?.setText(value)
+      .setColor(highlight ? '#865d1b' : '#203f32');
   }
   private drawPreview() {
     this.overlay?.clear();
@@ -307,11 +404,11 @@ export class BoardScene extends Phaser.Scene {
     const home = this.level!.nodes.find((n) => n.id === car.destinationId);
     const color = home?.kind === 'home' ? home.color : '#ed806d';
     const symbol = home?.kind === 'home' ? home.symbol : '●';
-    const key = `car-${color}-${car.imprint}-${symbol}`;
+    const key = `car-${color}-${car.imprint}-${symbol}@${this.density}`;
     this.texture(key, carSVG(color, car.imprint, symbol));
     const s = this.size();
     const image = this.textures.exists(key)
-      ? this.add.image(0, 0, key).setDisplaySize(s * 1.5, s * 0.975)
+      ? this.add.image(0, 0, key).setDisplaySize(s * 1.9, s * 1.235)
       : this.add
           .graphics()
           .fillStyle(Phaser.Display.Color.HexStringToColor(color).color)
@@ -345,12 +442,11 @@ export class BoardScene extends Phaser.Scene {
       if (next?.previousSign && this.lastSign !== this.cursor) {
         this.lastSign = this.cursor;
         this.onSign?.();
-        const label = this.signs.get(next.nodeId);
-        label?.setText(this.signLabel(next.nodeId, next.previousSign)).setColor('#b88733');
+        this.updateSign(next.nodeId, next.previousSign, true);
       }
       if (this.progress >= 0.95 && next?.newSign) {
         this.shown[next.nodeId] = next.newSign;
-        this.signs.get(next.nodeId)?.setText(this.signLabel(next.nodeId)).setColor('#2d5446');
+        this.updateSign(next.nodeId, next.newSign);
       }
       if (this.progress >= 1.16) {
         this.progress = 0;

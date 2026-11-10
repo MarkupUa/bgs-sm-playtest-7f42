@@ -1,0 +1,15 @@
+{
+  "src/core/model.ts": "d4888996388aac8ae174356e647c3bf407919f8f0b85062608eff4cf7a427f42",
+  "src/core/generator.ts": "418d69f6c0eb2ab33cd7fc68d57eba30b1e8376877256f617a0ebfbe7d15201e",
+  "src/core/serialization.ts": "90c27ce44a98256da163d54efdd4d478eea6e43351f0461883417ec24c537614",
+  "src/core/simulateMove.ts": "99443757006aed277eee18385d21f8d24d5d96b7e8f4df17e56d57a29626b660",
+  "src/core/solver.ts": "272b2b3afc048d9c63338bfb11e0f1eef2509a20075a21926641ec754390f876",
+  "src/core/validation.ts": "6bc5f829a8f4c133a8f56c9d90617d405a1711f7380fd9646d9995fc048be453",
+  "src/levels/reference.ts": "0c52de8dbaefe637907ad72567bafbd51db1b4e17a7a88d3065e39048d2988d7",
+  "src/levels/campaign.json": "e075e90e50813c9de064a1d63698deb1b5c23013b064e8c858509fccc7efec88",
+  "src/levels/campaign.ts": "4a41ec74a4398d6e8c6c1ceb4702c786df48fcb6f5abd55c88d239c7e82a1541",
+  "src/levels/daily.ts": "eef27de8b1157fee1e75ca3a9a7063c95a4934ee06d4ae4fd8eee27a68e972d2",
+  "src/app/progression.ts": "56bdb02f155f48f6093d5957f348ea912968e9f1e271b4c09406b466c2cc06cf",
+  "src/game/Audio.ts": "eaf45ce5d9d634a81f21577571580fc5ddfe48e081d4f26c23760ff51f595e8a",
+  "src/game/Music.ts": "b6d93d6c7198c5db1b9cd80e89306f296f5a135ec5b63b5d09d7e2ec9cb129cf"
+}

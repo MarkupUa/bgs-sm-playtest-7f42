@@ -1,0 +1,1542 @@
+[
+  {
+    "name": "390x844-dpr3-street1",
+    "level": 1,
+    "dpr": 3,
+    "canvas": {
+      "width": 364,
+      "height": 469,
+      "cssWidth": 364,
+      "cssHeight": 469,
+      "ratioX": 1,
+      "ratioY": 1,
+      "dataset": {}
+    },
+    "fonts": [
+      {
+        "text": "01 / MORNING LANE",
+        "font": "8px"
+      },
+      {
+        "text": "STREET 01 / 48",
+        "font": "8px"
+      },
+      {
+        "text": "Tap the coral car. Watch the sign change.",
+        "font": "10px"
+      },
+      {
+        "text": "YOUR LITTLE FLEET",
+        "font": "8px"
+      },
+      {
+        "text": "1",
+        "font": "7px"
+      },
+      {
+        "text": "●leaves R",
+        "font": "8px"
+      },
+      {
+        "text": "●",
+        "font": "9px"
+      },
+      {
+        "text": "Undo",
+        "font": "10px"
+      },
+      {
+        "text": "Restart",
+        "font": "10px"
+      },
+      {
+        "text": "Hint",
+        "font": "10px"
+      },
+      {
+        "text": "Preview",
+        "font": "10px"
+      }
+    ],
+    "overflow": false,
+    "performance": {
+      "frames": 192,
+      "medianMs": 16.699999999999818,
+      "p95Ms": 16.799999999999727,
+      "approxFps": 59.82985883891294
+    },
+    "errors": []
+  },
+  {
+    "name": "390x844-dpr3-street48",
+    "level": 48,
+    "dpr": 3,
+    "canvas": {
+      "width": 364,
+      "height": 469,
+      "cssWidth": 364,
+      "cssHeight": 469,
+      "ratioX": 1,
+      "ratioY": 1,
+      "dataset": {}
+    },
+    "fonts": [
+      {
+        "text": "06 / LANTERN HEIGHTS",
+        "font": "8px"
+      },
+      {
+        "text": "STREET 48 / 48",
+        "font": "8px"
+      },
+      {
+        "text": "Choose a car. The roads will remember.",
+        "font": "10px"
+      },
+      {
+        "text": "YOUR LITTLE FLEET",
+        "font": "8px"
+      },
+      {
+        "text": "1",
+        "font": "7px"
+      },
+      {
+        "text": "✚leaves Ldock 1",
+        "font": "8px"
+      },
+      {
+        "text": "✚",
+        "font": "9px"
+      },
+      {
+        "text": "dock 1",
+        "font": "7px"
+      },
+      {
+        "text": "2",
+        "font": "7px"
+      },
+      {
+        "text": "◆leaves Ldock 0",
+        "font": "8px"
+      },
+      {
+        "text": "◆",
+        "font": "9px"
+      },
+      {
+        "text": "dock 0",
+        "font": "7px"
+      },
+      {
+        "text": "3",
+        "font": "7px"
+      },
+      {
+        "text": "▲leaves Rdock 1",
+        "font": "8px"
+      },
+      {
+        "text": "▲",
+        "font": "9px"
+      },
+      {
+        "text": "dock 1",
+        "font": "7px"
+      },
+      {
+        "text": "4",
+        "font": "7px"
+      },
+      {
+        "text": "●leaves Ldock 1",
+        "font": "8px"
+      },
+      {
+        "text": "●",
+        "font": "9px"
+      },
+      {
+        "text": "dock 1",
+        "font": "7px"
+      },
+      {
+        "text": "5",
+        "font": "7px"
+      },
+      {
+        "text": "■leaves Ldock 0",
+        "font": "8px"
+      },
+      {
+        "text": "■",
+        "font": "9px"
+      },
+      {
+        "text": "dock 0",
+        "font": "7px"
+      },
+      {
+        "text": "6",
+        "font": "7px"
+      },
+      {
+        "text": "◆leaves Rdock 0",
+        "font": "8px"
+      },
+      {
+        "text": "◆",
+        "font": "9px"
+      },
+      {
+        "text": "dock 0",
+        "font": "7px"
+      },
+      {
+        "text": "Undo",
+        "font": "10px"
+      },
+      {
+        "text": "Restart",
+        "font": "10px"
+      },
+      {
+        "text": "Hint",
+        "font": "10px"
+      },
+      {
+        "text": "Preview",
+        "font": "10px"
+      }
+    ],
+    "overflow": false,
+    "performance": {
+      "frames": 193,
+      "medianMs": 16.699999999999818,
+      "p95Ms": 16.799999999999727,
+      "approxFps": 60.14147268703235
+    },
+    "errors": []
+  },
+  {
+    "name": "360x800-dpr3-street1",
+    "level": 1,
+    "dpr": 3,
+    "canvas": {
+      "width": 334,
+      "height": 419,
+      "cssWidth": 334,
+      "cssHeight": 419,
+      "ratioX": 1,
+      "ratioY": 1,
+      "dataset": {}
+    },
+    "fonts": [
+      {
+        "text": "01 / MORNING LANE",
+        "font": "8px"
+      },
+      {
+        "text": "STREET 01 / 48",
+        "font": "8px"
+      },
+      {
+        "text": "Tap the coral car. Watch the sign change.",
+        "font": "10px"
+      },
+      {
+        "text": "YOUR LITTLE FLEET",
+        "font": "8px"
+      },
+      {
+        "text": "1",
+        "font": "7px"
+      },
+      {
+        "text": "●leaves R",
+        "font": "8px"
+      },
+      {
+        "text": "●",
+        "font": "9px"
+      },
+      {
+        "text": "Undo",
+        "font": "10px"
+      },
+      {
+        "text": "Restart",
+        "font": "10px"
+      },
+      {
+        "text": "Hint",
+        "font": "10px"
+      },
+      {
+        "text": "Preview",
+        "font": "10px"
+      }
+    ],
+    "overflow": false,
+    "performance": {
+      "frames": 193,
+      "medianMs": 16.699999999999818,
+      "p95Ms": 16.700000000000728,
+      "approxFps": 60.25789128602215
+    },
+    "errors": []
+  },
+  {
+    "name": "360x800-dpr3-street48",
+    "level": 48,
+    "dpr": 3,
+    "canvas": {
+      "width": 334,
+      "height": 419,
+      "cssWidth": 334,
+      "cssHeight": 419,
+      "ratioX": 1,
+      "ratioY": 1,
+      "dataset": {}
+    },
+    "fonts": [
+      {
+        "text": "06 / LANTERN HEIGHTS",
+        "font": "8px"
+      },
+      {
+        "text": "STREET 48 / 48",
+        "font": "8px"
+      },
+      {
+        "text": "Choose a car. The roads will remember.",
+        "font": "10px"
+      },
+      {
+        "text": "YOUR LITTLE FLEET",
+        "font": "8px"
+      },
+      {
+        "text": "1",
+        "font": "7px"
+      },
+      {
+        "text": "✚leaves Ldock 1",
+        "font": "8px"
+      },
+      {
+        "text": "✚",
+        "font": "9px"
+      },
+      {
+        "text": "dock 1",
+        "font": "7px"
+      },
+      {
+        "text": "2",
+        "font": "7px"
+      },
+      {
+        "text": "◆leaves Ldock 0",
+        "font": "8px"
+      },
+      {
+        "text": "◆",
+        "font": "9px"
+      },
+      {
+        "text": "dock 0",
+        "font": "7px"
+      },
+      {
+        "text": "3",
+        "font": "7px"
+      },
+      {
+        "text": "▲leaves Rdock 1",
+        "font": "8px"
+      },
+      {
+        "text": "▲",
+        "font": "9px"
+      },
+      {
+        "text": "dock 1",
+        "font": "7px"
+      },
+      {
+        "text": "4",
+        "font": "7px"
+      },
+      {
+        "text": "●leaves Ldock 1",
+        "font": "8px"
+      },
+      {
+        "text": "●",
+        "font": "9px"
+      },
+      {
+        "text": "dock 1",
+        "font": "7px"
+      },
+      {
+        "text": "5",
+        "font": "7px"
+      },
+      {
+        "text": "■leaves Ldock 0",
+        "font": "8px"
+      },
+      {
+        "text": "■",
+        "font": "9px"
+      },
+      {
+        "text": "dock 0",
+        "font": "7px"
+      },
+      {
+        "text": "6",
+        "font": "7px"
+      },
+      {
+        "text": "◆leaves Rdock 0",
+        "font": "8px"
+      },
+      {
+        "text": "◆",
+        "font": "9px"
+      },
+      {
+        "text": "dock 0",
+        "font": "7px"
+      },
+      {
+        "text": "Undo",
+        "font": "10px"
+      },
+      {
+        "text": "Restart",
+        "font": "10px"
+      },
+      {
+        "text": "Hint",
+        "font": "10px"
+      },
+      {
+        "text": "Preview",
+        "font": "10px"
+      }
+    ],
+    "overflow": false,
+    "performance": {
+      "frames": 193,
+      "medianMs": 16.699999999999818,
+      "p95Ms": 16.799999999999727,
+      "approxFps": 60.17522526735894
+    },
+    "errors": []
+  },
+  {
+    "name": "375x667-dpr2-street1",
+    "level": 1,
+    "dpr": 2,
+    "canvas": {
+      "width": 349,
+      "height": 295,
+      "cssWidth": 349,
+      "cssHeight": 295,
+      "ratioX": 1,
+      "ratioY": 1,
+      "dataset": {}
+    },
+    "fonts": [
+      {
+        "text": "01 / MORNING LANE",
+        "font": "8px"
+      },
+      {
+        "text": "STREET 01 / 48",
+        "font": "8px"
+      },
+      {
+        "text": "Tap the coral car. Watch the sign change.",
+        "font": "10px"
+      },
+      {
+        "text": "YOUR LITTLE FLEET",
+        "font": "8px"
+      },
+      {
+        "text": "1",
+        "font": "7px"
+      },
+      {
+        "text": "●leaves R",
+        "font": "8px"
+      },
+      {
+        "text": "●",
+        "font": "9px"
+      },
+      {
+        "text": "Undo",
+        "font": "10px"
+      },
+      {
+        "text": "Restart",
+        "font": "10px"
+      },
+      {
+        "text": "Hint",
+        "font": "10px"
+      },
+      {
+        "text": "Preview",
+        "font": "10px"
+      }
+    ],
+    "overflow": false,
+    "performance": {
+      "frames": 193,
+      "medianMs": 16.699999999999818,
+      "p95Ms": 16.799999999999955,
+      "approxFps": 60.312499999943896
+    },
+    "errors": []
+  },
+  {
+    "name": "375x667-dpr2-street48",
+    "level": 48,
+    "dpr": 2,
+    "canvas": {
+      "width": 349,
+      "height": 295,
+      "cssWidth": 349,
+      "cssHeight": 295,
+      "ratioX": 1,
+      "ratioY": 1,
+      "dataset": {}
+    },
+    "fonts": [
+      {
+        "text": "06 / LANTERN HEIGHTS",
+        "font": "8px"
+      },
+      {
+        "text": "STREET 48 / 48",
+        "font": "8px"
+      },
+      {
+        "text": "Choose a car. The roads will remember.",
+        "font": "10px"
+      },
+      {
+        "text": "YOUR LITTLE FLEET",
+        "font": "8px"
+      },
+      {
+        "text": "1",
+        "font": "7px"
+      },
+      {
+        "text": "✚leaves Ldock 1",
+        "font": "8px"
+      },
+      {
+        "text": "✚",
+        "font": "9px"
+      },
+      {
+        "text": "dock 1",
+        "font": "7px"
+      },
+      {
+        "text": "2",
+        "font": "7px"
+      },
+      {
+        "text": "◆leaves Ldock 0",
+        "font": "8px"
+      },
+      {
+        "text": "◆",
+        "font": "9px"
+      },
+      {
+        "text": "dock 0",
+        "font": "7px"
+      },
+      {
+        "text": "3",
+        "font": "7px"
+      },
+      {
+        "text": "▲leaves Rdock 1",
+        "font": "8px"
+      },
+      {
+        "text": "▲",
+        "font": "9px"
+      },
+      {
+        "text": "dock 1",
+        "font": "7px"
+      },
+      {
+        "text": "4",
+        "font": "7px"
+      },
+      {
+        "text": "●leaves Ldock 1",
+        "font": "8px"
+      },
+      {
+        "text": "●",
+        "font": "9px"
+      },
+      {
+        "text": "dock 1",
+        "font": "7px"
+      },
+      {
+        "text": "5",
+        "font": "7px"
+      },
+      {
+        "text": "■leaves Ldock 0",
+        "font": "8px"
+      },
+      {
+        "text": "■",
+        "font": "9px"
+      },
+      {
+        "text": "dock 0",
+        "font": "7px"
+      },
+      {
+        "text": "6",
+        "font": "7px"
+      },
+      {
+        "text": "◆leaves Rdock 0",
+        "font": "8px"
+      },
+      {
+        "text": "◆",
+        "font": "9px"
+      },
+      {
+        "text": "dock 0",
+        "font": "7px"
+      },
+      {
+        "text": "Undo",
+        "font": "10px"
+      },
+      {
+        "text": "Restart",
+        "font": "10px"
+      },
+      {
+        "text": "Hint",
+        "font": "10px"
+      },
+      {
+        "text": "Preview",
+        "font": "10px"
+      }
+    ],
+    "overflow": false,
+    "performance": {
+      "frames": 193,
+      "medianMs": 16.699999999999818,
+      "p95Ms": 16.700000000000273,
+      "approxFps": 60.12461059187256
+    },
+    "errors": []
+  },
+  {
+    "name": "768x1024-dpr2-street1",
+    "level": 1,
+    "dpr": 2,
+    "canvas": {
+      "width": 680,
+      "height": 562,
+      "cssWidth": 680,
+      "cssHeight": 562,
+      "ratioX": 1,
+      "ratioY": 1,
+      "dataset": {}
+    },
+    "fonts": [
+      {
+        "text": "01 / MORNING LANE",
+        "font": "10px"
+      },
+      {
+        "text": "STREET 01 / 48",
+        "font": "10px"
+      },
+      {
+        "text": "Tap the coral car. Watch the sign change.",
+        "font": "12px"
+      },
+      {
+        "text": "YOUR LITTLE FLEET",
+        "font": "8px"
+      },
+      {
+        "text": "1",
+        "font": "9px"
+      },
+      {
+        "text": "●leaves R",
+        "font": "10px"
+      },
+      {
+        "text": "●",
+        "font": "12px"
+      },
+      {
+        "text": "Undo",
+        "font": "12px"
+      },
+      {
+        "text": "Restart",
+        "font": "12px"
+      },
+      {
+        "text": "Hint",
+        "font": "12px"
+      },
+      {
+        "text": "Preview",
+        "font": "12px"
+      }
+    ],
+    "overflow": false,
+    "performance": {
+      "frames": 193,
+      "medianMs": 16.699999999999818,
+      "p95Ms": 16.799999999999955,
+      "approxFps": 60.21277259543096
+    },
+    "errors": []
+  },
+  {
+    "name": "768x1024-dpr2-street48",
+    "level": 48,
+    "dpr": 2,
+    "canvas": {
+      "width": 680,
+      "height": 562,
+      "cssWidth": 680,
+      "cssHeight": 562,
+      "ratioX": 1,
+      "ratioY": 1,
+      "dataset": {}
+    },
+    "fonts": [
+      {
+        "text": "06 / LANTERN HEIGHTS",
+        "font": "10px"
+      },
+      {
+        "text": "STREET 48 / 48",
+        "font": "10px"
+      },
+      {
+        "text": "Choose a car. The roads will remember.",
+        "font": "12px"
+      },
+      {
+        "text": "YOUR LITTLE FLEET",
+        "font": "8px"
+      },
+      {
+        "text": "1",
+        "font": "9px"
+      },
+      {
+        "text": "✚leaves Ldock 1",
+        "font": "10px"
+      },
+      {
+        "text": "✚",
+        "font": "12px"
+      },
+      {
+        "text": "dock 1",
+        "font": "7px"
+      },
+      {
+        "text": "2",
+        "font": "9px"
+      },
+      {
+        "text": "◆leaves Ldock 0",
+        "font": "10px"
+      },
+      {
+        "text": "◆",
+        "font": "12px"
+      },
+      {
+        "text": "dock 0",
+        "font": "7px"
+      },
+      {
+        "text": "3",
+        "font": "9px"
+      },
+      {
+        "text": "▲leaves Rdock 1",
+        "font": "10px"
+      },
+      {
+        "text": "▲",
+        "font": "12px"
+      },
+      {
+        "text": "dock 1",
+        "font": "7px"
+      },
+      {
+        "text": "4",
+        "font": "9px"
+      },
+      {
+        "text": "●leaves Ldock 1",
+        "font": "10px"
+      },
+      {
+        "text": "●",
+        "font": "12px"
+      },
+      {
+        "text": "dock 1",
+        "font": "7px"
+      },
+      {
+        "text": "5",
+        "font": "9px"
+      },
+      {
+        "text": "■leaves Ldock 0",
+        "font": "10px"
+      },
+      {
+        "text": "■",
+        "font": "12px"
+      },
+      {
+        "text": "dock 0",
+        "font": "7px"
+      },
+      {
+        "text": "6",
+        "font": "9px"
+      },
+      {
+        "text": "◆leaves Rdock 0",
+        "font": "10px"
+      },
+      {
+        "text": "◆",
+        "font": "12px"
+      },
+      {
+        "text": "dock 0",
+        "font": "7px"
+      },
+      {
+        "text": "Undo",
+        "font": "12px"
+      },
+      {
+        "text": "Restart",
+        "font": "12px"
+      },
+      {
+        "text": "Hint",
+        "font": "12px"
+      },
+      {
+        "text": "Preview",
+        "font": "12px"
+      }
+    ],
+    "overflow": false,
+    "performance": {
+      "frames": 193,
+      "medianMs": 16.699999999999818,
+      "p95Ms": 16.700000000000273,
+      "approxFps": 60.05165064254953
+    },
+    "errors": []
+  },
+  {
+    "name": "1366x768-dpr1-street1",
+    "level": 1,
+    "dpr": 1,
+    "canvas": {
+      "width": 1230,
+      "height": 306,
+      "cssWidth": 1230,
+      "cssHeight": 306,
+      "ratioX": 1,
+      "ratioY": 1,
+      "dataset": {}
+    },
+    "fonts": [
+      {
+        "text": "01 / MORNING LANE",
+        "font": "10px"
+      },
+      {
+        "text": "STREET 01 / 48",
+        "font": "10px"
+      },
+      {
+        "text": "Tap the coral car. Watch the sign change.",
+        "font": "12px"
+      },
+      {
+        "text": "YOUR LITTLE FLEET",
+        "font": "9px"
+      },
+      {
+        "text": "1",
+        "font": "9px"
+      },
+      {
+        "text": "●leaves R",
+        "font": "10px"
+      },
+      {
+        "text": "●",
+        "font": "12px"
+      },
+      {
+        "text": "Undo",
+        "font": "12px"
+      },
+      {
+        "text": "Restart",
+        "font": "12px"
+      },
+      {
+        "text": "Hint",
+        "font": "12px"
+      },
+      {
+        "text": "Preview",
+        "font": "12px"
+      }
+    ],
+    "overflow": false,
+    "performance": {
+      "frames": 193,
+      "medianMs": 16.699999999999818,
+      "p95Ms": 16.700000000000728,
+      "approxFps": 60.25412881272681
+    },
+    "errors": []
+  },
+  {
+    "name": "1366x768-dpr1-street48",
+    "level": 48,
+    "dpr": 1,
+    "canvas": {
+      "width": 1230,
+      "height": 306,
+      "cssWidth": 1230,
+      "cssHeight": 306,
+      "ratioX": 1,
+      "ratioY": 1,
+      "dataset": {}
+    },
+    "fonts": [
+      {
+        "text": "06 / LANTERN HEIGHTS",
+        "font": "10px"
+      },
+      {
+        "text": "STREET 48 / 48",
+        "font": "10px"
+      },
+      {
+        "text": "Choose a car. The roads will remember.",
+        "font": "12px"
+      },
+      {
+        "text": "YOUR LITTLE FLEET",
+        "font": "9px"
+      },
+      {
+        "text": "1",
+        "font": "9px"
+      },
+      {
+        "text": "✚leaves Ldock 1",
+        "font": "10px"
+      },
+      {
+        "text": "✚",
+        "font": "12px"
+      },
+      {
+        "text": "dock 1",
+        "font": "8px"
+      },
+      {
+        "text": "2",
+        "font": "9px"
+      },
+      {
+        "text": "◆leaves Ldock 0",
+        "font": "10px"
+      },
+      {
+        "text": "◆",
+        "font": "12px"
+      },
+      {
+        "text": "dock 0",
+        "font": "8px"
+      },
+      {
+        "text": "3",
+        "font": "9px"
+      },
+      {
+        "text": "▲leaves Rdock 1",
+        "font": "10px"
+      },
+      {
+        "text": "▲",
+        "font": "12px"
+      },
+      {
+        "text": "dock 1",
+        "font": "8px"
+      },
+      {
+        "text": "4",
+        "font": "9px"
+      },
+      {
+        "text": "●leaves Ldock 1",
+        "font": "10px"
+      },
+      {
+        "text": "●",
+        "font": "12px"
+      },
+      {
+        "text": "dock 1",
+        "font": "8px"
+      },
+      {
+        "text": "5",
+        "font": "9px"
+      },
+      {
+        "text": "■leaves Ldock 0",
+        "font": "10px"
+      },
+      {
+        "text": "■",
+        "font": "12px"
+      },
+      {
+        "text": "dock 0",
+        "font": "8px"
+      },
+      {
+        "text": "6",
+        "font": "9px"
+      },
+      {
+        "text": "◆leaves Rdock 0",
+        "font": "10px"
+      },
+      {
+        "text": "◆",
+        "font": "12px"
+      },
+      {
+        "text": "dock 0",
+        "font": "8px"
+      },
+      {
+        "text": "Undo",
+        "font": "12px"
+      },
+      {
+        "text": "Restart",
+        "font": "12px"
+      },
+      {
+        "text": "Hint",
+        "font": "12px"
+      },
+      {
+        "text": "Preview",
+        "font": "12px"
+      }
+    ],
+    "overflow": false,
+    "performance": {
+      "frames": 193,
+      "medianMs": 16.699999999999818,
+      "p95Ms": 16.799999999999727,
+      "approxFps": 60.15646915814921
+    },
+    "errors": []
+  },
+  {
+    "name": "1920x1080-dpr1-street1",
+    "level": 1,
+    "dpr": 1,
+    "canvas": {
+      "width": 1284,
+      "height": 575,
+      "cssWidth": 1284,
+      "cssHeight": 575,
+      "ratioX": 1,
+      "ratioY": 1,
+      "dataset": {}
+    },
+    "fonts": [
+      {
+        "text": "01 / MORNING LANE",
+        "font": "10px"
+      },
+      {
+        "text": "STREET 01 / 48",
+        "font": "10px"
+      },
+      {
+        "text": "Tap the coral car. Watch the sign change.",
+        "font": "12px"
+      },
+      {
+        "text": "YOUR LITTLE FLEET",
+        "font": "9px"
+      },
+      {
+        "text": "1",
+        "font": "9px"
+      },
+      {
+        "text": "●leaves R",
+        "font": "11px"
+      },
+      {
+        "text": "●",
+        "font": "12px"
+      },
+      {
+        "text": "Undo",
+        "font": "12px"
+      },
+      {
+        "text": "Restart",
+        "font": "12px"
+      },
+      {
+        "text": "Hint",
+        "font": "12px"
+      },
+      {
+        "text": "Preview",
+        "font": "12px"
+      }
+    ],
+    "overflow": false,
+    "performance": {
+      "frames": 193,
+      "medianMs": 16.699999999999818,
+      "p95Ms": 16.700000000000273,
+      "approxFps": 59.999378244785134
+    },
+    "errors": []
+  },
+  {
+    "name": "1920x1080-dpr1-street48",
+    "level": 48,
+    "dpr": 1,
+    "canvas": {
+      "width": 1284,
+      "height": 575,
+      "cssWidth": 1284,
+      "cssHeight": 575,
+      "ratioX": 1,
+      "ratioY": 1,
+      "dataset": {}
+    },
+    "fonts": [
+      {
+        "text": "06 / LANTERN HEIGHTS",
+        "font": "10px"
+      },
+      {
+        "text": "STREET 48 / 48",
+        "font": "10px"
+      },
+      {
+        "text": "Choose a car. The roads will remember.",
+        "font": "12px"
+      },
+      {
+        "text": "YOUR LITTLE FLEET",
+        "font": "9px"
+      },
+      {
+        "text": "1",
+        "font": "9px"
+      },
+      {
+        "text": "✚leaves Ldock 1",
+        "font": "11px"
+      },
+      {
+        "text": "✚",
+        "font": "12px"
+      },
+      {
+        "text": "dock 1",
+        "font": "8px"
+      },
+      {
+        "text": "2",
+        "font": "9px"
+      },
+      {
+        "text": "◆leaves Ldock 0",
+        "font": "11px"
+      },
+      {
+        "text": "◆",
+        "font": "12px"
+      },
+      {
+        "text": "dock 0",
+        "font": "8px"
+      },
+      {
+        "text": "3",
+        "font": "9px"
+      },
+      {
+        "text": "▲leaves Rdock 1",
+        "font": "11px"
+      },
+      {
+        "text": "▲",
+        "font": "12px"
+      },
+      {
+        "text": "dock 1",
+        "font": "8px"
+      },
+      {
+        "text": "4",
+        "font": "9px"
+      },
+      {
+        "text": "●leaves Ldock 1",
+        "font": "11px"
+      },
+      {
+        "text": "●",
+        "font": "12px"
+      },
+      {
+        "text": "dock 1",
+        "font": "8px"
+      },
+      {
+        "text": "5",
+        "font": "9px"
+      },
+      {
+        "text": "■leaves Ldock 0",
+        "font": "11px"
+      },
+      {
+        "text": "■",
+        "font": "12px"
+      },
+      {
+        "text": "dock 0",
+        "font": "8px"
+      },
+      {
+        "text": "6",
+        "font": "9px"
+      },
+      {
+        "text": "◆leaves Rdock 0",
+        "font": "11px"
+      },
+      {
+        "text": "◆",
+        "font": "12px"
+      },
+      {
+        "text": "dock 0",
+        "font": "8px"
+      },
+      {
+        "text": "Undo",
+        "font": "12px"
+      },
+      {
+        "text": "Restart",
+        "font": "12px"
+      },
+      {
+        "text": "Hint",
+        "font": "12px"
+      },
+      {
+        "text": "Preview",
+        "font": "12px"
+      }
+    ],
+    "overflow": false,
+    "performance": {
+      "frames": 193,
+      "medianMs": 16.699999999999818,
+      "p95Ms": 16.700000000000273,
+      "approxFps": 60.154594190250734
+    },
+    "errors": []
+  },
+  {
+    "name": "1920x1080-dpr2-street1",
+    "level": 1,
+    "dpr": 2,
+    "canvas": {
+      "width": 1284,
+      "height": 575,
+      "cssWidth": 1284,
+      "cssHeight": 575,
+      "ratioX": 1,
+      "ratioY": 1,
+      "dataset": {}
+    },
+    "fonts": [
+      {
+        "text": "01 / MORNING LANE",
+        "font": "10px"
+      },
+      {
+        "text": "STREET 01 / 48",
+        "font": "10px"
+      },
+      {
+        "text": "Tap the coral car. Watch the sign change.",
+        "font": "12px"
+      },
+      {
+        "text": "YOUR LITTLE FLEET",
+        "font": "9px"
+      },
+      {
+        "text": "1",
+        "font": "9px"
+      },
+      {
+        "text": "●leaves R",
+        "font": "11px"
+      },
+      {
+        "text": "●",
+        "font": "12px"
+      },
+      {
+        "text": "Undo",
+        "font": "12px"
+      },
+      {
+        "text": "Restart",
+        "font": "12px"
+      },
+      {
+        "text": "Hint",
+        "font": "12px"
+      },
+      {
+        "text": "Preview",
+        "font": "12px"
+      }
+    ],
+    "overflow": false,
+    "performance": {
+      "frames": 193,
+      "medianMs": 16.699999999999818,
+      "p95Ms": 16.700000000000273,
+      "approxFps": 60.289891290752024
+    },
+    "errors": []
+  },
+  {
+    "name": "1920x1080-dpr2-street48",
+    "level": 48,
+    "dpr": 2,
+    "canvas": {
+      "width": 1284,
+      "height": 575,
+      "cssWidth": 1284,
+      "cssHeight": 575,
+      "ratioX": 1,
+      "ratioY": 1,
+      "dataset": {}
+    },
+    "fonts": [
+      {
+        "text": "06 / LANTERN HEIGHTS",
+        "font": "10px"
+      },
+      {
+        "text": "STREET 48 / 48",
+        "font": "10px"
+      },
+      {
+        "text": "Choose a car. The roads will remember.",
+        "font": "12px"
+      },
+      {
+        "text": "YOUR LITTLE FLEET",
+        "font": "9px"
+      },
+      {
+        "text": "1",
+        "font": "9px"
+      },
+      {
+        "text": "✚leaves Ldock 1",
+        "font": "11px"
+      },
+      {
+        "text": "✚",
+        "font": "12px"
+      },
+      {
+        "text": "dock 1",
+        "font": "8px"
+      },
+      {
+        "text": "2",
+        "font": "9px"
+      },
+      {
+        "text": "◆leaves Ldock 0",
+        "font": "11px"
+      },
+      {
+        "text": "◆",
+        "font": "12px"
+      },
+      {
+        "text": "dock 0",
+        "font": "8px"
+      },
+      {
+        "text": "3",
+        "font": "9px"
+      },
+      {
+        "text": "▲leaves Rdock 1",
+        "font": "11px"
+      },
+      {
+        "text": "▲",
+        "font": "12px"
+      },
+      {
+        "text": "dock 1",
+        "font": "8px"
+      },
+      {
+        "text": "4",
+        "font": "9px"
+      },
+      {
+        "text": "●leaves Ldock 1",
+        "font": "11px"
+      },
+      {
+        "text": "●",
+        "font": "12px"
+      },
+      {
+        "text": "dock 1",
+        "font": "8px"
+      },
+      {
+        "text": "5",
+        "font": "9px"
+      },
+      {
+        "text": "■leaves Ldock 0",
+        "font": "11px"
+      },
+      {
+        "text": "■",
+        "font": "12px"
+      },
+      {
+        "text": "dock 0",
+        "font": "8px"
+      },
+      {
+        "text": "6",
+        "font": "9px"
+      },
+      {
+        "text": "◆leaves Rdock 0",
+        "font": "11px"
+      },
+      {
+        "text": "◆",
+        "font": "12px"
+      },
+      {
+        "text": "dock 0",
+        "font": "8px"
+      },
+      {
+        "text": "Undo",
+        "font": "12px"
+      },
+      {
+        "text": "Restart",
+        "font": "12px"
+      },
+      {
+        "text": "Hint",
+        "font": "12px"
+      },
+      {
+        "text": "Preview",
+        "font": "12px"
+      }
+    ],
+    "overflow": false,
+    "performance": {
+      "frames": 193,
+      "medianMs": 16.699999999999818,
+      "p95Ms": 16.700000000000273,
+      "approxFps": 60.20525938174043
+    },
+    "errors": []
+  }
+]

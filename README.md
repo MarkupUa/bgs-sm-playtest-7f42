@@ -1,5 +1,8 @@
 # Street Memory
 
+Visual rendering and mobile readability validation, including native DPR 1/2/3
+screenshots and before/after comparisons: [Visual quality report](docs/VISUAL_QUALITY_REPORT.md).
+
 A tiny town. Roads with a memory. A playable puzzle campaign with an independent GitHub Pages public playtest. **Not published on CrazyGames.** See [QA report](docs/QA_REPORT.md) and [submission checklist](docs/CRAZYGAMES_SUBMISSION.md) for verified scope and outstanding device/platform checks.
 
 ## Public playtest and deployment

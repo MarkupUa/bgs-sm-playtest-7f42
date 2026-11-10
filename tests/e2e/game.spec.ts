@@ -377,3 +377,77 @@ test('background music starts after a gesture, pauses, respects mute and saves i
   await page.locator('#settings').click();
   await expect(page.locator('#set-music')).not.toBeChecked();
 });
+
+test('HiDPI camera keeps Phaser pointer coordinates in logical CSS pixels after resize', async ({
+  browser,
+}) => {
+  for (const dpr of [1, 2, 3]) {
+    const context = await browser.newContext({
+      viewport: { width: 390, height: 844 },
+      deviceScaleFactor: dpr,
+    });
+    const page = await context.newPage();
+    await boot(page);
+    for (const viewport of [
+      { width: 390, height: 844 },
+      { width: 1366, height: 768 },
+    ]) {
+      await page.setViewportSize(viewport);
+      await page.waitForTimeout(100);
+      const box = (await page.locator('canvas').boundingBox())!;
+      await page.mouse.move(box.x + box.width * 0.37, box.y + box.height * 0.61);
+      await page.waitForTimeout(50);
+      const diag = await page.evaluate(() =>
+        (
+          window.streetMemory as unknown as {
+            boardDiagnostics(): {
+              density: number;
+              pointer: { x: number; y: number };
+              texts: { resolution: number }[];
+            };
+          }
+        ).boardDiagnostics(),
+      );
+      expect(diag.density).toBe(dpr);
+      // Browser mouse events quantize their CSS client coordinates to integers.
+      expect(Math.abs(diag.pointer.x - box.width * 0.37)).toBeLessThanOrEqual(1);
+      expect(Math.abs(diag.pointer.y - box.height * 0.61)).toBeLessThanOrEqual(1);
+      expect(diag.texts.every((t) => t.resolution === dpr)).toBe(true);
+      const dimensions = await page.locator('canvas').evaluate((c) => ({
+        width: (c as HTMLCanvasElement).width,
+        height: (c as HTMLCanvasElement).height,
+      }));
+      expect(Math.abs(dimensions.width / box.width - dpr)).toBeLessThan(0.02);
+      expect(Math.abs(dimensions.height / box.height - dpr)).toBeLessThan(0.02);
+    }
+    await context.close();
+  }
+});
+
+test('display follows a silent DPR change without a CSS resize', async ({ browser }) => {
+  const context = await browser.newContext({
+    viewport: { width: 390, height: 844 },
+    deviceScaleFactor: 1,
+    isMobile: true,
+  });
+  const page = await context.newPage();
+  await boot(page);
+  const session = await context.newCDPSession(page);
+  const initial = (await page.locator('canvas').boundingBox())!;
+  for (const density of [3, 2, 1]) {
+    await session.send('Emulation.setDeviceMetricsOverride', {
+      width: 390,
+      height: 844,
+      deviceScaleFactor: density,
+      mobile: true,
+    });
+    await expect(page.locator('canvas')).toHaveAttribute('data-render-density', String(density));
+    const box = (await page.locator('canvas').boundingBox())!;
+    expect(box.width).toBe(initial.width);
+    expect(box.height).toBe(initial.height);
+    expect(await page.locator('canvas').evaluate((c) => (c as HTMLCanvasElement).width)).toBe(
+      initial.width * density,
+    );
+  }
+  await context.close();
+});

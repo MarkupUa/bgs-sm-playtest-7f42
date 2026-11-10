@@ -1,0 +1,410 @@
+[
+  {
+    "dpr": 1,
+    "css": [
+      343,
+      268
+    ],
+    "density": 1,
+    "camera": {
+      "zoom": 1,
+      "width": 343,
+      "height": 268
+    },
+    "pointer": {
+      "x": 0,
+      "y": 0
+    },
+    "texts": [
+      {
+        "resolution": 1,
+        "size": "20px"
+      },
+      {
+        "resolution": 1,
+        "size": "20px"
+      },
+      {
+        "resolution": 1,
+        "size": "20px"
+      },
+      {
+        "resolution": 1,
+        "size": "20px"
+      },
+      {
+        "resolution": 1,
+        "size": "20px"
+      }
+    ],
+    "textures": [
+      {
+        "key": "house-#e98873-●@2",
+        "width": 200,
+        "height": 210
+      },
+      {
+        "key": "house-#75b6cd-◆@2",
+        "width": 200,
+        "height": 210
+      },
+      {
+        "key": "house-#ed806d-●@2",
+        "width": 200,
+        "height": 210
+      },
+      {
+        "key": "house-#70afca-◆@2",
+        "width": 200,
+        "height": 210
+      },
+      {
+        "key": "house-#8aaa75-▲@2",
+        "width": 200,
+        "height": 210
+      },
+      {
+        "key": "house-#a6b978-▲@2",
+        "width": 200,
+        "height": 210
+      },
+      {
+        "key": "house-#dbb05d-★@2",
+        "width": 200,
+        "height": 210
+      },
+      {
+        "key": "house-#b69aca-✚@2",
+        "width": 200,
+        "height": 210
+      },
+      {
+        "key": "house-#7db6a5-■@2",
+        "width": 200,
+        "height": 210
+      },
+      {
+        "key": "house-#e98873-●@1",
+        "width": 200,
+        "height": 210
+      },
+      {
+        "key": "house-#75b6cd-◆@1",
+        "width": 200,
+        "height": 210
+      },
+      {
+        "key": "house-#a6b978-▲@1",
+        "width": 200,
+        "height": 210
+      },
+      {
+        "key": "house-#dbb05d-★@1",
+        "width": 200,
+        "height": 210
+      },
+      {
+        "key": "house-#b69aca-✚@1",
+        "width": 200,
+        "height": 210
+      },
+      {
+        "key": "house-#7db6a5-■@1",
+        "width": 200,
+        "height": 210
+      }
+    ]
+  },
+  {
+    "dpr": 3,
+    "css": [
+      343,
+      268
+    ],
+    "density": 3,
+    "camera": {
+      "zoom": 3,
+      "width": 1029,
+      "height": 804
+    },
+    "pointer": {
+      "x": 0,
+      "y": 0
+    },
+    "texts": [
+      {
+        "resolution": 3,
+        "size": "20px"
+      },
+      {
+        "resolution": 3,
+        "size": "20px"
+      },
+      {
+        "resolution": 3,
+        "size": "20px"
+      },
+      {
+        "resolution": 3,
+        "size": "20px"
+      },
+      {
+        "resolution": 3,
+        "size": "20px"
+      }
+    ],
+    "textures": [
+      {
+        "key": "house-#e98873-●@2",
+        "width": 200,
+        "height": 210
+      },
+      {
+        "key": "house-#75b6cd-◆@2",
+        "width": 200,
+        "height": 210
+      },
+      {
+        "key": "house-#ed806d-●@2",
+        "width": 200,
+        "height": 210
+      },
+      {
+        "key": "house-#70afca-◆@2",
+        "width": 200,
+        "height": 210
+      },
+      {
+        "key": "house-#8aaa75-▲@2",
+        "width": 200,
+        "height": 210
+      },
+      {
+        "key": "house-#a6b978-▲@2",
+        "width": 200,
+        "height": 210
+      },
+      {
+        "key": "house-#dbb05d-★@2",
+        "width": 200,
+        "height": 210
+      },
+      {
+        "key": "house-#b69aca-✚@2",
+        "width": 200,
+        "height": 210
+      },
+      {
+        "key": "house-#7db6a5-■@2",
+        "width": 200,
+        "height": 210
+      },
+      {
+        "key": "house-#e98873-●@1",
+        "width": 200,
+        "height": 210
+      },
+      {
+        "key": "house-#75b6cd-◆@1",
+        "width": 200,
+        "height": 210
+      },
+      {
+        "key": "house-#a6b978-▲@1",
+        "width": 200,
+        "height": 210
+      },
+      {
+        "key": "house-#dbb05d-★@1",
+        "width": 200,
+        "height": 210
+      },
+      {
+        "key": "house-#b69aca-✚@1",
+        "width": 200,
+        "height": 210
+      },
+      {
+        "key": "house-#7db6a5-■@1",
+        "width": 200,
+        "height": 210
+      },
+      {
+        "key": "house-#e98873-●@3",
+        "width": 400,
+        "height": 420
+      },
+      {
+        "key": "house-#75b6cd-◆@3",
+        "width": 400,
+        "height": 420
+      },
+      {
+        "key": "house-#a6b978-▲@3",
+        "width": 400,
+        "height": 420
+      },
+      {
+        "key": "house-#dbb05d-★@3",
+        "width": 400,
+        "height": 420
+      },
+      {
+        "key": "house-#b69aca-✚@3",
+        "width": 400,
+        "height": 420
+      },
+      {
+        "key": "house-#7db6a5-■@3",
+        "width": 400,
+        "height": 420
+      }
+    ]
+  },
+  {
+    "dpr": 2,
+    "css": [
+      343,
+      268
+    ],
+    "density": 2,
+    "camera": {
+      "zoom": 2,
+      "width": 686,
+      "height": 536
+    },
+    "pointer": {
+      "x": 0,
+      "y": 0
+    },
+    "texts": [
+      {
+        "resolution": 2,
+        "size": "20px"
+      },
+      {
+        "resolution": 2,
+        "size": "20px"
+      },
+      {
+        "resolution": 2,
+        "size": "20px"
+      },
+      {
+        "resolution": 2,
+        "size": "20px"
+      },
+      {
+        "resolution": 2,
+        "size": "20px"
+      }
+    ],
+    "textures": [
+      {
+        "key": "house-#e98873-●@2",
+        "width": 200,
+        "height": 210
+      },
+      {
+        "key": "house-#75b6cd-◆@2",
+        "width": 200,
+        "height": 210
+      },
+      {
+        "key": "house-#ed806d-●@2",
+        "width": 200,
+        "height": 210
+      },
+      {
+        "key": "house-#70afca-◆@2",
+        "width": 200,
+        "height": 210
+      },
+      {
+        "key": "house-#8aaa75-▲@2",
+        "width": 200,
+        "height": 210
+      },
+      {
+        "key": "house-#a6b978-▲@2",
+        "width": 200,
+        "height": 210
+      },
+      {
+        "key": "house-#dbb05d-★@2",
+        "width": 200,
+        "height": 210
+      },
+      {
+        "key": "house-#b69aca-✚@2",
+        "width": 200,
+        "height": 210
+      },
+      {
+        "key": "house-#7db6a5-■@2",
+        "width": 200,
+        "height": 210
+      },
+      {
+        "key": "house-#e98873-●@1",
+        "width": 200,
+        "height": 210
+      },
+      {
+        "key": "house-#75b6cd-◆@1",
+        "width": 200,
+        "height": 210
+      },
+      {
+        "key": "house-#a6b978-▲@1",
+        "width": 200,
+        "height": 210
+      },
+      {
+        "key": "house-#dbb05d-★@1",
+        "width": 200,
+        "height": 210
+      },
+      {
+        "key": "house-#b69aca-✚@1",
+        "width": 200,
+        "height": 210
+      },
+      {
+        "key": "house-#7db6a5-■@1",
+        "width": 200,
+        "height": 210
+      },
+      {
+        "key": "house-#e98873-●@3",
+        "width": 400,
+        "height": 420
+      },
+      {
+        "key": "house-#75b6cd-◆@3",
+        "width": 400,
+        "height": 420
+      },
+      {
+        "key": "house-#a6b978-▲@3",
+        "width": 400,
+        "height": 420
+      },
+      {
+        "key": "house-#dbb05d-★@3",
+        "width": 400,
+        "height": 420
+      },
+      {
+        "key": "house-#b69aca-✚@3",
+        "width": 400,
+        "height": 420
+      },
+      {
+        "key": "house-#7db6a5-■@3",
+        "width": 400,
+        "height": 420
+      }
+    ]
+  }
+]

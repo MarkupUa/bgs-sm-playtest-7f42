@@ -43,6 +43,14 @@ jobs:
         run: npx playwright install --with-deps chromium
       - name: Test production game in its project subpath
         run: npm run test:pages
+      - name: Check seven viewport and DPR combinations with browser screenshots
+        run: |
+          npm run preview:pages &
+          for attempt in $(seq 1 30); do
+            curl --fail --silent http://127.0.0.1:4180/bgs-sm-playtest-7f42/ >/dev/null && break
+            sleep 1
+          done
+          npm run test:visual
       - name: Configure Pages
         uses: actions/configure-pages@v6
       - name: Upload only dist
