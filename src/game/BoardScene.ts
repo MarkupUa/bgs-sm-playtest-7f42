@@ -247,20 +247,20 @@ export class BoardScene extends Phaser.Scene {
           .lineStyle(2, 0xadb6a0)
           .strokeRoundedRect(p.x - s * 0.55, p.y - s * 0.4, s * 1.1, s * 0.8, 6);
         this.objects.add(bg);
-        const label = this.label(
-          p.x,
-          p.y,
-          this.level.nodes.filter((v) => v.kind === 'entry').length > 1
-            ? n.id.replace('E', '')
-            : this.entryArrow(p, this.point(n.next)),
-          {
-            fontFamily: 'Arial',
-            fontSize: String(Math.max(16, s * 0.5)) + 'px',
-            fontStyle: 'bold',
-            color: '#526a56',
-          },
-        ).setOrigin(0.5);
-        this.objects.add(label);
+        if (this.level.nodes.filter((v) => v.kind === 'entry').length > 1) {
+          this.objects.add(
+            this.label(p.x, p.y, n.id.replace('E', ''), {
+              fontFamily: 'Arial',
+              fontSize: String(Math.max(16, s * 0.5)) + 'px',
+              fontStyle: 'bold',
+              color: '#526a56',
+            }).setOrigin(0.5),
+          );
+        } else {
+          const arrow = this.add.graphics();
+          this.drawArrow(arrow, p, this.point(n.next), p, 0x203f32);
+          this.objects.add(arrow);
+        }
       } else {
         const bg = this.add
           .graphics()
@@ -344,33 +344,53 @@ export class BoardScene extends Phaser.Scene {
       );
     }
   }
-  private entryArrow(start: Point, end: Point) {
-    return Math.abs(end.x - start.x) > Math.abs(end.y - start.y)
-      ? end.x > start.x
-        ? '→'
-        : '←'
-      : end.y > start.y
-        ? '↓'
-        : '↑';
+  private drawArrow(
+    g: Phaser.GameObjects.Graphics,
+    start: Point,
+    end: Point,
+    center: Point,
+    color: number,
+  ) {
+    const angle = Math.atan2(end.y - start.y, end.x - start.x);
+    const cos = Math.cos(angle),
+      sin = Math.sin(angle);
+    // One solid silhouette: straight shaft and symmetric, square-ended chevron.
+    // Rotate the whole shape, rather than assembling three disconnected strokes.
+    const shape = [
+      [-12, -2],
+      [3, -2],
+      [-3, -8],
+      [-0.5, -10.5],
+      [10, 0],
+      [-0.5, 10.5],
+      [-3, 8],
+      [3, 2],
+      [-12, 2],
+    ];
+    g.clear()
+      .fillStyle(color)
+      .fillPoints(
+        shape.map(([x, y]) => ({
+          x: center.x + x * cos - y * sin,
+          y: center.y + x * sin + y * cos,
+        })),
+        true,
+      );
   }
   private updateSign(id: string, value: string, highlight = false) {
     const node = this.level?.nodes.find((n) => n.id === id);
     if (node?.kind !== 'switch') return;
     const p = this.point(id),
       end = this.point(value === 'L' ? node.L : node.R);
-    const angle = Math.atan2(end.y - p.y, end.x - p.x),
-      cos = Math.cos(angle),
-      sin = Math.sin(angle);
-    const center = { x: p.x - this.size() * 0.32, y: p.y },
-      half = 10;
-    const tip = { x: center.x + cos * half, y: center.y + sin * half };
-    const back = { x: tip.x - cos * 8, y: tip.y - sin * 8 };
     const g = this.signArrows.get(id);
-    g?.clear();
-    g?.lineStyle(3, highlight ? 0x865d1b : 0x203f32, 1)
-      .lineBetween(center.x - cos * half, center.y - sin * half, tip.x, tip.y)
-      .lineBetween(back.x - sin * 6, back.y + cos * 6, tip.x, tip.y)
-      .lineBetween(back.x + sin * 6, back.y - cos * 6, tip.x, tip.y);
+    if (g)
+      this.drawArrow(
+        g,
+        p,
+        end,
+        { x: p.x - this.size() * 0.32, y: p.y },
+        highlight ? 0x865d1b : 0x203f32,
+      );
     this.signs
       .get(id)
       ?.setText(value)
